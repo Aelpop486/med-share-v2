@@ -137,11 +137,6 @@ Route::get('SystemUsersTable/create', function () {
 // -----Create END---
 
 
-// test login
-Route::get('/test', function () {
-    return view('test');
-})->name('test');
-
 
 
 
