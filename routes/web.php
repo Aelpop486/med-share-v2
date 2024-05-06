@@ -41,10 +41,6 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::get('/home', function () {
     return Inertia::render('admins/home');
