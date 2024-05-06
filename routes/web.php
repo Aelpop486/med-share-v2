@@ -40,7 +40,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('admins', AdminController::class);
     Route::resource('specialties', SpecialtyController::class);
 
-
     Route::get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
 
     Route::get('/govDonations', function () {
