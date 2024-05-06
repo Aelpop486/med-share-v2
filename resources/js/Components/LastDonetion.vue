@@ -1,5 +1,5 @@
 <template>
-    <div class="w-1/2 max-w-sm m-4 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-10 dark:bg-gray-800 dark:border-gray-700">
+    <div class=" max-w-sm m-4 p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-10 dark:bg-gray-800 dark:border-gray-700">
               <div class=" items-center  mb-4">
                   <h6
                       class="text-xl font-bold leading-none text-gray-900 dark:text-white"

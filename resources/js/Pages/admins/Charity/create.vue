@@ -96,14 +96,14 @@
     <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
 
     <!-- Main modal -->
-    <div class="container px-5 py-6 mx-auto flex">
-      <div class="lg:w-4/6 mx-auto">
-        <div class="flex flex-col justify-center sm:flex-row mt-10 rounded-xl">
-          <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
-            <form class="p-4 md:p-5">
-              <div class="flex flex-col justify-center mb-10">
+    <div class="container px-5 py-6 ">
+      <div class=" lg:w-3/6  mx-auto bg-white rounded-2xl">
+        <div class="  rounded-xl">
+          <div class=" text-center sm:pr-8 sm:py-8">
+            <form class="p-4 md:p-5 ">
+              <div class=" justify-center mb-10">
                 <div class="shrink-0 mb-6 justify-center flex">
-                  <img class="h-20 w-20 bg-slate-300 object-cover rounded-full" src alt />
+                  <img class="h-20 w-20 bg-slate-300 object-cover rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfhk7r0ysYUeoklEp9XpCCCvf346u8U2dBow&s" alt />
                 </div>
 
                 <label

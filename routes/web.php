@@ -46,14 +46,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/home', function () {
-    return Inertia::render('admins/home');
-})->name('home');
-
-
 
 Route::get('/dashboardView', function () {
-    return Inertia::render('admins/Dashboard/dashboardView');
+    return Inertia::render('admins/dashboardView');
 })->name('dashboardView');
 
 Route::get('/govDonations', function () {
@@ -82,6 +77,10 @@ Route::get('/users', function () {
 Route::get('/systemUsers', function () {
     return Inertia::render('admins/SystemUsers/index');
 })->name('systemUsers');
+Route::get('/adminsSettings', function () {
+    return Inertia::render('admins/Settings/index');
+})->name('adminsSettings');
+
 
 // -----Index END---//
 
@@ -126,18 +125,16 @@ Route::get('/specialties/create', function () {
     return Inertia::render('admins/specialties/create');
 })->name('createSpecialtie');
 
-Route::get('UsersTable/create', function () {
+Route::get('/UsersTable/create', function () {
     return Inertia::render('admins/Users/create');
 })->name('createUser');
 
-Route::get('SystemUsersTable/create', function () {
+Route::get('/SystemUsersTable/create', function () {
     return Inertia::render('admins/SystemUsers/create');
 })->name('createSystemUser');
 
 // -----Create END---
-
-
-
+// -----------------------------
 
 
 

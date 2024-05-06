@@ -101,9 +101,9 @@
     </h2>
     <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
     <section class="text-gray-200 body-font">
-        <div class="container px-5 py-24 mx-auto flex flex-col">
+        <div class="container px-5 py-24 mx-auto  ">
             <!-- Edit Section-->
-            <div class="lg:w-4/6 mx-auto" >
+            <div class=" mx-auto bg-white p-8 rounded-lg" >
                 <!-- image upload -->
                 <div class="shrink-0 mb-6 justify-center flex">
                     <img
@@ -264,9 +264,9 @@
                 <!-- Form End -->
             </div>
             <!-- Edit Section End-->
-                <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
+                <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700 " />
 
-            <div class="lg:w-4/6 mx-auto">
+            <div class="lg:w-4/6 mx-auto bg-white rounded-3xl">
                 <div class="py-20">
                     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div
@@ -326,6 +326,8 @@
                     </div>
                 </div>
             </div>
+                            <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700 " />
+
             <charities-users-table />
         </div>
     </section>

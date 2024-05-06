@@ -1,5 +1,5 @@
 <template>
-    <div class="text-sky-500 body-font col-span-2">
+    <div class="text-sky-500 body-font col-span-2 bg-white rounded-xl">
         <div class=" px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full"></div>
             <div class="flex flex-wrap text-center">
