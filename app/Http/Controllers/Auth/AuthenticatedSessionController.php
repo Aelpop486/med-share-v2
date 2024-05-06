@@ -37,8 +37,8 @@ class AuthenticatedSessionController extends Controller
         $credentionlas = $request->only('email', 'password');
         if (Auth::guard('web')->attempt($credentionlas)) {
             $request->session()->regenerate();
-            # code...
-            return to_route('test');
+            
+            return to_route('dashboardView');
         } elseif (Auth::guard('charits')->attempt($credentionlas)) {
             $request->session()->regenerate();
             # code...
