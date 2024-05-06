@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CharityStoreRequest;
 use App\Models\charit;
-use App\Services\ImageService;
+use App\Models\specialty;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\CharityStoreRequest;
 
 class CharitController extends Controller
 {
@@ -26,7 +28,10 @@ class CharitController extends Controller
      */
     public function create()
     {
-        return inertia('admins/Charity/create');
+        $specialty = specialty::all();
+        return inertia('admins/Charity/create',[
+            'specialty' => $specialty
+        ]);
     }
 
     /**
@@ -39,7 +44,8 @@ class CharitController extends Controller
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
         }
         $validatedData["password"] = Hash::make($request->password);
-        $chrity = charit::create($validatedData);
+        $validatedData["admin_id"] = Auth::user()->id;
+        $charity = charit::create($validatedData);
         return to_route("charities.index");
     }
 

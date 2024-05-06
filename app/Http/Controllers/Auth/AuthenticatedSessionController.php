@@ -22,7 +22,6 @@ class AuthenticatedSessionController extends Controller
         return Inertia::render(
             'Auth/Login',
             [
-
                 'canResetPassword' => Route::has('password.request'),
                 'status' => session('status'),
             ]
@@ -37,12 +36,12 @@ class AuthenticatedSessionController extends Controller
         $credentionlas = $request->only('email', 'password');
         if (Auth::guard('web')->attempt($credentionlas)) {
             $request->session()->regenerate();
-            
+
             return to_route('dashboardView');
         } elseif (Auth::guard('charits')->attempt($credentionlas)) {
             $request->session()->regenerate();
             # code...
-            return to_route('test.chartiy');
+            return to_route('dashboardView');
         }
         return back()->withErrors(
             [

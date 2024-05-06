@@ -15,6 +15,16 @@ class DonationController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        //
+    }
+
+    public function store(Request $request)
+    {
+        //
+    }
+
     public function show(donation $donation)
     {
         return inertia('admins/Donations/show',[
@@ -27,6 +37,11 @@ class DonationController extends Controller
         return inertia('admins/Donations/edit',[
             'donation'=>$donation
         ]);
+    }
+
+    public function update(Request $request, donation $donation)
+    {
+        //
     }
 
     public function destroy(donation $donation)
