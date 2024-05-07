@@ -3,28 +3,20 @@
   <div class="container px-5 py-24 mx-auto flex ">
             <div class="lg:w-4/6 mx-auto">
                 <div
-                    class="flex flex-col justify-center sm:flex-row mt-10  rounded-xl"
+                    class=" flex-col justify-center sm:flex-row mt-10  rounded-2xl bg-white"
                 >
-                    <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                    <div class=" text-center sm:pr-8 sm:py-8">
                         <div
                             class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-400 text-gray-600"
                         >
                             <img
                                 class="w-20 h-20 rounded-full"
-                                src=""
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfhk7r0ysYUeoklEp9XpCCCvf346u8U2dBow&s"
                                 alt=""
                             />
                         </div>
 
 
-                           <a href="https://www.google.com/maps"  class="flex items-center text-center justify-center mb-10">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 my-2" fill="#075985"  viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-                            <h2
-                                class="font-medium title-font mx-4 text-cyan-900 text-lg"
-                            >
-                                add Location
-                            </h2>
-                           </a>
 
 
                           <form class="p-4 md:p-5">
@@ -59,7 +51,7 @@
                     <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                     Create
                 </button>
-               
+
             </form>
                     </div>
                 </div>

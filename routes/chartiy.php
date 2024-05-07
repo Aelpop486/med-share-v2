@@ -35,21 +35,26 @@ Route::middleware('auth')->group(function () {
 
 
 
-//     Route::get('/home', function () {
-//         return Inertia::render('admins/home');
-//     })->name('home');
+Route::get('/CharityDashboard', function () {
+    return Inertia::render('charities/dashboardView');
+})->name('CharityDashboard');
+Route::get('/DonationManagement', function () {
+    return Inertia::render('charities/DonationManagement/index');
+})->name('DonationManagement');
 
+Route::get('/CharuityProfile', function () {
+    return Inertia::render('charities/CharityProfile/index');
+})->name('CharityProfile');
 
-//     Route::get('/ListgovDonations', function () {
-//         return Inertia::render('admins/Donations/index');
-//     })->name('ListgovDonations');
-
-
-//     Route::get('/govDonations', function () {
-//         return Inertia::render('admins/Donations/governments');
-//     })->name('govDonations');
-
-// });
+Route::get('/CharityUsers', function () {
+    return Inertia::render('charities/CharityUsers/index');
+})->name('CharityUsers');
+Route::get('/Help&Support', function () {
+    return Inertia::render('charities/Help&Support/index');
+})->name('Help&Support');
+Route::get('/charitySettings', function () {
+    return Inertia::render('charities/Settings/index');
+})->name('charitySettings');
 
 
 // test login

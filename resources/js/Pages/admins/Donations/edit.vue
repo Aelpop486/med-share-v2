@@ -69,7 +69,7 @@
                 <div id="gallery" class="relative w-full" data-carousel="slide">
                     <!-- Carousel wrapper -->
                     <div
-                        class="relative h-44 overflow-hidden rounded-lg md:h-96"
+                        class="relative h-44 overflow-hidden rounded-xl md:h-96"
                     >
                         <!-- Item 1 -->
                         <div
@@ -182,9 +182,9 @@
                     </button>
                 </div>
                 <div
-                    class="flex flex-col justify-center sm:flex-row mt-10  rounded-xl"
+                    class=" justify-center mt-10 rounded-2xl bg-white  "
                 >
-                    <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                    <div class="text-center sm:pr-8 sm:py-8">
                         <div
                             class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-800 text-gray-600"
                         >

@@ -89,8 +89,8 @@
                     <span
                         class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400"
                     >
-                        Create Speciality </span
-                    >
+                        Create Speciality
+                    </span>
                 </div>
             </li>
         </ol>
@@ -102,29 +102,34 @@
     </h2>
     <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
     <!-- Main modal -->
-    <div class="container px-5 py-24 mx-auto flex">
-        <div class="lg:w-4/6 mx-auto">
+    <div class="container px-5 py-24 mx-auto ">
+        <div class="lg:w-4/6 mx-auto bg-white rounded-2xl">
             <div
                 class="flex flex-col justify-center sm:flex-row mt-10 rounded-xl"
             >
-                <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                <div class="w-3/4 text-center sm:pr-8 sm:py-8">
                     <form class="p-4 md:p-5">
                         <div class="flex flex-col justify-center mb-4">
-                          <div class="shrink-0 mb-6 justify-center flex">
-                             <img
-                                 class="h-20 w-20 bg-slate-300 object-cover rounded-full"
-                                 src=""
-                                 alt=""
-                             />
-                         </div>
+                            <div class="shrink-0 mb-6 justify-center flex">
+                                <img
+                                    class="h-20 w-20 bg-slate-300 object-cover rounded-full"
+                                    src=""
+                                    alt=""
+                                />
+                            </div>
 
-                          <label class=" mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload Photo</label>
-                         <input class=" w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
-
-
+                            <label
+                                class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                for="file_input"
+                                >Upload Photo</label
+                            >
+                            <input
+                                class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                id="file_input"
+                                type="file"
+                            />
                         </div>
                         <div class="grid gap-4 mb-4 grid-cols-2">
-
                             <div class="col-span-2">
                                 <label
                                     for="name"
@@ -140,8 +145,6 @@
                                     required=""
                                 />
                             </div>
-
-
 
                             <div class="col-span-2">
                                 <label

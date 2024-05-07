@@ -34,13 +34,29 @@ Route::get('/', function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::resource('charities', CharitController::class);
-    Route::resource('donations', DonationController::class)->only('index', 'show', 'destroy');
-    Route::resource('users', UserController::class);
-    Route::resource('admins', AdminController::class);
-    Route::resource('specialties', SpecialtyController::class);
+    Route::resource('charities',CharitController::class);
+    Route::resource('donations',DonationController::class);
+    Route::resource('users',UserController::class);
+    Route::resource('admins',AdminController::class);
+    Route::resource('specialties',SpecialtyController::class);
+});
 
-    Route::get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
+
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/home', function () {
+    return Inertia::render('admins/home');
+})->name('home');
+
+
+
+Route::get('/dashboardView', function () {
+    return Inertia::render('admins/Dashboard/dashboardView');
+})->name('dashboardView');
 
     Route::get('/govDonations', function () {
         return Inertia::render('admins/Donations/governments');
@@ -65,9 +81,9 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('admins/Users/index');
     })->name('users');
 
-    Route::get('/systemUsers', function () {
-        return Inertia::render('admins/SystemUsers/index');
-    })->name('systemUsers');
+Route::get('/systemUsers', function () {
+    return Inertia::render('admins/SystemUsers/index');
+})->name('systemUsers');
 
     // -----Index END---//
 
@@ -112,16 +128,19 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('admins/specialties/create');
     })->name('createSpecialtie');
 
-    Route::get('UsersTable/create', function () {
-        return Inertia::render('admins/Users/create');
-    })->name('createUser');
+Route::get('UsersTable/create', function () {
+    return Inertia::render('admins/Users/create');
+})->name('createUser');
 
-    Route::get('SystemUsersTable/create', function () {
-        return Inertia::render('admins/SystemUsers/create');
-    })->name('createSystemUser');
-});
+Route::get('SystemUsersTable/create', function () {
+    return Inertia::render('admins/SystemUsers/create');
+})->name('createSystemUser');
+
 // -----Create END---
 
 
 
-require __DIR__ . '/auth.php';
+
+
+
+require __DIR__.'/auth.php';
