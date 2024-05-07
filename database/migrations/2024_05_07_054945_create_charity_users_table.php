@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('charity_users', function (Blueprint $table) {
             $table->id();
             $table->steing('name');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('email')->nullable()->unique();
+            $table->string('password')->nullable();
             $table->steing('phone')->unique();
             $table->string('image')->nullable();
             $table->enum('role', ['admin', 'delvery','reviewer','volunteer'])->default('admin');

@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\charities\DonationController;
+use App\Http\Controllers\charities\CharityProfileController;
+use App\Http\Controllers\charities\CharityDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,14 +29,11 @@ Route::get('/', function () {
 });
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-
-
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 Route::get('/CharityDashboard', function () {
     return Inertia::render('charities/dashboardView');
@@ -56,10 +56,11 @@ Route::get('/charitySettings', function () {
     return Inertia::render('charities/Settings/index');
 })->name('charitySettings');
 
+Route::prefix('charities')->group(function () {
+    Route::resource('donations',DonationController::class);
+    Route::get('/charity/dashboardView',CharityDashboardController::class)->name('dashboardView');
+    Route::get('/charity/dashboardView',CharityProfileController::class)->name('charity.profileView');
+});
 
-// test login
-Route::get('/test/chartiy', function () {
-    return view('test-chartiy');
-})->name('test.chartiy');
 
 require __DIR__.'/auth.php';
