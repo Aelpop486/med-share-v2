@@ -1,6 +1,6 @@
 <template>
-    <div class=" max-w-sm m-auto sm:p-10 bg-white dark:bg-gray-800 dark:border-gray-700">
-              <div class=" items-center  mb-4">
+    <div class=" max-w-sm m-auto p-10 bg-white dark:bg-gray-800 dark:border-gray-700 rounded-2xl">
+              <div class=" items-center ">
                   <h6
                       class="text-xl font-bold leading-none text-gray-900 dark:text-white"
                   >

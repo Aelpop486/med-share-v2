@@ -11,6 +11,7 @@ const form = useForm({
     email: '',
     password: '',
     password_confirmation: '',
+    phone:'',
 });
 
 const submit = () => {
@@ -87,10 +88,10 @@ const submit = () => {
             </div>
 
                 <div class="mt-4">
-                <InputLabel for="phone" value="Phone" />
+                <InputLabel for="phone" value="phone" />
 
                 <TextInput
-                    id="Phone"
+                    id="phone"
                     type="tel"
                     class="mt-1 block w-full"
                     v-model="form.phone"

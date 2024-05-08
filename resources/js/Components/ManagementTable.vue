@@ -196,7 +196,7 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3';
+    import { Link } from '@inertiajs/vue3';
 import EditButton from './EditButton.vue';
 import DeleteButton from './DeleteButton.vue'
 </script>

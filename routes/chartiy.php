@@ -50,6 +50,12 @@ Route::get('/charitySettings', function () {
     return Inertia::render('charities/Settings/index');
 })->name('charitySettings');
 
+///////
+Route::get('/DonationProfile', function () {
+    return Inertia::render('charities/DonationManagement/edit');
+})->name('DonationProfile');
+
+
 //  belongs to backend
 // Route::prefix('charities')->group(function () {
 //     Route::resource('donations',DonationController::class);
