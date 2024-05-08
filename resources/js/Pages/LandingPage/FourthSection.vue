@@ -1,5 +1,5 @@
 <template>
-    
+
     <!-- component -->
     <div class="mx-auto px-5 bg-[#EAF0FF] min-h-sceen">
         <div class="flex flex-col items-center">
@@ -7,11 +7,12 @@
                 FAQ
             </h2>
         </div>
-        <div class="grid max-w-xl mx-auto mt-8">
-            <div class="p-5 text-black mb-8 border-[3px] rounded-lg">
+        <div class="grid  w-[90%] mx-auto mt-8">
+            <div class="p-5 text-black mb-8 border-[3px] border-[#0155A5]  rounded-lg">
                 <details class="group">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none border-full ">
-                        <span> What is a SAAS platform?</span>
+                    <summary
+                        class="flex justify-between items-center font-medium cursor-pointer list-none border-full ">
+                        <span>   {{ translate("question_1") }}</span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
@@ -21,15 +22,14 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                        SAAS platform is a cloud-based software service that allows users to access
-                        and use a variety of tools and functionality.
+                        {{ translate("answer_1") }}
                     </p>
                 </details>
             </div>
-            <div class="p-5 text-black border-[3px] mb-8 rounded-lg">
+            <div class="p-5 text-black border-[3px] border-[#0155A5] mb-8 rounded-lg">
                 <details class="group">
                     <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                        <span> How does billing work?</span>
+                        <span>    {{ translate("question_2") }}</span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
@@ -39,17 +39,14 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 mb-8 group-open:animate-fadeIn">
-                        We offers a variety of billing options, including monthly and annual subscription plans,
-                        as well as pay-as-you-go pricing for certain services. Payment is typically made through a
-                        credit
-                        card or other secure online payment method.
+                        {{ translate("answer_2") }}
                     </p>
                 </details>
             </div>
-            <div class="p-5 border-[3px] text-black mb-8 rounded-lg">
+            <div class="p-5 border-[3px] border-[#0155A5] text-black mb-8 rounded-lg">
                 <details class="group">
                     <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                        <span> Can I get a refund for my subscription?</span>
+                        <span>   {{ translate("question_3") }}</span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
@@ -59,19 +56,14 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                        We offers a 30-day money-back guarantee for most of its subscription plans. If you are not
-                        satisfied with your subscription within the first 30 days, you can request a full refund.
-                        Refunds
-                        for subscriptions that have been active for longer than 30 days may be considered on a
-                        case-by-case
-                        basis.
+                        {{ translate("answer_3") }}
                     </p>
                 </details>
             </div>
-            <div class="p-5 border-[3px] text-black mb-8 rounded-lg">
+            <div class="p-5 border-[3px] border-[#0155A5] text-black mb-8 rounded-lg">
                 <details class="group">
                     <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                        <span> How do I cancel my subscription?</span>
+                        <span>   {{ translate("question_4") }}</span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
@@ -81,17 +73,14 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                        To cancel your We subscription, you can log in to your account and navigate to the
-                        subscription management page. From there, you should be able to cancel your subscription and
-                        stop
-                        future billing.
+                        {{ translate("answer_4") }}
                     </p>
                 </details>
             </div>
-            <div class="p-5 border-[3px] text-black mb-8 rounded-lg">
+            <div class="p-5 border-[3px] border-[#0155A5] text-black mb-8 rounded-lg">
                 <details class="group">
                     <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                        <span> Can I try this platform for free?</span>
+                        <span>   {{ translate("headerOne") }}</span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
@@ -101,16 +90,14 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                        We offers a free trial of its platform for a limited time. During the trial period,
-                        you will have access to a limited set of features and functionality, but you will not be
-                        charged.
+                        {{ translate("headerOne") }}
                     </p>
                 </details>
             </div>
-            <div class="p-5 border-[3px] text-black mb-8 rounded-lg">
+            <div class="p-5 border-[3px] border-[#0155A5] text-black mb-8 rounded-lg">
                 <details class="group">
                     <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                        <span> How do I access documentation?</span>
+                        <span>   {{ translate("question_5") }}</span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
@@ -120,12 +107,65 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
-                        Documentation is available on the company's website and can be accessed by
-                        logging in to your account. The documentation provides detailed information on how to use the ,
-                        as well as code examples and other resources.
+                        {{ translate("answer_5") }}
                     </p>
                 </details>
             </div>
+
+            <div class="p-5 border-[3px] border-[#0155A5] text-black mb-8 rounded-lg">
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                        <span>    {{ translate("question_6") }}</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                width="24">
+                                <path d="M6 9l6 6 6-6"></path>
+                            </svg>
+                        </span>
+                    </summary>
+                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                        {{ translate("answer_6") }}
+                    </p>
+                </details>
+            </div>
+
+            <div class="p-5 border-[3px] border-[#0155A5] text-black mb-8 rounded-lg">
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                        <span>    {{ translate("question_7") }}</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+                                width="24">
+                                <path d="M6 9l6 6 6-6"></path>
+                            </svg>
+                        </span>
+                    </summary>
+                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                        {{ translate("answer_7") }}
+                    </p>
+                </details>
+            </div>
+
         </div>
     </div>
 </template>
+<script>
+import en from "@/translation/en";
+import ar from "@/translation/ar";
+
+export default {
+    mixins: [en, ar],
+    data() {
+        return {
+            lang: "en",
+        };
+    },
+    methods: {
+        translate(prop) {
+            return this[this.lang][prop];
+        },
+    },
+};
+</script>
