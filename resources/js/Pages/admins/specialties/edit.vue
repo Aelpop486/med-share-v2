@@ -102,12 +102,12 @@
     </h2>
     <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
     <!-- Main modal -->
-    <div class="container px-5 py-24 mx-auto flex">
-        <div class="lg:w-4/6 mx-auto">
+    <div class="container px-5 py-24 mx-auto ">
+        <div class="lg:w-4/6 mx-auto bg-white rounded-2xl">
             <div
-                class="flex flex-col justify-center sm:flex-row mt-10 rounded-xl"
+                class=" justify-center sm:flex-row mt-10 rounded-xl"
             >
-                <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                <div class=" text-center sm:pr-8 sm:py-8">
                     <form class="p-4 md:p-5">
                         <div class="flex flex-col justify-center mb-4">
                           <div class="shrink-0 mb-6 justify-center flex">

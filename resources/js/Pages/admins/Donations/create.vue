@@ -12,7 +12,7 @@
                         Home
                     </a>
                 </li>
-                
+
                 <li aria-current="page">
                     <div class="flex items-center">
                         <svg class="w-3 h-3 text-gray-400 mx-1 rtl:rotate-180" aria-hidden="true"
@@ -63,12 +63,12 @@
             Create Donation</h2>
             <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700">
 <!-- Main modal -->
-  <div class="container px-5 py-24 mx-auto flex ">
-            <div class="lg:w-4/6 mx-auto">
+  <div class=" lg:w-4/6 container px-12 py-24 mx-auto ">
+            <div class=" bg-white rounded-xl">
                 <div
-                    class="flex flex-col justify-center sm:flex-row mt-10  rounded-xl"
+                    class="  justify-center sm:flex-row mt-10  rounded-2xl"
                 >
-                    <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                    <div class=" text-center sm:pr-8 sm:py-8">
                         <div
                             class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-400 text-gray-600"
                         >

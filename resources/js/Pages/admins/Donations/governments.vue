@@ -76,7 +76,7 @@
         <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
 
         <div class="container mt-20">
-            <div class="grid grid-cols-3 md:grid-cols-4">
+            <div class="grid md:grid-cols-3  sm:grid-cols-2">
                 <div
                     class="max-w-sm p-6 m-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
                 >

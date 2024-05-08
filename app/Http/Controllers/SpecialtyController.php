@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Services\ImageService;
 use App\Http\Requests\SpecialityStoreRequest;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class SpecialtyController extends Controller
 {
@@ -16,7 +17,7 @@ class SpecialtyController extends Controller
     public function index()
     {
         $specialties = specialty::paginate(10);
-        return inertia('admins/specialties/index', [
+        return Inertia::render('admins/specialties/majors', [
             'specialties' => $specialties
         ]);
     }
@@ -26,7 +27,7 @@ class SpecialtyController extends Controller
     */
     public function create()
     {
-        return inertia('admins/specialties/create');
+        return Inertia::render('admins/specialties/create');
     }
 
     /**
@@ -40,7 +41,7 @@ class SpecialtyController extends Controller
         }
         $validatedData["admin_id"] = Auth::user()->id;
         $specialty = specialty::create($validatedData);
-        return to_route("specialties.index");
+        return to_route('specialties');
     }
 
     /**
@@ -48,7 +49,7 @@ class SpecialtyController extends Controller
      */
     public function show(specialty $specialty)
     {
-        return inertia('admins/specialties/show', [
+        return Inertia::render('admins/specialties/index', [
             'specialty' => $specialty
         ]);
     }
@@ -58,7 +59,7 @@ class SpecialtyController extends Controller
      */
     public function edit(specialty $specialty)
     {
-        return inertia('admins/specialties/edit', [
+        return Inertia::render('admins/specialties/edit', [
             'specialty' => $specialty
         ]);
     }
@@ -66,7 +67,7 @@ class SpecialtyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, specialty $specialty)
+    public function update(SpecialityStoreRequest $request, specialty $specialty)
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
@@ -74,7 +75,7 @@ class SpecialtyController extends Controller
             ImageService::deleteImage($specialty->image,);
         }
         $specialty->update($validatedData);
-        return to_route("specialties.index");
+        return to_route('specialties');
     }
 
     /**
@@ -83,6 +84,6 @@ class SpecialtyController extends Controller
     public function destroy(specialty $specialty)
     {
         $specialty->delete();
-        return to_route("specialties.index");
+        return to_route('specialties');
     }
 }

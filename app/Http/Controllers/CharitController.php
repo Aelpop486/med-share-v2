@@ -9,6 +9,7 @@ use App\Services\ImageService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\CharityStoreRequest;
+use Inertia\Inertia;
 
 class CharitController extends Controller
 {
@@ -18,7 +19,7 @@ class CharitController extends Controller
     public function index()
     {
         $charities = charit::paginate(10);
-        return inertia('admins/Charity/index',[
+        return Inertia::render('admins/Charity/index',[
             'charities' => $charities
         ]);
     }
@@ -29,7 +30,7 @@ class CharitController extends Controller
     public function create()
     {
         $specialty = specialty::all();
-        return inertia('admins/Charity/create',[
+        return Inertia::render('admins/Charity/create',[
             'specialty' => $specialty
         ]);
     }
@@ -46,17 +47,7 @@ class CharitController extends Controller
         $validatedData["password"] = Hash::make($request->password);
         $validatedData["admin_id"] = Auth::user()->id;
         $charity = charit::create($validatedData);
-        return to_route("charities.index");
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(charit $charity)
-    {
-        return inertia('admins/Charity/show',[
-            'charity'=>$charity
-        ]);
+        return to_route('charities');
     }
 
     /**
@@ -64,7 +55,7 @@ class CharitController extends Controller
      */
     public function edit(charit $charity)
     {
-        return inertia('admins/Charity/edit',[
+        return Inertia::render('admins/Charity/edit',[
             'charity'=>$charity
         ]);
     }
@@ -72,7 +63,7 @@ class CharitController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,charit $charity)
+    public function update(CharityStoreRequest $request,charit $charity)
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
@@ -80,7 +71,7 @@ class CharitController extends Controller
             ImageService::deleteImage($charity->image,);
         }
         $charity->update($validatedData);
-        return to_route("charities.index");
+        return to_route('charities');
     }
 
     /**
@@ -89,6 +80,6 @@ class CharitController extends Controller
     public function destroy(charit $charity)
     {
         $charity->delete();
-        return to_route('charities.index');
+        return to_route('charities');
     }
 }

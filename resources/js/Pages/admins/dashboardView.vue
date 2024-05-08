@@ -45,14 +45,22 @@
             <Statistics />
         </div>
 
-        <div class="w-[60%] shadow flex mt-10 ">
-            <Charts />
-            <LastUsers class="mx-15"/>
-            <LastDonetion class="mx-20"/>
+        <div class="grid grid-cols-4 ">
+            <div class="col-span-2">
+                        <Charts class="my-20 bg-white rounded-xl p-2" />
+
+            </div>
+            <div class="col-span-1">
+                        <LastUsers />
+
+            </div>
+            <div class="col-span-1">
+                        <LastDonetion />
+
+            </div>
         </div>
 
         <DonationTable />
-
     </AdminsLayout>
 </template>
 
