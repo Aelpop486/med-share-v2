@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\charities;
 
+use Inertia\Inertia;
 use App\Models\donation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,7 +15,7 @@ class DonationController extends Controller
     public function index()
     {
         $donation = donation::paginate(20);
-        return inertia('charities/Donation/index',[
+        return Inertia::render('charitier/DonationManagement/index',[
             'donation' => $donation
         ]);
     }
@@ -40,7 +41,7 @@ class DonationController extends Controller
      */
     public function show(donation $donation)
     {
-        return inertia('charities/Donation/show',[
+        return Inertia::render('charities/Donation/show',[
             'donation'=>$donation
         ]);
     }
@@ -50,7 +51,7 @@ class DonationController extends Controller
      */
     public function edit(donation $donation)
     {
-        return inertia('charities/Donation/edit',[
+        return Inertia::render('charities/Donation/edit',[
             'donation'=>$donation
         ]);
     }
@@ -62,9 +63,10 @@ class DonationController extends Controller
     {
         $validatedData = $request->validate([
            'charity_id' => 'required|exists:charits,id',
+           'state' => 'required|exists:donations,state',
         ]);
         $donation->update($validatedData);
-        return to_route('charity.donation.index');
+        return to_route('DonationManagement');
     }
 
     /**
@@ -73,6 +75,6 @@ class DonationController extends Controller
     public function destroy(donation $donation)
     {
         $donation->delete();
-        return to_route('charity.donation.index');
+        return to_route('DonationManagement');
     }
 }

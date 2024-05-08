@@ -29,12 +29,6 @@ Route::get('/', function () {
 });
 
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
 Route::get('/CharityDashboard', function () {
     return Inertia::render('charities/dashboardView');
 })->name('CharityDashboard');
@@ -56,11 +50,12 @@ Route::get('/charitySettings', function () {
     return Inertia::render('charities/Settings/index');
 })->name('charitySettings');
 
-Route::prefix('charities')->group(function () {
-    Route::resource('donations',DonationController::class);
-    Route::get('/charity/dashboardView',CharityDashboardController::class)->name('dashboardView');
-    Route::get('/charity/dashboardView',CharityProfileController::class)->name('charity.profileView');
-});
+//  belongs to backend
+// Route::prefix('charities')->group(function () {
+//     Route::resource('donations',DonationController::class);
+//     Route::get('/charity/dashboardView',CharityDashboardController::class)->name('dashboardView');
+//     Route::get('/charity/profileView',CharityProfileController::class)->name('charity.profileView');
+// });
 
 
 require __DIR__.'/auth.php';

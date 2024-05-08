@@ -16,7 +16,7 @@ class AdminDashboardController extends Controller
     {
         $user = User::latest()->take(10)->get();
         $donation = donation::latest()->take(10)->get();
-        return Inertia::render('admins/Dashboard/dashboardView', [
+        return Inertia::render('admins/dashboardView', [
             'users' => $user,
             'donations' => $donation
         ]);

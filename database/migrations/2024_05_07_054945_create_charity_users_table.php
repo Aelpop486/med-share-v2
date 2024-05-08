@@ -19,9 +19,8 @@ return new class extends Migration
             $table->steing('phone')->unique();
             $table->string('image')->nullable();
             $table->enum('role', ['admin', 'delvery','reviewer','volunteer'])->default('admin');
-            $table->enum('status', ['active', 'not active'])->default('active');
+            $table->boolean('isActive')->default(true);
             $table->foreignId('charity_id')->constrained('charits')->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
     }

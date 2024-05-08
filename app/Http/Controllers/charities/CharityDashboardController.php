@@ -15,7 +15,7 @@ class CharityDashboardController extends Controller
     public function __invoke(Request $request)
     {
         $donation = donation::all();
-        return Inertia::render('charities/Dashboard/dashboardView', [
+        return Inertia::render('charities/dashboardView', [
             'donations' => $donation
         ]);
     }

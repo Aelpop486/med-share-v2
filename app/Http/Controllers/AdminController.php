@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreAdminRequest;
 use App\Models\admin;
+use Inertia\Inertia;
 
 class AdminController extends Controller
 {
@@ -15,7 +16,7 @@ class AdminController extends Controller
     public function index()
     {
         $admin = admin::paginate(10) ;
-        return inertia('admins/SystemUsers/index',[
+        return Inertia::render('admins/SystemUsers/index',[
             'admin' => $admin
         ]);
     }
@@ -25,7 +26,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return inertia('admins/SystemUsers/create');
+        return Inertia::render('admins/SystemUsers/create');
     }
 
     /**
@@ -36,18 +37,7 @@ class AdminController extends Controller
         $validatedData = $request->validated();
         $validatedData ['password'] = Hash::make($request->password);
         $admin = admin::create($validatedData);
-        return to_route('admins.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(admin $admin)
-    {
-        return inertia('admins/SystemUsers/show',[
-            'admin'=>$admin
-        ]);
-
+        return to_route('systemUsers');
     }
 
     /**
@@ -55,7 +45,7 @@ class AdminController extends Controller
      */
     public function edit(admin $admin)
     {
-        return inertia('admins/SystemUsers/edit',[
+        return Inertia::render('admins/SystemUsers/edit',[
             'admin'=>$admin
         ]);
     }
@@ -63,11 +53,11 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, admin $admin)
+    public function update(StoreAdminRequest $request, admin $admin)
     {
         $validatedData = $request->validated();
         $admin->update($validatedData);
-        return to_route('admins.index');
+        return to_route('systemUsers');
     }
 
     /**
@@ -76,6 +66,6 @@ class AdminController extends Controller
     public function destroy(admin $admin)
     {
         $admin->delete();
-        return to_route('admins.index');
+        return to_route('systemUsers');
     }
 }

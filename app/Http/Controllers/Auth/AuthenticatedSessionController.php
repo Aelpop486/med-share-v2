@@ -41,7 +41,7 @@ class AuthenticatedSessionController extends Controller
         } elseif (Auth::guard('charits')->attempt($credentionlas)) {
             $request->session()->regenerate();
             # code...
-            return to_route('dashboardView');
+            return to_route('CharityDashboard');
         }
         return back()->withErrors(
             [

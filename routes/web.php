@@ -5,7 +5,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CharitController;
 use App\Http\Controllers\DonationController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
@@ -33,30 +32,8 @@ Route::get('/', function () {
 });
 
 
-Route::middleware('auth')->group(function () {
-    Route::resource('charities', CharitController::class);
-    Route::resource('donations', DonationController::class);
-    Route::resource('users', UserController::class);
-    Route::resource('admins', AdminController::class);
-    Route::resource('specialties', SpecialtyController::class);
-    // Route::get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
-});
-
-
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-Route::get('/home', function () {
-    return Inertia::render('admins/home');
-})->name('home');
-
-
-
 Route::get('/dashboardView', function () {
-    return Inertia::render('admins/Dashboard/dashboardView');
+    return Inertia::render('admins/dashboardView');
 })->name('dashboardView');
 
 Route::get('/govDonations', function () {
@@ -74,6 +51,7 @@ Route::get('/charities', function () {
 Route::get('/specialties', function () {
     return Inertia::render('admins/specialties/majors');
 })->name('specialties');
+
 Route::get('/ListspecCharities', function () {
     return Inertia::render('admins/specialties/index');
 })->name('ListspecCharities');
@@ -140,6 +118,50 @@ Route::get('SystemUsersTable/create', function () {
 // -----Create END---
 
 
+//  belongs to backend //
+
+// Route::middleware('auth')->controller(AdminController::class)->group(function () {
+//     Route::get('systemUsers', 'index')->name('systemUsers');
+//     Route::get('SystemUsersTable/create', 'create')->name('createSystemUser');
+//     Route::post('SystemUsersTable/create', 'store')->name('storeSystemUser');
+//     Route::get('systemUsersTable/show', 'edit')->name('showSystemUser');
+//     Route::post('systemUsersTable/create', 'update')->name('updateSystemUser');
+//     Route::get('charityTable/delete', 'destroy')->name('deleteSystemUser');
+// });
+// Route::middleware('auth')->controller(CharitController::class)->group(function () {
+//     Route::get('charities','index')->name('charities');
+//     Route::get('charityTable/create','create')->name('createCharity');
+//     Route::post('charityTable/create','store')->name('storeCharity');
+//     Route::get('charityTable/show','edit')->name('showCharity');
+//     Route::post('charityTable/show','store')->name('updateCharity');
+//     Route::get('charityTable/delete','destroy')->name('deleteCharity');
+// });
+// Route::middleware('auth')->controller(DonationController::class)->group(function () {
+//     Route::get('govDonations','index')->name('govDonations');
+//     Route::get('ListgovDonations','show')->name('ListgovDonations');
+//     Route::get('ListgovDonations/show','edit')->name('showDonation');
+//     Route::get('ListgovDonations/delete','destroy')->name('deleteDonation');
+// });
+// Route::middleware('auth')->controller(UserController::class)->group(function () {
+//     Route::get('users','index')->name('users');
+//     Route::get('UsersTable/create','create')->name('createUser');
+//     Route::post('UsersTable/create','store')->name('storeUser');
+//     Route::get('UsersTable/show','edit')->name('showUser');
+//     Route::post('UsersTable/show','update')->name('updateUser');
+//     Route::get('UsersTable/delete','destroy')->name('deleteUser');
+// });
+// Route::middleware('auth')->controller(SpecialtyController::class)->group(function () {
+//     Route::get('specialties','index')->name('specialties');
+//     Route::get('specialties/majors/create','create')->name('createSpecialtie');
+//     Route::post('specialties/majors/create','store')->name('storeSpecialtie');
+//     Route::get('ListspecCharities','show')->name('ListspecCharities');
+//     Route::get('specialties/majors/show','edit')->name('showSpecialtie');
+//     Route::post('specialties/majors/show','update')->name('updateSpecialtie');
+//     Route::get('specialties/majors/delete','destroy')->name('deleteSpecialtie');
+// });
+
+
+// Route::middleware('auth')->get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
 
 
 
