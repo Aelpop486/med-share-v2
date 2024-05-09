@@ -77,12 +77,12 @@
         Analytics
     </h2>
     <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
-    <donations-received/>
+    <DonationsReceived class="m-6"  />
     <div class="grid md:grid-cols-3 gap-6">
         <div class="md:col-span-2">
             <CharityCharts class="my-20 bg-white rounded-xl p-4" />
         </div>
-        <div class="md:col-span-1 mt-20  ">
+        <div class="md:col-span-1 mt-20   ">
             <ActiveAreas />
         </div>
 

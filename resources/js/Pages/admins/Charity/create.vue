@@ -123,6 +123,7 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >Name</label>
                   <input
+                    v-model="form.name"
                     type="text"
                     name="name"
                     id="name"
@@ -137,6 +138,8 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >Phone</label>
                   <input
+                                      v-model="form.phone"
+
                     type="text"
                     name="phone"
                     id="phone"
@@ -151,6 +154,7 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >Email</label>
                   <input
+                    v-model="form.email"
                     type="email"
                     name="email"
                     id="email"
@@ -165,6 +169,8 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >Website URL</label>
                   <input
+                                      v-model="form.website_link"
+
                     type="url"
                     id="website"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -178,6 +184,8 @@
                     class="block mb-2 text-sm text-center font-medium text-gray-900 dark:text-white"
                   >Major</label>
                   <select
+                                      v-model="form.major"
+
                     id="category"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   >
@@ -195,6 +203,9 @@
                   >Status</label>
                   <select
                     id="category"
+                                                          v-model="form.isAtive"
+
+
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   >
                     <option selected>-</option>
@@ -209,6 +220,8 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >Description</label>
                   <textarea
+                                                     v-model="form.description"
+
                     id="description"
                     rows="4"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -243,8 +256,23 @@
 </template>
 
 <script setup>
+import { Head, Link, useForm } from '@inertiajs/vue3';
+
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
+
+const form = useForm({
+    name: '',
+    email: '',
+    phone: '',
+    website_link:'',
+    major: '',
+    isAtive:'',
+    description: '',
+    image: '',
+
+});
+
 </script>
 
 <style lang="scss" scoped>

@@ -121,6 +121,7 @@
                     class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     id="file_input"
                     type="file"
+
                 />
                <!-- image upload End -->
                 <!-- Form -->
@@ -137,6 +138,7 @@
                                 >Name</label
                             >
                             <input
+                            v-model="form.name"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -152,6 +154,7 @@
                                 >Phone</label
                             >
                             <input
+                            v-model="form.phone"
                                 type="text"
                                 name="phone"
                                 id="phone"
@@ -167,6 +170,7 @@
                                 >Email</label
                             >
                             <input
+                            v-model="form.email"
                                 type="email"
                                 name="email"
                                 id="email"
@@ -177,11 +181,13 @@
                         </div>
                         <div class="col-span-2">
                             <label
+
                                 for="website"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Website URL</label
                             >
                             <input
+                                v-model="form.website_link"
                                 type="url"
                                 id="website"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -201,6 +207,7 @@
                                 >Major</label
                             >
                             <select
+                            v-model="form.major"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             >
@@ -218,6 +225,7 @@
                                 >Status</label
                             >
                             <select
+                            v-model="form.isAtive"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             >
@@ -235,6 +243,7 @@
                                 Description</label
                             >
                             <textarea
+                            v-model="form.description"
                                 id="description"
                                 rows="4"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -339,10 +348,23 @@ import { initFlowbite } from "flowbite";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
 import CharitiesUsersTable from "@/Components/CharitiesUsersTable.vue";
+import { Head, Link, useForm } from '@inertiajs/vue3';
 import SaveButton from "@/Components/SaveButton.vue";
 // initialize components based on data attribute selectors
 onMounted(() => {
     initFlowbite();
+});
+
+const form = useForm({
+    name: '',
+    email: '',
+    phone: '',
+    website_link:'',
+    major: '',
+    isAtive:'',
+    description: '',
+    image: '',
+
 });
 </script>
 
