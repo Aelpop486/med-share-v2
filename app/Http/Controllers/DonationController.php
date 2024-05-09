@@ -16,10 +16,14 @@ class DonationController extends Controller
         ]);
     }
 
-
     public function show(String $id)
     {
+        // $donation = donation::all();
+        // $city_id = $donation->address->city_id ;
+        // $donations = donation::where('city_id', $id)->get();
+
         return Inertia::render('admins/Donations/index',[
+
         ]);
     }
 

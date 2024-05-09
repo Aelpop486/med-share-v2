@@ -50,12 +50,17 @@ Route::get('/charitySettings', function () {
     return Inertia::render('charities/Settings/index');
 })->name('charitySettings');
 
+///////
+Route::get('/DonationProfile', function () {
+    return Inertia::render('charities/DonationManagement/edit');
+})->name('DonationProfile');
+
+
 //  belongs to backend
 // Route::prefix('charities')->group(function () {
 //     Route::resource('donations',DonationController::class);
 //     Route::get('/charity/dashboardView',CharityDashboardController::class)->name('dashboardView');
 //     Route::get('/charity/profileView',CharityProfileController::class)->name('charity.profileView');
 // });
-
 
 require __DIR__.'/auth.php';

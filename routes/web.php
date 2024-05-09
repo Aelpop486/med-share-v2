@@ -117,7 +117,7 @@ Route::get('SystemUsersTable/create', function () {
 
 // -----Create END---
 
-
+########################################################################################################
 //  belongs to backend //
 
 // Route::middleware('auth')->controller(AdminController::class)->group(function () {
@@ -128,6 +128,7 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('systemUsersTable/create', 'update')->name('updateSystemUser');
 //     Route::get('charityTable/delete', 'destroy')->name('deleteSystemUser');
 // });
+########################################################################
 // Route::middleware('auth')->controller(CharitController::class)->group(function () {
 //     Route::get('charities','index')->name('charities');
 //     Route::get('charityTable/create','create')->name('createCharity');
@@ -136,12 +137,14 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('charityTable/show','store')->name('updateCharity');
 //     Route::get('charityTable/delete','destroy')->name('deleteCharity');
 // });
+########################################################################
 // Route::middleware('auth')->controller(DonationController::class)->group(function () {
 //     Route::get('govDonations','index')->name('govDonations');
 //     Route::get('ListgovDonations','show')->name('ListgovDonations');
 //     Route::get('ListgovDonations/show','edit')->name('showDonation');
 //     Route::get('ListgovDonations/delete','destroy')->name('deleteDonation');
 // });
+########################################################################
 // Route::middleware('auth')->controller(UserController::class)->group(function () {
 //     Route::get('users','index')->name('users');
 //     Route::get('UsersTable/create','create')->name('createUser');
@@ -150,6 +153,7 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('UsersTable/show','update')->name('updateUser');
 //     Route::get('UsersTable/delete','destroy')->name('deleteUser');
 // });
+########################################################################
 // Route::middleware('auth')->controller(SpecialtyController::class)->group(function () {
 //     Route::get('specialties','index')->name('specialties');
 //     Route::get('specialties/majors/create','create')->name('createSpecialtie');
@@ -159,12 +163,8 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('specialties/majors/show','update')->name('updateSpecialtie');
 //     Route::get('specialties/majors/delete','destroy')->name('deleteSpecialtie');
 // });
-
-
+########################################################################
 // Route::middleware('auth')->get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
-
-
-
 
 
 
