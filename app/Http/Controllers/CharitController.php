@@ -68,7 +68,7 @@ class CharitController extends Controller
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
-            ImageService::deleteImage($charity->image,);
+            ImageService::deleteImage($charity->image);
         }
         $charity->update($validatedData);
         return to_route('charities');

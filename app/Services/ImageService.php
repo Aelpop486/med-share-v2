@@ -21,9 +21,8 @@ class ImageService
     {
         if ($imagePath && file_exists($imagePath)) {
             unlink($imagePath);
-            return true; 
+            return true;
         }
         return false; // Return false if no image path provided or image not found
     }
 }
-

@@ -38,7 +38,18 @@ class UserFactory extends Factory
     public function unverified(): static
     {
         return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'phone' => $this->faker->phoneNumber,
+            'image' => $this->faker->imageUrl(),
+            'password' => bcrypt('password'), // You can customize the default password if needed
+            'address_id' => \App\Models\Address::factory(), // Assuming you have an Address model
+            'email_verified_at' => now(),
+            'device_token' => $this->faker->uuid,
+            'remember_token' => Str::random(10),
+            'user_aggrement' => $this->faker->boolean(80), // 80% chance of having user agreement
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }
