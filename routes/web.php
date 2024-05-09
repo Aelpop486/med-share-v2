@@ -99,7 +99,7 @@ Route::get('/ListgovDonations/create', function () {
     return Inertia::render('admins/Donations/create');
 })->name('createDonation');
 
-Route::get('charityTable/create', function () {
+Route::get('/charityTable/create', function () {
     return Inertia::render('admins/Charity/create');
 })->name('createCharity');
 
