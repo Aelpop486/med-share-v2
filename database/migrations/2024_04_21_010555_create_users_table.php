@@ -14,17 +14,22 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->unique();            
+            $table->string('password');
             $table->string('phone')->nullable()->unique();
             $table->string('image')->nullable();
-            $table->string('password');
-            $table->foreignId('address_id')->constrained('addresses')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('national_id')->nullable();
+            $table->enum('gender', ['male', 'female'])->nullable();
+            $table->date('date_of_birth')->nullable(); 
+            $table->boolean('user_aggrement')->default(0);
+            $table->foreignId('address_id')->nullable()->constrained('addresses')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('device_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.
