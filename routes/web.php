@@ -165,7 +165,28 @@ Route::get('SystemUsersTable/create', function () {
 
 
 
+// Linding Page
 
+Route::get('/about', function () {
+    return Inertia::render('LandingPage/About');
+})->name('About');
+
+Route::get('/pages', function () {
+    return Inertia::render('LandingPage/pages');
+})->name('pages');
+
+
+Route::get('/Contact', function () {
+    return Inertia::render('LandingPage/Contact');
+})->name('Contact');
+
+Route::get('/Services', function () {
+    return Inertia::render('LandingPage/Services');
+})->name('Services');
+
+Route::get('/privacy', function () {
+    return Inertia::render('LandingPage/Privacy');
+})->name('Privacy');
 
 
 require __DIR__ . '/auth.php';

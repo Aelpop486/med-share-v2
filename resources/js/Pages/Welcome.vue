@@ -6,9 +6,9 @@
     <!-- second section -->
     <TowSection />
     <!-- third section -->
-    <SectionVideoOneVue />
+    <!-- <SectionVideoOneVue /> -->
     <!-- fifth section -->
-    <FeaturesSectionVue />
+    <!-- <FeaturesSectionVue /> -->
     <!-- fifth section -->
     <featuresVue />
     <!-- sixing section -->
@@ -29,8 +29,8 @@ import NavbarVue from './LandingPage/Navbar.vue';
 import HeroSection from "./LandingPage/HeroSection.vue";
 import TowSection from "./LandingPage/TwoSection.vue";
 import FourthSection from "./LandingPage/FourthSection.vue";
-import SectionVideoOneVue from "./LandingPage/SectionVideoOne.vue";
-import FeaturesSectionVue from "./LandingPage/Features Section.vue";
+// import SectionVideoOneVue from "./LandingPage/SectionVideoOne.vue";
+// import FeaturesSectionVue from "./LandingPage/Features Section.vue";
 import SectionVideoTwoVue from "./LandingPage/SectionVideoTwo.vue";
 import Footer from "./LandingPage/Footer.vue";
 import featuresVue from './LandingPage/features.vue';
@@ -40,8 +40,8 @@ export default {
         TowSection,
         FourthSection,
         Footer,
-        SectionVideoOneVue,
-        FeaturesSectionVue,
+        // SectionVideoOneVue,
+        // FeaturesSectionVue,
         SectionVideoTwoVue,
         NavbarVue,
         featuresVue
