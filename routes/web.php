@@ -120,51 +120,51 @@ Route::get('SystemUsersTable/create', function () {
 ########################################################################################################
 //  belongs to backend //
 
-// Route::middleware('auth')->controller(AdminController::class)->group(function () {
+// Route::middleware('auth:admins')->controller(AdminController::class)->group(function () {
 //     Route::get('systemUsers', 'index')->name('systemUsers');
 //     Route::get('SystemUsersTable/create', 'create')->name('createSystemUser');
 //     Route::post('SystemUsersTable/create', 'store')->name('storeSystemUser');
-//     Route::get('systemUsersTable/show', 'edit')->name('showSystemUser');
-//     Route::post('systemUsersTable/create', 'update')->name('updateSystemUser');
-//     Route::get('charityTable/delete', 'destroy')->name('deleteSystemUser');
+//     Route::get('systemUsersTable/show/{id}', 'edit')->name('showSystemUser');
+//     Route::post('systemUsersTable/show/{id}', 'update')->name('updateSystemUser');
+//     Route::get('charityTable/delete/{id}', 'destroy')->name('deleteSystemUser');
 // });
 ########################################################################
-// Route::middleware('auth')->controller(CharitController::class)->group(function () {
+// Route::middleware('auth:admins')->controller(CharitController::class)->group(function () {
 //     Route::get('charities','index')->name('charities');
 //     Route::get('charityTable/create','create')->name('createCharity');
 //     Route::post('charityTable/create','store')->name('storeCharity');
-//     Route::get('charityTable/show','edit')->name('showCharity');
-//     Route::post('charityTable/show','store')->name('updateCharity');
-//     Route::get('charityTable/delete','destroy')->name('deleteCharity');
+//     Route::get('charityTable/show/{id}','edit')->name('showCharity');
+//     Route::post('charityTable/show/{id}','update')->name('updateCharity');
+//     Route::get('charityTable/delete/{id}','destroy')->name('deleteCharity');
 // });
 ########################################################################
-// Route::middleware('auth')->controller(DonationController::class)->group(function () {
+// Route::middleware('auth:admins')->controller(DonationController::class)->group(function () {
 //     Route::get('govDonations','index')->name('govDonations');
-//     Route::get('ListgovDonations','show')->name('ListgovDonations');
-//     Route::get('ListgovDonations/show','edit')->name('showDonation');
+//     Route::get('ListgovDonations/{id}','show')->name('ListgovDonations');
+//     Route::get('ListgovDonations/show/{id}','edit')->name('showDonation');
 //     Route::get('ListgovDonations/delete','destroy')->name('deleteDonation');
 // });
 ########################################################################
-// Route::middleware('auth')->controller(UserController::class)->group(function () {
+// Route::middleware('auth:admins')->controller(UserController::class)->group(function () {
 //     Route::get('users','index')->name('users');
 //     Route::get('UsersTable/create','create')->name('createUser');
 //     Route::post('UsersTable/create','store')->name('storeUser');
-//     Route::get('UsersTable/show','edit')->name('showUser');
-//     Route::post('UsersTable/show','update')->name('updateUser');
-//     Route::get('UsersTable/delete','destroy')->name('deleteUser');
+//     Route::get('UsersTable/show/{id}','edit')->name('showUser');
+//     Route::post('UsersTable/show/{id}','update')->name('updateUser');
+//     Route::get('UsersTable/delete/{id}','destroy')->name('deleteUser');
 // });
 ########################################################################
-// Route::middleware('auth')->controller(SpecialtyController::class)->group(function () {
+// Route::middleware('auth:admins')->controller(SpecialtyController::class)->group(function () {
 //     Route::get('specialties','index')->name('specialties');
 //     Route::get('specialties/majors/create','create')->name('createSpecialtie');
 //     Route::post('specialties/majors/create','store')->name('storeSpecialtie');
-//     Route::get('ListspecCharities','show')->name('ListspecCharities');
-//     Route::get('specialties/majors/show','edit')->name('showSpecialtie');
-//     Route::post('specialties/majors/show','update')->name('updateSpecialtie');
-//     Route::get('specialties/majors/delete','destroy')->name('deleteSpecialtie');
+//     Route::get('ListspecCharities/{id}','show')->name('ListspecCharities');
+//     Route::get('specialties/majors/show/{id}','edit')->name('showSpecialtie');
+//     Route::post('specialties/majors/show/{id}','update')->name('updateSpecialtie');
+//     Route::get('specialties/majors/delete/{id}','destroy')->name('deleteSpecialtie');
 // });
 ########################################################################
-// Route::middleware('auth')->get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
+// Route::middleware('auth:adminss')->get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
 
 
 

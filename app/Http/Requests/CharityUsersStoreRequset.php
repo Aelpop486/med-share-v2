@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CharityStoreRequest extends FormRequest
+class CharityUsersStoreRequset extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,13 +23,13 @@ class CharityStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:charits',
+            'email' => 'required|string|email|max:255|unique:charity_users',
             'password' => 'required|string|min:8|confirmed',
             'phone' => 'required|numeric',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
-            'description' => 'nullable|string',
-            'specialty_id' => 'nullable|exists:specialties,id',
-            'website_link'=>'nullable|url',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'role' => 'required',
+            'charity_id' => 'required|exists:charits,id',
+            'isActive' => 'required',
         ];
     }
 }

@@ -6,6 +6,7 @@ use App\Models\specialty;
 use Illuminate\Http\Request;
 use App\Services\ImageService;
 use App\Http\Requests\SpecialityStoreRequest;
+use App\Models\charit;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
@@ -24,7 +25,7 @@ class SpecialtyController extends Controller
 
     /**
      * Show the form for creating a new resource.
-    */
+     */
     public function create()
     {
         return Inertia::render('admins/specialties/create');
@@ -47,10 +48,11 @@ class SpecialtyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(specialty $specialty)
+    public function show(string $id)
     {
+        $charities = charit::where('specialty_id', $id)->paginate(10);
         return Inertia::render('admins/specialties/index', [
-            'specialty' => $specialty
+            'charities' => $charities
         ]);
     }
 

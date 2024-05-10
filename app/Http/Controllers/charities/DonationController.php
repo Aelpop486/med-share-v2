@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use App\Models\donation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DonationController extends Controller
 {
@@ -14,31 +15,12 @@ class DonationController extends Controller
      */
     public function index()
     {
-        $donation = donation::paginate(20);
-        return Inertia::render('charitier/DonationManagement/index',[
-            'donation' => $donation
+        $donations = donation::where(['state','!=','pending'],['charit_id',Auth::user()->id])->paginate(20);
+        return Inertia::render('charities/DonationManagement/index',[
+            'donations' => $donations
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(donation $donation)
     {
         return Inertia::render('charities/Donation/show',[
@@ -62,7 +44,6 @@ class DonationController extends Controller
     public function update(Request $request,donation $donation)
     {
         $validatedData = $request->validate([
-           'charity_id' => 'required|exists:charits,id',
            'state' => 'required|exists:donations,state',
         ]);
         $donation->update($validatedData);

@@ -70,6 +70,7 @@ class CharitController extends Controller
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
             ImageService::deleteImage($charity->image);
         }
+        $validatedData['password'] = Hash::make($request->password);
         $charity->update($validatedData);
         return to_route('charities');
     }

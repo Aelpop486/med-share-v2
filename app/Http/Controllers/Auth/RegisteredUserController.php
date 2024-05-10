@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CharityStoreRequest;
 use App\Models\charit;
 // use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -30,20 +31,23 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(CharityStoreRequest $request): RedirectResponse
     {
-        dd($request);
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:'.charit::class,
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
 
-        $user = charit::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        $validatedData = $request->validated();
+        $user = charit::create($validatedData);
+
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
+        //     'email' => 'required|string|lowercase|email|max:255|unique:'.charit::class,
+        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        // ]);
+
+        // $user = charit::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
+        // ]);
 
         event(new Registered($user));
 

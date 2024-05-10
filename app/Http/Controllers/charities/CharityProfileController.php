@@ -17,7 +17,7 @@ class CharityProfileController extends Controller
      */
     public function index()
     {
-        $charity = Auth::user();
+        $charity = charit::where("id", Auth::user()->id)->get();
         return Inertia::render('charities/CharityProfile/index', [
             'charity' => $charity
         ]);
