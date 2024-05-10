@@ -22,7 +22,7 @@ export default {
       <div class="mx-auto grid max-w-lg grid-cols-1 gap-y-12 lg:max-w-full lg:grid-cols-2 lg:items-center lg:gap-x-8">
         <div>
           <div class="text-center lg:text-left">
-            <h1 class="max-w-md text-4xl text-slate-700 font-bold leading-snug sm:text-5xl sm:leading-snug">
+            <h1 class="max-w-md  text-4xl text-slate-700 font-bold leading-snug sm:text-5xl sm:leading-snug">
                 {{ translate("headerOne") }}
             </h1>
             <p class="mt-2 text-lg font-bold text-slate-600 sm:mt-8">

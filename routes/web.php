@@ -163,8 +163,33 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('specialties/majors/show/{id}','update')->name('updateSpecialtie');
 //     Route::get('specialties/majors/delete/{id}','destroy')->name('deleteSpecialtie');
 // });
-########################################################################
-// Route::middleware('auth:adminss')->get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
+
+
+// Route::middleware('auth')->get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
+
+// Linding Page
+
+Route::get('/about', function () {
+    return Inertia::render('LandingPage/About');
+})->name('About');
+
+Route::get('/pages', function () {
+    return Inertia::render('LandingPage/pages');
+})->name('pages');
+
+
+Route::get('/Contact', function () {
+    return Inertia::render('LandingPage/Contact');
+})->name('Contact');
+
+Route::get('/Services', function () {
+    return Inertia::render('LandingPage/Services');
+})->name('Services');
+
+Route::get('/privacy', function () {
+    return Inertia::render('LandingPage/Privacy');
+})->name('Privacy');
+
 
 
 

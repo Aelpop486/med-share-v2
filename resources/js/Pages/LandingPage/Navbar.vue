@@ -1,23 +1,3 @@
-<script>
-import { Link } from "@inertiajs/vue3";
-
-import en from "@/translation/en";
-import ar from "@/translation/ar";
-
-export default {
-    mixins: [en, ar],
-    data() {
-        return {
-            lang: "en",
-        };
-    },
-    methods: {
-        translate(prop) {
-            return this[this.lang][prop];
-        },
-    },
-};
-</script>
 
 <template>
     <nav>
@@ -28,7 +8,6 @@ export default {
                 <div class="h-10 w-10">
                     <img src="@/Images/IMG_1525.svg" alt="" />
                 </div>
-                <!-- <div class="w-[1px] bg-blue-900 h-10 hidden lg:block"></div> -->
                 <div class="hidden font-bold text-2xl leading-4 lg:block">
                     <p>
                         Med
@@ -86,9 +65,9 @@ export default {
                     v-model="lang"
                     class="appearance-none row-start-1 col-start-1 border-[#0155a5] border-[2px] text-white transition-all duration-500 loginbtn rounded-xl"
                 >
-                    translation
-                    <option value="en">ُEnglish</option>
+                 
                     <option value="ar">عربي</option>
+                    <option value="en">ُEnglish</option>
                 </select>
 
                 <Link
@@ -252,3 +231,24 @@ export default {
     background-color: #0155a5;
 }
 </style>
+
+<script>
+import { Link } from "@inertiajs/vue3";
+
+import en from "@/translation/en";
+import ar from "@/translation/ar";
+
+export default {
+    mixins: [en, ar],
+    data() {
+        return {
+            lang: "ar",
+        };
+    },
+    methods: {
+        translate(prop) {
+            return this[this.lang][prop];
+        },
+    },
+};
+</script>
