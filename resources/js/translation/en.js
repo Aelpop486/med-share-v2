@@ -79,7 +79,7 @@ export default {
               description: "Description",
               website: "Website",
               password: "Password",
-              passwordConfirm: "Confirm Password -",
+              passwordConfirm: "Confirm Password ",
               importImage: "Import Image",
 
               //CONTACT US
@@ -89,7 +89,7 @@ export default {
               formcontactName: "full name",
               formcontactPhone: "phone number",
               formcontactEmail: "email",
-              formcontact: "how can we help you",
+              formcontact: "How can we help you",
           },
       };
     }

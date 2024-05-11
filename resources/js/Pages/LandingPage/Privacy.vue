@@ -1,32 +1,28 @@
 <template>
 
     <body class="font-inter">
+        <NavbarVue />
         <div class="w-full">
-            <div class="w-full bg-cover bg-center bg-no-repeat lg:pt-44 pt-28 lg:pb-24 pb-14 px-12 xl:px-20" style="
-          background-image: url('https://pagedone.io/asset/uploads/1702271852.png');
-        ">
+            <div class="w-full">
+                <img src="@/Images/Group 2.svg" alt="">
                 <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl">
                     PRIVACY POLICY
                 </h1>
-                <p class="text-gray-900 text-lg leading-8 text-center font-normal px-4">
-
-
-
-                </p>
             </div>
             <section class="w-full relative overflow-hidden lg:py-28 py-16">
                 <div class="px-12 xl:px-20">
                     <div class="flex flex-col md:flex-row w-full gap-8">
                         <div class="w-full md:max-w-[176px] md:border-r md:border-gray-200">
                             <ul class="tab-nav flex flex-col md:items-start items-center lg:gap-10 gap-6">
-                                <li>
-                                    <a href="#" class="font-medium text-base leading-7 text-indigo-600">Terms of Use</a>
-                                </li>
-                                <li>
+                                 <li>
                                     <a href="#"
-                                        class="font-medium text-base leading-7 text-gray-500 hover:text-indigo-600">Privacy
-                                        Policy</a>
+                                        class="font-medium text-base leading-7 hover:text-indigo-600 text-indigo-600">Privacy
+                                        </a>
                                 </li>
+                                <li>
+                                    <a :href="route('pages')" class="font-medium text-base leading-7 ">Terms of Use</a>
+                                </li>
+
                             </ul>
                         </div>
                         <div class="w-full tab-pane max-md:px-4">
@@ -45,7 +41,7 @@
                                     Last updated: April 28, 2024
                                 </p>
                             </div>
-                            <p class="font-manrope font-bold lg:text-xl text-3xl text-gray-900 mb-5">
+                            <p class="font-manrope font-bold lg:text-lg text-xl text-gray-900 mb-5">
                                 This privacy notice for MedShare ("we," "us," or "our"), describes how and why we might
                                 collect,
                                 store, use, and/or share ("process") your information when you use our services
@@ -567,11 +563,18 @@
                 </div>
             </section>
         </div>
+        <Footer />
     </body>
+
 </template>
 
 <script>
 
+import NavbarVue from "../LandingPage/Navbar.vue";
+import Footer from "../LandingPage/Footer.vue";
+export default {
+    components: { Footer, NavbarVue },
+};
 </script>
 
 <style lang="scss" scoped></style>

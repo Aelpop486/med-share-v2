@@ -3,8 +3,9 @@
     <body class="font-inter">
         <div class="w-full">
             <NavbarVue />
-            <div class="w-full bg-cover bg-center bg-no-repeat lg:pt-44 pt-28 lg:pb-24 pb-14 px-12 xl:px-20" style="
-          background-image: url('Image');">
+            <div class="">
+                <img src="@/Images/Group 145.svg" alt="">
+
                 <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl">
                     Terms of Use
                 </h1>
@@ -22,9 +23,9 @@
                                     <a href="#" class="font-medium text-base leading-7 text-indigo-600">Terms of Use</a>
                                 </li>
                                 <li>
-                                    <a href="#"
+                                    <a :href="route('Privacy')"
                                         class="font-medium text-base leading-7 text-gray-500 hover:text-indigo-600">Privacy
-                                        Policy</a>
+                                        </a>
                                 </li>
                             </ul>
                         </div>
