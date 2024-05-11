@@ -38,7 +38,7 @@ class SpecialtyController extends Controller
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
-            $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
+            $validatedData["image"] = ImageService::uploadImage($request->file("image"), "specialties");
         }
         $validatedData["admin_id"] = Auth::user()->id;
         $specialty = specialty::create($validatedData);
