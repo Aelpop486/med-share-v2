@@ -4,7 +4,7 @@
         <div class="w-full">
             <NavbarVue />
             <div class="">
-                <img src="@/Images/Group 145.svg" alt="">
+                <img src="@/Images/Group 145.svg" class="w-full" alt="">
 
                 <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl">
                     Terms of Use

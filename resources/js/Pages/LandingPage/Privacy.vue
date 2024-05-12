@@ -4,7 +4,7 @@
         <NavbarVue />
         <div class="w-full">
             <div class="w-full">
-                <img src="@/Images/Group 2.svg" alt="">
+                <img src="@/Images/Group 2.svg" class="w-full" alt="">
                 <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl">
                     PRIVACY POLICY
                 </h1>
