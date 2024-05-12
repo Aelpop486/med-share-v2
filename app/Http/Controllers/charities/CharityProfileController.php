@@ -44,7 +44,7 @@ class CharityProfileController extends Controller
             ImageService::deleteImage($charity->image,);
         }
         $charity->update($validatedData);
-        return to_route("charities.index");
+        return back()->with('success', 'Charity profile updated successfully');
     }
 
     /**

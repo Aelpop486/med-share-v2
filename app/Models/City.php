@@ -20,4 +20,8 @@ class City extends Model
     {
         return $this->hasMany(Address::class);
     }
+    public function donations() : HasMany
+    {
+        return $this->hasMany(donation::class);
+    }
 }

@@ -31,7 +31,7 @@ class UserController extends Controller
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "users");
         }
         $user = User::create($validatedData);
-        return to_route('users');
+        return back()->with('success', 'User created successfully');
     }
 
     public function edit(User $user)
@@ -49,12 +49,12 @@ class UserController extends Controller
             ImageService::deleteImage($user->image,);
         }
         $user->update($validatedData);
-        return to_route('users');
+        return back()->with('success', 'User updated successfully');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
-        return to_route('users');
+        return to_route('users')->with('success', 'User deleted successfully');
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdminStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\StoreAdminRequest;
 use App\Models\admin;
 use Inertia\Inertia;
 
@@ -32,12 +32,12 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreAdminRequest $request)
+    public function store(AdminStoreRequest $request)
     {
         $validatedData = $request->validated();
         $validatedData ['password'] = Hash::make($request->password);
         $admin = admin::create($validatedData);
-        return to_route('systemUsers');
+        return back()->with('success', 'Admin created successfully');
     }
 
     /**
@@ -53,11 +53,11 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreAdminRequest $request, admin $admin)
+    public function update(AdminStoreRequest $request, admin $admin)
     {
         $validatedData = $request->validated();
         $admin->update($validatedData);
-        return to_route('systemUsers');
+        return back()->with('success', 'Admin updated successfully');
     }
 
     /**
@@ -66,6 +66,7 @@ class AdminController extends Controller
     public function destroy(admin $admin)
     {
         $admin->delete();
-        return to_route('systemUsers');
+        return to_route('systemUsers')->with('success', 'Admin deleted successfully');
     }
+
 }

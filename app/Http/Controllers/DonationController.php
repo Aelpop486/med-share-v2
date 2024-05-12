@@ -34,7 +34,7 @@ class DonationController extends Controller
     public function destroy(donation $donation)
     {
         $donation->delete();
-        return to_route('govDonations');
+        return to_route('govDonations')->with('success', 'Donation deleted successfully');
     }
 
 }

@@ -44,7 +44,7 @@ class CharityUsersController extends Controller
         $validatedData['charity_id'] = Auth::user()->id;
         $validatedData['password'] = Hash::make($request->password);
         $user = Charity_users::create($validatedData);
-        return to_route('charityUsers');
+        return back()->with('success', 'User created successfully');
     }
 
     /**
@@ -79,7 +79,7 @@ class CharityUsersController extends Controller
         }
         $validatedData['password'] = Hash::make($request->password);
         $charity_users->update($validatedData);
-        return to_route('charityUsers');
+        return back()->with('success', 'User updated successfully');
     }
 
     /**
@@ -88,6 +88,6 @@ class CharityUsersController extends Controller
     public function destroy(Charity_users $charity_users)
     {
         $charity_users->delete();
-        return to_route('charityUsers');
+        return to_route('charityUsers')->with('success', 'User deleted successfully');
     }
 }

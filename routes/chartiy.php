@@ -62,7 +62,6 @@ Route::get('/DonationProfile', function () {
 //     Route::get('/DonationManagement', 'index')->name('DonationManagement');
 //     Route::get('/Donation/show/{id}','edit')->name('ShowDonation');
 //     Route::post('/Donation/show/{id}','update')->name('UpdateDonation');
-//     Route::get('/Donation/delete/{id}','destroy')->name('DeleteDonation');
 // });
 // ##################################################################################################
 // Route::middleware('auth:charits')->controller(CharityProfileController::class)->group(function () {

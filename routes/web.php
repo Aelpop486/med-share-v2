@@ -5,6 +5,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CharitController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\LandingPage\AboutController;
+use App\Http\Controllers\LandingPage\ContactController;
+use App\Http\Controllers\LandingPage\PageController;
+use App\Http\Controllers\LandingPage\PrivacyController;
+use App\Http\Controllers\LandingPage\ServicesController;
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
@@ -117,9 +122,9 @@ Route::get('SystemUsersTable/create', function () {
 
 // -----Create END---
 
-########################################################################################################
+//////////////////////////////////////////////////////////////////////////////////////////////////
 //  belongs to backend //
-
+// admin controller //
 // Route::middleware('auth:admins')->controller(AdminController::class)->group(function () {
 //     Route::get('systemUsers', 'index')->name('systemUsers');
 //     Route::get('SystemUsersTable/create', 'create')->name('createSystemUser');
@@ -128,7 +133,8 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('systemUsersTable/show/{id}', 'update')->name('updateSystemUser');
 //     Route::get('charityTable/delete/{id}', 'destroy')->name('deleteSystemUser');
 // });
-########################################################################
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// charity controller //
 // Route::middleware('auth:admins')->controller(CharitController::class)->group(function () {
 //     Route::get('charities','index')->name('charities');
 //     Route::get('charityTable/create','create')->name('createCharity');
@@ -137,14 +143,16 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('charityTable/show/{id}','update')->name('updateCharity');
 //     Route::get('charityTable/delete/{id}','destroy')->name('deleteCharity');
 // });
-########################################################################
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// donation controller //
 // Route::middleware('auth:admins')->controller(DonationController::class)->group(function () {
 //     Route::get('govDonations','index')->name('govDonations');
 //     Route::get('ListgovDonations/{id}','show')->name('ListgovDonations');
 //     Route::get('ListgovDonations/show/{id}','edit')->name('showDonation');
 //     Route::get('ListgovDonations/delete','destroy')->name('deleteDonation');
 // });
-########################################################################
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// user controller //
 // Route::middleware('auth:admins')->controller(UserController::class)->group(function () {
 //     Route::get('users','index')->name('users');
 //     Route::get('UsersTable/create','create')->name('createUser');
@@ -153,7 +161,8 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('UsersTable/show/{id}','update')->name('updateUser');
 //     Route::get('UsersTable/delete/{id}','destroy')->name('deleteUser');
 // });
-########################################################################
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// specialty controller //
 // Route::middleware('auth:admins')->controller(SpecialtyController::class)->group(function () {
 //     Route::get('specialties','index')->name('specialties');
 //     Route::get('specialties/majors/create','create')->name('createSpecialtie');
@@ -163,9 +172,31 @@ Route::get('SystemUsersTable/create', function () {
 //     Route::post('specialties/majors/show/{id}','update')->name('updateSpecialtie');
 //     Route::get('specialties/majors/delete/{id}','destroy')->name('deleteSpecialtie');
 // });
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// admin dashboard controller //
 // Route::middleware('auth')->get('/dashboardView',AdminDashboardController::class)->name('dashboardView');
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// contact controller //
+// Route::controller(ContactController::class)->group(function () {
+//     Route::get('/Contact', 'index')->name('Contact');
+//     Route::post('/Contact', 'store')->name('StoreMessage');
+// });
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// services controller //
+// Route::controller(ServicesController::class)->group(function () {
+//     Route::get('/Services', 'index')->name('Services');
+//     Route::post('/Services', 'store')->name('Store');
+// });
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// about controller //
+// Route::get('/about',AboutController::class)->name('About');
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// page controller //
+// Route::get('/pages',PageController::class)->name('pages');
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// privacy controller //
+// Route::get('/privacy',PrivacyController::class)->name('Privacy');
+
 
 // Linding Page
 
@@ -176,7 +207,6 @@ Route::get('/about', function () {
 Route::get('/pages', function () {
     return Inertia::render('LandingPage/pages');
 })->name('pages');
-
 
 Route::get('/Contact', function () {
     return Inertia::render('LandingPage/Contact');
@@ -189,7 +219,6 @@ Route::get('/Services', function () {
 Route::get('/privacy', function () {
     return Inertia::render('LandingPage/Privacy');
 })->name('Privacy');
-
 
 
 

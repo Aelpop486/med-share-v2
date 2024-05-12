@@ -42,7 +42,7 @@ class SpecialtyController extends Controller
         }
         $validatedData["admin_id"] = Auth::user()->id;
         $specialty = specialty::create($validatedData);
-        return to_route('specialties');
+        return back()->with('success', 'Specialty created successfully');
     }
 
     /**
@@ -77,7 +77,7 @@ class SpecialtyController extends Controller
             ImageService::deleteImage($specialty->image,);
         }
         $specialty->update($validatedData);
-        return to_route('specialties');
+        return back()->with('success', 'Specialty updated successfully');
     }
 
     /**
@@ -86,6 +86,6 @@ class SpecialtyController extends Controller
     public function destroy(specialty $specialty)
     {
         $specialty->delete();
-        return to_route('specialties');
+        return to_route('specialties')->with('success', 'Specialty deleted successfully');
     }
 }

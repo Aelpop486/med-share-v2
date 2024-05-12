@@ -47,7 +47,7 @@ class DonationController extends Controller
            'state' => 'required|exists:donations,state',
         ]);
         $donation->update($validatedData);
-        return to_route('DonationManagement');
+        return back();
     }
 
     /**

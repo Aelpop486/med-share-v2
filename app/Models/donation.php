@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\City;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class donation extends Model
 {
@@ -38,6 +39,11 @@ class donation extends Model
     public function address() : BelongsTo
     {
         return $this->belongsTo(Address::class);
+    }
+
+    public function city() : BelongsTo
+    {
+        return $this->belongsTo(City::class);
     }
 
 }
