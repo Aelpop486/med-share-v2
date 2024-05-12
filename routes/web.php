@@ -183,10 +183,7 @@ Route::get('SystemUsersTable/create', function () {
 // });
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // services controller //
-// Route::controller(ServicesController::class)->group(function () {
-//     Route::get('/Services', 'index')->name('Services');
-//     Route::post('/Services', 'store')->name('Store');
-// });
+// Route::get('/Services',[ServicesController::class,'index'])->name('Services');
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // about controller //
 // Route::get('/about',AboutController::class)->name('About');
