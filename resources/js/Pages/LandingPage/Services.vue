@@ -1,8 +1,10 @@
 <template>
     <NavbarVue />
 
-    <form action=""
+    <Head title="Register" />
+    <form @submit.prevent="submit"
         class="h-fit bg-white border border-slate-200 rounded-2xl lg:p-12 p-8 w-full max-w-lg md:max-w-3xl lg:max-w-full mx-auto">
+
         <div class="relative mb-8">
             <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Name
             </label>
@@ -14,11 +16,12 @@
                             stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <input type="text" id="default-search"
+                <input id="name" type="text" v-model="form.name" required autofocus autocomplete="name"
                     class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                     placeholder="Full Name">
             </div>
         </div>
+
         <div class="relative mb-8">
             <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Email
             </label>
@@ -30,7 +33,7 @@
                             stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" />
                     </svg>
                 </div>
-                <input type="text" id="default-search"
+                <input id="email" type="email" v-model="form.email" required autocomplete="username"
                     class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                     placeholder="Enter Your Email">
             </div>
@@ -49,10 +52,36 @@
 
 
                 </div>
-                <input type="text" id="default-search"
+                <input id="phone" type="tel" v-model="form.phone" required autocomplete="phone"
                     class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                     placeholder="Enter Your Phone">
             </div>
+        </div>
+
+        <div class="relative mb-8">
+            <label for="category"
+                class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Major</label>
+            <div class="relative text-gray-500 focus-within:text-gray-900">
+
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+
+
+                </div>
+                <select v-model="form.specialty_id" id="category"
+                    class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-600 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none">
+                    <option selected="">-</option>
+                    <option value="">Major 1</option>
+                    <option value="">Major 2</option>
+                    <option value="">Major 3</option>
+                    <option value="">Major 4</option>
+                </select>
+            </div>
+
         </div>
 
 
@@ -69,7 +98,7 @@
 
 
                 </div>
-                <input type="text" id="default-search"
+                <input id="website" type="url" v-model="form.website_link" autocomplete="website"
                     class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                     placeholder="Enter Your Website">
             </div>
@@ -91,7 +120,7 @@
 
 
                 </div>
-                <input type="password" id="default-search"
+                <input id="password" type="password" v-model="form.password" required autocomplete="new-password"
                     class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                     placeholder="Enter Your Password">
             </div>
@@ -109,10 +138,9 @@
                             d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                     </svg>
 
-
-
                 </div>
-                <input type="password" id="default-search"
+                <input id="password_confirmation" type="password" v-model="form.password_confirmation" required
+                    autocomplete="new-password"
                     class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                     placeholder="Enter Your Confirm Password">
             </div>
@@ -123,7 +151,7 @@
                 Description
             </label>
             <div class="relative ">
-                <textarea
+                <textarea v-model="form.description" id="description" rows="4"
                     class="block w-full h-40 px-4 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-2xl placeholder-gray-400 focus:outline-none resize-none"
                     placeholder="Write your message"></textarea>
             </div>
@@ -160,15 +188,29 @@
     <Footer />
 </template>
 
-<script>
+<script setup>
 import NavbarVue from '../LandingPage/Navbar.vue';
 import Footer from '../LandingPage/Footer.vue'
-export default {
-    components: { Footer, NavbarVue },
-}
+import { Head, Link, useForm } from '@inertiajs/vue3';
+
+
+const form = useForm({
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+    phone: '',
+    website_link: '',
+    specialty_id: '',
+    description: '',
+
+});
+
+const submit = () => {
+    form.post(route('register'), {
+        onFinish: () => form.reset('password', 'password_confirmation'),
+    });
+};
 </script>
 
 <style lang="scss" scoped></style>
-
-
-

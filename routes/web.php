@@ -191,6 +191,8 @@ Route::get('/privacy', function () {
 })->name('Privacy');
 
 
-
+Route::get('/faqs', function () {
+    return Inertia::render('LandingPage/Faqs');
+})->name('Faqs');
 
 require __DIR__ . '/auth.php';
