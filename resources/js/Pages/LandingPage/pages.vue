@@ -7,7 +7,7 @@
                 <img src="@/Images/Group 145.svg" class="w-full" alt="">
 
                 <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl">
-                    Terms of Use
+                    Terms of Services
                 </h1>
                 <p class="text-gray-900 text-lg leading-8 text-center font-normal px-4">
                     We're here to help! Reach us by phone at [contact number] or email us
@@ -24,14 +24,14 @@
                                 </li>
                                 <li>
                                     <a :href="route('Privacy')"
-                                        class="font-medium text-base leading-7 text-gray-500 hover:text-indigo-600">Privacy
+                                        class="font-medium text-base leading-7 text-gray-500 hover:text-indigo-600">Privacy Policy
                                         </a>
                                 </li>
                             </ul>
                         </div>
                         <div class="w-full tab-pane max-md:px-4">
                             <h2 class="font-manrope font-bold lg:text-4xl text-3xl text-gray-900 mb-5">
-                                Terms of Use
+                                Terms of Services
                             </h2>
                             <div class="flex items-center gap-3 lg:mb-10 mb-8">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"

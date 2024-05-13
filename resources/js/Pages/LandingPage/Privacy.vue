@@ -4,7 +4,7 @@
         <NavbarVue />
         <div class="w-full">
             <div class="w-full">
-                <img src="@/Images/Group 2.svg" class="w-full" alt="">
+                <img src="@/Images/Group 147.svg" class="w-full" alt="">
                 <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl">
                     PRIVACY POLICY
                 </h1>
@@ -16,11 +16,11 @@
                             <ul class="tab-nav flex flex-col md:items-start items-center lg:gap-10 gap-6">
                                  <li>
                                     <a href="#"
-                                        class="font-medium text-base leading-7 hover:text-indigo-600 text-indigo-600">Privacy
+                                        class="font-medium text-base leading-7 hover:text-indigo-600 text-indigo-600">Privacy Policy
                                         </a>
                                 </li>
                                 <li>
-                                    <a :href="route('pages')" class="font-medium text-base leading-7 ">Terms of Use</a>
+                                    <a :href="route('pages')" class="font-medium text-base leading-7 ">Terms of Services</a>
                                 </li>
 
                             </ul>
