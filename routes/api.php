@@ -38,6 +38,7 @@ Route::middleware('auth:sanctum')->group(function () {
     
 //         ---          Donations           ---
     Route::apiResource('/donations', DonationController::class);
+    Route::apiResource('/addresses', AddressController::class);
 });
 
 

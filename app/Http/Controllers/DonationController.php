@@ -8,19 +8,19 @@ use Illuminate\Http\Request;
 
 class DonationController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $donations = donation::paginate(10);
-        return Inertia::render('admins/Donations/governments',[
+        $donations = donation::where('city_id', $request->city_id)->with(['user'])->paginate(20);
+        // dd($donations);
+        return Inertia::render('admins/Donations/index',[
             'donations'=>$donations
         ]);
     }
 
-    public function show(String $id)
+    public function show(donation $donation)
     {
-        $donations = donation::where('city_id', $id)->get();
-        return Inertia::render('admins/Donations/index',[
-            'donations'=>$donations
+        return Inertia::render('admins/Donations/show',[
+            'donation'=>$donation
         ]);
     }
 

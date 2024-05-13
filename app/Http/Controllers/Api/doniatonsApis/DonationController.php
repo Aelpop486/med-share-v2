@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\Api\doniatonsApis;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DonationApiStoreRequest;
+use App\Http\Requests\DonationApiUpdateRequest;
 use App\Http\Requests\UpdateDonationRequest;
 use App\Http\Resources\DonationCollection;
 use App\Http\Resources\DonationResource;
 use Illuminate\Http\Request;
 use App\Models\donation;
+use App\Services\ImageService;
 use Illuminate\Support\Facades\Validator;
+
+use function Pest\Laravel\json;
 
 class DonationController extends Controller
 {
@@ -17,36 +22,35 @@ class DonationController extends Controller
      */
     public function index(Request $request)
     {
-        //return response()->json(donation::all());
-        return new DonationCollection(donation::all());
+        $user = $request->user();
+        $donations = $user->donations()->with('images')->paginate(10);
+        return response()->json([
+            'status' => 200,
+            'donations' => new DonationCollection($donations)
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
 
-    public function store(Request $request)
+    public function store(DonationApiStoreRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'description' => 'required|max:255',
-            'images.*' => 'required|string',
-        ]);
     
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-    
-        // Get the authenticated user
         $user = $request->user();
-    
-        // Create the donation and associate it with the user
-        $donation = $user->donations()->create([
+        $donation = donation::create([
             'description' => $request->description,
+            'user_id' => $user->id,
+            'address_id'=> $request->address_id,
+            'city_id'=> $request->city_id
         ]);
-    
-        // Create images associated with the donation
-        foreach ($request->images as $image) {
-            $donation->images()->create(['path' => $image]);
+
+        $donationImages = ImageService::uploadImages($request->images, 'donations');
+
+        foreach ($donationImages as $imageName) {
+            $donation->images()->create([
+                'path' => $imageName
+            ]);
         }
     
         return response()->json(['message' => 'Donation Created successfully', 'donation' => new DonationResource($donation)]);
@@ -64,30 +68,28 @@ class DonationController extends Controller
     // /**
     //  * Update the specified resource in storage.
     //  */
-    public function update(UpdateDonationRequest $request, donation $donation)
+    public function update(DonationApiUpdateRequest $request, donation $donation)
     {
-        $validator = Validator::make($request->all(), [
-            'description' => 'required|max:255',
-            'images.*' => 'required|string', 
-        ], [], [
-            'description' => 'Description',
-            'images.*' => 'Images', 
+
+        $validatedDate = $request->validated();
+        $donation->update([
+            'description' => $validatedDate['description']?? $donation->description,
+            'city_id'=> $validatedDate['city_id']?? $donation->city_id,
+            'address_id'=> $validatedDate['address_id']?? $donation->address_id,
+            'state' => $validatedDate['state']?? $donation->state
         ]);
-    
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+
+        if ($request->input("images")) {
+            $donationImages = ImageService::uploadImages($request->images, 'donations');
+            foreach ($donationImages as $imageName) {
+                $donation->images()->create([
+                    'image' => $imageName
+                ]);
+            }
         }
-    
-        $donation->description = $request->description;
-        $donation->save();
-    
-        $donation->images()->delete(); 
-        foreach ($request->images as $image) {
-            $donation->images()->create(['path' => $image]);
-        }
-    
-        // Return a success message along with the updated donation
+
         return response()->json(['message' => 'Donation updated successfully', 'donation' => new DonationResource($donation)]);
+    
     }
     
 
@@ -103,51 +105,3 @@ class DonationController extends Controller
 
 
 
-
-
-// public function store(Request $request)
-// {
-//     $validator = Validator::make($request->all(), [
-//         'description' => 'required|max:255',
-//         'images.*' => 'required|string',
-//         'horizontalCoordinate' => 'required|numeric',
-//         'verticalCoordinate' => 'required|numeric',
-//         'address' => 'required|string',
-//     ], [], [
-//         'description' => 'Description',
-//         'images.*' => 'Images',
-//         'horizontalCoordinate' => 'Horizontal Coordinate',
-//         'verticalCoordinate' => 'Vertical Coordinate',
-//         'address' => 'Address',
-//     ]);
-
-//     if ($validator->fails()) {
-//         return response()->json(['errors' => $validator->errors()], 422);
-//     }
-
-//     $donation = Donation::create([
-//         'description' => $request->description,
-//     ]);
-
-//     foreach ($request->images as $image) {
-//         $donation->images()->create(['path' => $image]);
-//     }
-
-//     // Create or update the address
-//     $address = new Address();
-//     $address->address = $request->address;
-//     $address->save();
-
-//     // Create or update the coordinates
-//     $coordinates = new Coordinates();
-//     $coordinates->horizontal = $request->horizontalCoordinate;
-//     $coordinates->vertical = $request->verticalCoordinate;
-//     $coordinates->save();
-
-//     // Associate the address and coordinates with the donation
-//     $donation->address()->associate($address);
-//     $donation->coordinates()->associate($coordinates);
-//     $donation->save();
-
-//     return response()->json(['message' => 'Donation Created successfully', 'donation' => new DonationResource($donation)]);
-// }
