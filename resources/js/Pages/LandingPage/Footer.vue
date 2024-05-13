@@ -23,6 +23,7 @@
                     <li><a :href="route('Services')" class=" text-white hover:text-gray-900">{{ translate("ourServices") }}</a></li>
                     <li><a :href="route('pages')" class=" text-white hover:text-gray-900"> {{ translate("pages") }}</a></li>
                     <li><a :href="route('Contact')" class=" text-white hover:text-gray-900">{{ translate("contact") }}</a></li>
+                    <li><a :href="route('Faqs')" class=" text-white hover:text-gray-900">Faqs</a></li>
                 </ul>
                 <div class="flex space-x-10 justify-center items-center mb-14">
                     <a href="#" class="block  text-white transition-all duration-500 hover:text-indigo-600 ">
