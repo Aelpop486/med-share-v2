@@ -18,7 +18,9 @@ class donation extends Model
         'description',
         'status',
         'user_id',
+        'city_id',
         'charity_id',
+        'adress_id',
     ];
 
     public function charity() : BelongsTo

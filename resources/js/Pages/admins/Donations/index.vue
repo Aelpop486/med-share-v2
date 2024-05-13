@@ -54,7 +54,7 @@
             Government Donations</h2>
             <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700">
 
-<GovDonationsTable />
+<GovDonationsTable :donations="donations" />
 
     </AdminsLayout>
 </template>
@@ -66,6 +66,7 @@ import AdminsLayout from '@/Layouts/AdminsLayout.vue';
 import GovDonationsTable from '@/Components/GovDonationsTable.vue';
 
 import { Link } from "@inertiajs/vue3";
+defineProps({donations: Object});
 
 
 </script>

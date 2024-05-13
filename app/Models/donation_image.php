@@ -21,4 +21,9 @@ class donation_image extends Model
     {
         return $this->belongsTo(donation::class);
     }
+
+    public function getPathAttribute($value)
+    {
+        return asset($value);
+    }
 }
