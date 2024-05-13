@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CharityStoreRequest;
-use App\Models\charit;
-// use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\charit;
+// use App\Models\User;
+use Illuminate\Http\Request;
+use App\Services\ImageService;
+use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
+use App\Http\Requests\CharityStoreRequest;
 
 class RegisteredUserController extends Controller
 {
@@ -35,6 +36,9 @@ class RegisteredUserController extends Controller
     {
 
         $validatedData = $request->validated();
+        if ($request->hasFile("image")) {
+            $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
+        }
         $user = charit::create($validatedData);
 
         // $request->validate([
