@@ -23,9 +23,9 @@ class CharityStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:charits',
+            'email' => 'required|string|email|max:255|unique:charits,email',
             'password' => 'required|string|min:8|confirmed',
-            'phone' => 'required|numeric',
+            'phone' => 'required|numeric|unique:charits,phone',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
             'description' => 'nullable|string',
             'specialty_id' => 'nullable|exists:specialties,id',
