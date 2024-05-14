@@ -41,7 +41,7 @@
                                     Last updated: April 28, 2024
                                 </p>
                             </div>
-                            <p class="font-manrope font-bold lg:text-lg text-xl text-gray-900 mb-5">
+                            <p class="font-manrope font-bold lg:text-lg text-sm text-gray-500 mb-5">
                                 This privacy notice for MedShare ("we," "us," or "our"), describes how and why we might
                                 collect,
                                 store, use, and/or share ("process") your information when you use our services
@@ -57,7 +57,7 @@
                                 Services. If you
                                 still have any questions or concerns, please contact us at sharemed915@gmail.com. <br>
                             </p>
-                            <p class="font-normal text-lg leading-8 text-gray-500 lg:mb-10 mb-8">
+                            <p class="font-bold text-sm leading-8 text-gray-500 lg:mb-10 mb-8">
 
                                 SUMMARY OF KEY POINTS <br>
 
@@ -126,7 +126,7 @@
                                 full.
 
                             </p>
-                            <h5 class="font-manrope font-bold md:text-3xl text-2xl text-gray-900 mb-4">
+                            <h5 class="font-bold md:text-3xl text-sm text-gray-900 mb-4">
                                 TABLE OF CONTENTS
                             </h5>
                             <ul class="ml-8 lg:mb-10 mb-8">
@@ -177,7 +177,7 @@
                             <ul
                                 class="flex flex-col ml-8 gap-10 list-outside list-decimal font-manrope font-bold text-3xl">
                                 <li id="01" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-3xl text-sm text-gray-900">
                                         WHAT INFORMATION DO WE COLLECT?
                                     </h2>
                                     <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
@@ -264,7 +264,7 @@
                                     </p>
                                 </li>
                                 <li id="02" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-3xl text-sm text-gray-900">
                                         HOW DO WE PROCESS YOUR INFORMATION?
                                     </h2>
                                     <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
@@ -289,7 +289,7 @@
                                     </p>
                                 </li>
                                 <li id="03" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-3xl text-sm text-gray-900">
                                         WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?
                                     </h2>
                                     <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
@@ -336,7 +336,7 @@
                                 </li>
 
                                 <li id="05" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-3xl text-sm text-gray-900">
                                         HOW DO WE HANDLE YOUR SOCIAL LOGINS?
                                     </h2>
                                     <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
@@ -364,7 +364,7 @@
                                 </li>
 
                                 <li id="06" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-3xl text-sm text-gray-900">
                                         HOW LONG DO WE KEEP YOUR INFORMATION?
                                     </h2>
                                     <p class="mt-5 font-normal text-lg leading-8 text-gray-500">

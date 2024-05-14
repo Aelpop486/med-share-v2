@@ -5,7 +5,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 
 defineOptions({ layout: GuestLayout })
 
@@ -35,10 +35,9 @@ const submit = () => {
 
     <div class="container mx-auto">
 
-        
                <form @submit.prevent="submit"
-                class="h-fit bg-white border border-slate-200 rounded-2xl lg:p-12 p-8 w-full max-w-lg md:max-w-3xl lg:max-w-full mx-auto">
-        
+                 class="h-fit bg-white border border-slate-200 shadow-xl rounded-2xl lg:p-12 p-8 w-[75%] mb-10 mt-10  max-w-lg md:max-w-3xl lg:max-w-full mx-auto">
+
                 <div class="relative mb-8">
                     <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Name
                     </label>
@@ -53,9 +52,10 @@ const submit = () => {
                         <input id="name" type="text" v-model="form.name" required autofocus autocomplete="name"
                             class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                             placeholder="Full Name">
+                            <InputError class="mt-2" :message="form.errors.name" />
                     </div>
                 </div>
-        
+
                 <div class="relative mb-8">
                     <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Email
                     </label>
@@ -70,9 +70,11 @@ const submit = () => {
                         <input id="email" type="email" v-model="form.email" required autocomplete="username"
                             class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                             placeholder="Enter Your Email">
+                            <InputError class="mt-2" :message="form.errors.email" />
+
                     </div>
                 </div>
-        
+
                 <div class="relative mb-8">
                     <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Phone
                     </label>
@@ -83,28 +85,29 @@ const submit = () => {
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                             </svg>
-        
-        
+
+
                         </div>
                         <input id="phone" type="tel" v-model="form.phone" required autocomplete="phone"
                             class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                             placeholder="Enter Your Phone">
+                            <InputError class="mt-2" :message="form.errors.phone" />
                     </div>
                 </div>
-        
+
                 <div class="relative mb-8">
                     <label for="category"
                         class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Major</label>
                     <div class="relative text-gray-500 focus-within:text-gray-900">
-        
+
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" width="24" height="24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
-        
-        
+
+
                         </div>
                         <select v-model="form.specialty_id" id="category"
                             class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-600 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none">
@@ -115,10 +118,10 @@ const submit = () => {
                             <option value="">Major 4</option>
                         </select>
                     </div>
-        
+
                 </div>
-        
-        
+
+
                 <div class="relative mb-8">
                     <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Website
                     </label>
@@ -129,17 +132,19 @@ const submit = () => {
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
                             </svg>
-        
-        
+
+
                         </div>
                         <input id="website" type="url" v-model="form.website_link" autocomplete="website"
                             class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                             placeholder="Enter Your Website">
+                            <InputError class="mt-2" :message="form.errors.website" />
+
                     </div>
                 </div>
-        
-        
-        
+
+
+
                 <div class="relative mb-8">
                     <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Password
                     </label>
@@ -150,17 +155,18 @@ const submit = () => {
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                             </svg>
-        
-        
-        
+
+
+
                         </div>
                         <input id="password" type="password" v-model="form.password" required autocomplete="new-password"
                             class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                             placeholder="Enter Your Password">
+                            <InputError class="mt-2" :message="form.errors.password" />
                     </div>
                 </div>
-        
-        
+
+
                 <div class="relative mb-8">
                     <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Confirm Password
                     </label>
@@ -171,15 +177,17 @@ const submit = () => {
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
                             </svg>
-        
+
                         </div>
                         <input id="password_confirmation" type="password" v-model="form.password_confirmation" required
                             autocomplete="new-password"
                             class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                             placeholder="Enter Your Confirm Password">
+                            <InputError class="mt-2" :message="form.errors.password_confirmation" />
+
                     </div>
                 </div>
-        
+
                 <div class="relative mb-8">
                     <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">
                         Description
@@ -190,7 +198,7 @@ const submit = () => {
                             placeholder="Write your message"></textarea>
                     </div>
                 </div>
-        
+
                 <div class="mb-8">
                     <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover photo</label>
                     <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
@@ -208,9 +216,9 @@ const submit = () => {
                         </div>
                     </div>
                 </div>
-        
+
                 <button
-                    class="w-full h-12 rounded-full bg-indigo-600 hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center">Send
+                    class="w-full h-12 rounded-full bg-[#0155A5] hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center">Send
                     message <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M7.5 15L11.0858 11.4142C11.7525 10.7475 12.0858 10.4142 12.0858 10C12.0858 9.58579 11.7525 9.25245 11.0858 8.58579L7.5 5"
@@ -218,7 +226,6 @@ const submit = () => {
                     </svg>
                 </button>
             </form>
-
     </div>
 
 </template>
