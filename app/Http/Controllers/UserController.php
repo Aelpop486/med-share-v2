@@ -13,10 +13,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = User::paginate(20);
-        return Inertia::render('admins/Users/index', [
-            'users' => $user
-        ]);
+        //
     }
 
     public function create()
@@ -41,16 +38,6 @@ class UserController extends Controller
         ]);
     }
 
-    public function update(Request $request, User $user)
-    {
-        $validatedData = $request->validated();
-        if ($request->hasFile("image")) {
-            $validatedData["image"] = ImageService::uploadImage($request->file("image"), "users");
-            ImageService::deleteImage($user->image,);
-        }
-        $user->update($validatedData);
-        return back()->with('success', 'User updated successfully');
-    }
 
     public function destroy(User $user)
     {

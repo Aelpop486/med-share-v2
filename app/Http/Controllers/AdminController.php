@@ -15,10 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admin = admin::paginate(10) ;
-        return Inertia::render('admins/SystemUsers/index',[
-            'admin' => $admin
-        ]);
+        //
     }
 
     /**

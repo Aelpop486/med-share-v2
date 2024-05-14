@@ -15,19 +15,8 @@ class DonationController extends Controller
      */
     public function index()
     {
-        $donations = donation::where(['state','!=','pending'],['charit_id',Auth::user()->id])->paginate(20);
-        return Inertia::render('charities/DonationManagement/index',[
-            'donations' => $donations
-        ]);
+        //
     }
-
-    public function show(donation $donation)
-    {
-        return Inertia::render('charities/Donation/show',[
-            'donation'=>$donation
-        ]);
-    }
-
     /**
      * Show the form for editing the specified resource.
      */

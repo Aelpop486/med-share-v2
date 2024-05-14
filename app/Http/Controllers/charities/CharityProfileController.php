@@ -9,6 +9,7 @@ use App\Services\ImageService;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CharityStoreRequest;
+use App\Http\Requests\CharityUpdateRequest;
 
 class CharityProfileController extends Controller
 {
@@ -17,10 +18,7 @@ class CharityProfileController extends Controller
      */
     public function index()
     {
-        $charity = charit::where("id", Auth::user()->id)->get();
-        return Inertia::render('charities/CharityProfile/index', [
-            'charity' => $charity
-        ]);
+        //
     }
 
     /**
@@ -36,7 +34,7 @@ class CharityProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CharityStoreRequest $request, charit $charity)
+    public function update(CharityUpdateRequest $request, charit $charity)
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
