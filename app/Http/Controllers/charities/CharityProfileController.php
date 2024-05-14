@@ -22,16 +22,6 @@ class CharityProfileController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(charit $charity)
-    {
-        return Inertia::render('charities/CharityProfile/edit', [
-            'charity' => $charity
-        ]);
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(CharityUpdateRequest $request, charit $charity)
