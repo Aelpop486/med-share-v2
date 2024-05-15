@@ -18,11 +18,11 @@
                 </a>
                 <ul
                     class="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
-                    <li><a href="/" class="text-white hover:text-gray-900">{{ translate("home") }}</a></li>
-                    <li><a :href="route('About')" class=" text-white hover:text-gray-900">{{ translate("about") }}</a></li>
-                    <li><a :href="route('Services')" class=" text-white hover:text-gray-900">{{ translate("ourServices") }}</a></li>
-                    <li><a :href="route('pages')" class=" text-white hover:text-gray-900"> {{ translate("pages") }}</a></li>
-                    <li><a :href="route('Contact')" class=" text-white hover:text-gray-900">{{ translate("contact") }}</a></li>
+                    <li><a href="/" class="text-white hover:text-gray-900">Home</a></li>
+                    <li><a :href="route('About')" class=" text-white hover:text-gray-900">About</a></li>
+                    <li><a :href="route('Services')" class=" text-white hover:text-gray-900">Our Services</a></li>
+                    <li><a :href="route('pages')" class=" text-white hover:text-gray-900"> Pages</a></li>
+                    <li><a :href="route('Contact')" class=" text-white hover:text-gray-900">contact us</a></li>
                     <li><a :href="route('Faqs')" class=" text-white hover:text-gray-900">Faqs</a></li>
                 </ul>
                 <div class="flex space-x-10 justify-center items-center mb-14">
@@ -71,22 +71,8 @@
 </template>
 
 <script>
-import en from "@/translation/en";
-import ar from "@/translation/ar";
 
-export default {
-    mixins: [en, ar],
-    data() {
-        return {
-            lang: "en",
-        };
-    },
-    methods: {
-        translate(prop) {
-            return this[this.lang][prop];
-        },
-    },
-};
+
 </script>
 
 <style></style>

@@ -4,14 +4,10 @@ export default {
          en: {
             // navbar
               home: "Home",
-              homeOne:"Home",
               about: "About",
-              aboutone: "About",
               ourServices: "Our Services",
-              ourServicesOur : "Services",
               pages: "Pages",
               contact: "contact us",
-              contactone: "contact",
               login:"Login",
 
               // first Section
