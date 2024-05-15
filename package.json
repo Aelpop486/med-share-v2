@@ -20,6 +20,7 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
+        "@vueuse/core": "^10.9.0",
         "chart.js": "^4.4.2",
         "pagedone": "^1.1.2",
         "sweetalert2": "^11.11.0",
