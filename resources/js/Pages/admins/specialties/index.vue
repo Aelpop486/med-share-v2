@@ -103,7 +103,7 @@
             Speciality Table
         </h2>
         <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
-        <speciality-table/>
+        <speciality-table :specialties="specialties"/>
 
     </AdminsLayout>
 </template>
@@ -112,6 +112,8 @@
 import { Link } from '@inertiajs/vue3';
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 import SpecialityTable from '@/Components/SpecialityTable.vue';
+defineProps({specialties: Object});
+
 
 </script>
 

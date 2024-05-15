@@ -121,6 +121,7 @@
                     class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     id="file_input"
                     type="file"
+                    @input="form.image = $event.target.files[0]"
 
                 />
                <!-- image upload End -->
@@ -350,6 +351,7 @@ defineOptions({ layout: AdminsLayout });
 import CharitiesUsersTable from "@/Components/CharitiesUsersTable.vue";
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import SaveButton from "@/Components/SaveButton.vue";
+defineProps({donation:Object})
 // initialize components based on data attribute selectors
 onMounted(() => {
     initFlowbite();
@@ -366,6 +368,11 @@ const form = useForm({
     image: '',
 
 });
+const submit = () => {
+    form.post(route("charities.update"), {
+        onFinish: () => Swal.fire("Created successfully", "", "success"),
+    });
+};
 </script>
 
 <style lang="scss" scoped></style>
