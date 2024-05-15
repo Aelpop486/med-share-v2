@@ -1,21 +1,25 @@
 <?php
 
 
+use App\Models\City;
+use App\Models\User;
+use Inertia\Inertia;
+use App\Models\admin;
+use App\Models\charit;
+use App\Models\donation;
+use App\Models\specialty;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CharitController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\SpecialtyController;
+use App\Http\Controllers\LandingPage\PageController;
 use App\Http\Controllers\LandingPage\AboutController;
 use App\Http\Controllers\LandingPage\ContactController;
-use App\Http\Controllers\LandingPage\PageController;
 use App\Http\Controllers\LandingPage\PrivacyController;
 use App\Http\Controllers\LandingPage\ServicesController;
-use App\Http\Controllers\SpecialtyController;
-use App\Http\Controllers\UserController;
-use App\Models\City;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,20 +38,54 @@ Route::group(['middleware' => ['auth:web']], function () {
 
     Route::get('/govDonations', function () {
         $cities = City::all();
-        return Inertia::render('admins/Donations/governments',[
+        return Inertia::render('admins/Donations/governments', [
             'cities' => $cities
         ]);
     })->name('govDonations');
+
     Route::get('/dashboardView', function () {
-        return Inertia::render('admins/dashboardView');
+        $user = User::latest()->take(10)->get();
+        $donation = donation::latest()->take(10)->get();
+        return Inertia::render('admins/dashboardView', [
+            'users' => $user,
+            'donations' => $donation
+        ]);
     })->name('dashboardView');
-    
+
+
+    Route::get('/specialties', function () {
+        $specialties = specialty::paginate(10);
+        return Inertia::render('admins/specialties/majors', [
+            'specialties' => $specialties
+        ]);
+    })->name('specialties');
+
+    Route::get('/users', function () {
+        $user = User::paginate(20);
+        return Inertia::render('admins/Users/index', [
+            'users' => $user
+        ]);
+    })->name('users');
+
+    Route::get('/systemUsers', function () {
+        $admins = admin::paginate(10);
+        return Inertia::render('admins/SystemUsers/index', [
+            'admins' => $admins
+        ]);
+    })->name('systemUsers');
+
+    Route::get('/charities', function () {
+        $charities = charit::paginate(20);
+        return Inertia::render('admins/Charity/index', [
+            'charities' => $charities
+        ]);
+    })->name('charities');
+
     Route::resource('charities', CharitController::class);
     Route::resource('donations', DonationController::class);
     Route::resource('specialties', SpecialtyController::class);
     Route::resource('users', UserController::class);
     Route::resource('admins', AdminController::class);
-
 });
 
 

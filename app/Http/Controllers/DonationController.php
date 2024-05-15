@@ -10,22 +10,16 @@ class DonationController extends Controller
 {
     public function index(Request $request)
     {
-        $donations = donation::where('city_id', $request->city_id)->with(['user'])->paginate(20);
+        $donations = donation::where('city_id', $request->city_id)->with(['user'],['address'])->paginate(20);
         // dd($donations);
         return Inertia::render('admins/Donations/index',[
             'donations'=>$donations
         ]);
     }
 
-    public function show(donation $donation)
+    public function edit(Request $request)
     {
-        return Inertia::render('admins/Donations/show',[
-            'donation'=>$donation
-        ]);
-    }
-
-    public function edit(donation $donation)
-    {
+        $donation = donation::find($request->id)->with(['images'],['address'])->get();
         return Inertia::render('admins/Donations/edit',[
             'donation'=>$donation
         ]);

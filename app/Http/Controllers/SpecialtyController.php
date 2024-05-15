@@ -15,11 +15,11 @@ class SpecialtyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $specialties = specialty::paginate(10);
-        return Inertia::render('admins/specialties/majors', [
-            'specialties' => $specialties
+        $charities = charit::where('specialty_id',$request->id)->with(['users'])->paginate(10);
+        return Inertia::render('admins/specialties/index', [
+            'charities' => $charities
         ]);
     }
 
@@ -48,11 +48,11 @@ class SpecialtyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        $charities = charit::where('specialty_id', $id)->paginate(10);
+        $charity = charit::find($request->id)->with(['images'])->get();
         return Inertia::render('admins/specialties/index', [
-            'charities' => $charities
+            'charity' => $charity
         ]);
     }
 

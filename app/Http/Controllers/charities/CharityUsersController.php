@@ -19,8 +19,7 @@ class CharityUsersController extends Controller
      */
     public function index()
     {
-        $users = Charity_users::where('charity_id', '=', Auth::user()->id)->get();
-        return Inertia::render('charities/CharityUsers/index');
+        //
     }
 
     /**
@@ -52,9 +51,7 @@ class CharityUsersController extends Controller
      */
     public function show(Charity_users $charity_users)
     {
-        return Inertia::render('charities/CharityUsers/show', [
-            'charity_users' => $charity_users
-        ]);
+        //
     }
 
     /**

@@ -1,12 +1,15 @@
 <?php
 
 use Inertia\Inertia;
+use App\Models\charit;
+use App\Models\donation;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\charities\DonationController;
-use App\Http\Controllers\charities\CharityProfileController;
-use App\Http\Controllers\charities\CharityDashboardController;
 use App\Http\Controllers\charities\CharityUsersController;
+use App\Models\Charity_users;
+use App\Http\Controllers\charities\CharityProfileController;
 
 
 /*
@@ -29,59 +32,70 @@ Route::get('/', function () {
     ]);
 });
 
+Route::group(['middleware' => ['auth:charits']], function () {
 
-Route::get('/CharityDashboard', function () {
-    return Inertia::render('charities/dashboardView');
-})->name('CharityDashboard');
-Route::get('/DonationManagement', function () {
-    return Inertia::render('charities/DonationManagement/index');
-})->name('DonationManagement');
+    Route::get('/CharityDashboard', function () {
+        $donation = donation::where('state', 'pending')->paginate(20);
+        return Inertia::render('charities/dashboardView', [
+            'donations' => $donation
+        ]);
+    })->name('CharityDashboard');
 
-Route::get('/CharuityProfile', function () {
-    return Inertia::render('charities/CharityProfile/index');
-})->name('CharityProfile');
+    Route::get('/DonationManagement', function () {
+        $donations = donation::where(['state', '!=', 'pending'],['charit_id', Auth::user()->id])->paginate(20);
+        return Inertia::render('charities/DonationManagement/index', [
+            'donations' => $donations
+        ]);
+    })->name('DonationManagement');
 
-Route::get('/CharityUsers', function () {
-    return Inertia::render('charities/CharityUsers/index');
-})->name('CharityUsers');
-Route::get('/Help&Support', function () {
-    return Inertia::render('charities/Help&Support/index');
-})->name('Help&Support');
-Route::get('/charitySettings', function () {
-    return Inertia::render('charities/Settings/index');
-})->name('charitySettings');
+    Route::get('/CharuityProfile', function () {
+        $charity = charit::where("id", Auth::user()->id)->get();
+        return Inertia::render('charities/CharityProfile/index', [
+            'charity' => $charity
+        ]);
+    })->name('CharityProfile');
 
-///////
-Route::get('/DonationProfile', function () {
-    return Inertia::render('charities/DonationManagement/edit');
-})->name('DonationProfile');
+    Route::get('/CharityUsers', function () {
+        $users = Charity_users::where('charity_id', '=', Auth::user()->id)->get();
+        return Inertia::render('charities/CharityUsers/index', [
+            'users' => $users
+        ]);
+    })->name('CharityUsers');
 
-
-//  belongs to backend
-// Route::middleware('auth:charits')->controller(DonationController::class)->group(function () {
-//     Route::get('/DonationManagement', 'index')->name('DonationManagement');
-//     Route::get('/Donation/show/{id}','edit')->name('ShowDonation');
-//     Route::post('/Donation/show/{id}','update')->name('UpdateDonation');
-// });
-// ##################################################################################################
-// Route::middleware('auth:charits')->controller(CharityProfileController::class)->group(function () {
-//     Route::get('/charityProfile', 'index')->name('charityProfile');
-//     Route::get('/charityProfile/show/{id}','edit')->name('ShowCharityProfile');
-//     Route::post('/charityProfile/show/{id}','update')->name('UpdateCharityProfile');
-//     Route::get('/charityProfile/delete/{id}','destroy')->name('DeleteCharityProfile');
-// });
-// ##################################################################################################
-// Route::middleware('auth:charits')->controller(CharityUsersController::class)->group(function () {
-//     Route::get('/CharityUsers', 'index')->name('CharityUsers');
-//     Route::get('/CharityUsers/create', 'create')->name('CreateCharityUsers');
-//     Route::post('/CharityUsers/create', 'create')->name('StoreCharityUsers');
-//     Route::get('/CharityUsers/show/{id}','edit')->name('ShowCharityUsers');
-//     Route::post('/CharityUsers/show/{id}','update')->name('UpdateCharityUsers');
-//     Route::get('/CharityUsers/delete/{id}','destroy')->name('DeleteCharityUsers');
-// });
-// ##################################################################################################
-// Route::middleware('auth:adminss')->get('/CharityDashboard',CharityDashboardController::class)->name('CharityDashboard');
+    Route::resource('donations', DonationController::class);
+    Route::resource('profile', CharityProfileController::class);
+    Route::resource('users', CharityUsersController::class);
+});
 
 
+// Route::get('/CharityDashboard', function () {
+//     return Inertia::render('charities/dashboardView');
+// })->name('CharityDashboard');
+// Route::get('/DonationManagement', function () {
+//     return Inertia::render('charities/DonationManagement/index');
+// })->name('DonationManagement');
 
-require __DIR__.'/auth.php';
+// Route::get('/CharuityProfile', function () {
+//     return Inertia::render('charities/CharityProfile/index');
+// })->name('CharityProfile');
+
+// Route::get('/CharityUsers', function () {
+//     return Inertia::render('charities/CharityUsers/index');
+// })->name('CharityUsers');
+// Route::get('/Help&Support', function () {
+//     return Inertia::render('charities/Help&Support/index');
+// })->name('Help&Support');
+// Route::get('/charitySettings', function () {
+//     return Inertia::render('charities/Settings/index');
+// })->name('charitySettings');
+
+// ///////
+// Route::get('/DonationProfile', function () {
+//     return Inertia::render('charities/DonationManagement/edit');
+// })->name('DonationProfile');
+
+
+
+
+
+require __DIR__ . '/auth.php';

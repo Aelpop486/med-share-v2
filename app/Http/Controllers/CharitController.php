@@ -18,10 +18,7 @@ class CharitController extends Controller
      */
     public function index()
     {
-        $charities = charit::paginate(10);
-        return Inertia::render('admins/Charity/index',[
-            'charities' => $charities
-        ]);
+        //
     }
 
     /**
@@ -55,8 +52,10 @@ class CharitController extends Controller
      */
     public function edit(charit $charity)
     {
+        $specialty = specialty::all();
         return Inertia::render('admins/Charity/edit',[
-            'charity'=>$charity
+            'charity'=>$charity,
+            'specialty' => $specialty
         ]);
     }
 
