@@ -2,7 +2,6 @@
 
 
     <body class="font-inter">
-        <NavbarVue />
         <section class="py-14 lg:py-24 bg-gray-50">
             <h1
                 class="max-w-2xl mx-auto text-center font-manrope font-bold text-4xl  text-gray-900 mb-5 md:text-5xl md:leading-normal">
@@ -52,7 +51,7 @@
 
                     <div class="lg:pr-24 flex items-center">
                         <div class="data w-full">
-                            <img src="https://pagedone.io/asset/uploads/1702034785.png" alt="About Us tailwind page"
+                            <img src="@/Images/About.jpg" alt="About medShare"
                                 class="block lg:hidden mb-9 mx-auto">
                             <h2 class="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center">
                                 We
@@ -70,21 +69,18 @@
                         </div>
                     </div>
                     <div class="img-box ">
-                        <img src="https://pagedone.io/asset/uploads/1702034785.png" alt="About Us tailwind page"
+                        <img src="@/Images/About.jpg" alt="About medShare"
                             class="hidden lg:block ">
                     </div>
                 </div>
             </div>
         </section>
-        <Footer />
     </body>
 
 </template>
 
-<script>
-import NavbarVue from '../LandingPage/Navbar.vue';
-import Footer from '../LandingPage/Footer.vue'
-export default {
-    components: { Footer, NavbarVue },
-}
+<script setup>
+import GuestLayout from '@/Layouts/GuestLayout.vue';
+
+defineOptions({ layout: GuestLayout })
 </script>

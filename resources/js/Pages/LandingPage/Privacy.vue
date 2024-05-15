@@ -1,7 +1,6 @@
 <template>
 
     <body class="font-inter">
-        <NavbarVue />
         <div class="w-full">
             <div class="w-full">
                 <img src="@/Images/Group 147.svg" class="w-full" alt="">
@@ -41,7 +40,7 @@
                                     Last updated: April 28, 2024
                                 </p>
                             </div>
-                            <p class="font-manrope font-bold lg:text-lg text-xl text-gray-900 mb-5">
+                            <p class="font-bold text-[13px] lg:text-lg text-gray-500 mb-5">
                                 This privacy notice for MedShare ("we," "us," or "our"), describes how and why we might
                                 collect,
                                 store, use, and/or share ("process") your information when you use our services
@@ -57,7 +56,7 @@
                                 Services. If you
                                 still have any questions or concerns, please contact us at sharemed915@gmail.com. <br>
                             </p>
-                            <p class="font-normal text-lg leading-8 text-gray-500 lg:mb-10 mb-8">
+                            <p class="font-bold text-[13px] leading-8 text-gray-500 lg:mb-10 mb-8">
 
                                 SUMMARY OF KEY POINTS <br>
 
@@ -126,61 +125,61 @@
                                 full.
 
                             </p>
-                            <h5 class="font-manrope font-bold md:text-3xl text-2xl text-gray-900 mb-4">
+                            <h5 class="font-bold md:text-xl text-md text-gray-900 mb-4">
                                 TABLE OF CONTENTS
                             </h5>
-                            <ul class="ml-8 lg:mb-10 mb-8">
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                            <ul class="ml-8 lg:mb-10 mb-8 font-bold md:text-xl text-[15px]">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#01">WHAT INFORMATION DO WE COLLECT?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#02">HOW DO WE PROCESS YOUR INFORMATION?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#03">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#04">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#05"> HOW DO WE HANDLE YOUR SOCIAL LOGINS?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#06"> HOW LONG DO WE KEEP YOUR INFORMATION?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#07"> HOW DO WE KEEP YOUR INFORMATION SAFE?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#08">DO WE COLLECT INFORMATION FROM MINORS?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal  text-gray-500">
                                     <a href="#09"> WHAT ARE YOUR PRIVACY RIGHTS?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal  text-gray-500">
                                     <a href="#10">CONTROLS FOR DO-NOT-TRACK FEATURES</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal  text-gray-500">
                                     <a href="#11">DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#12">DO WE MAKE UPDATES TO THIS NOTICE?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#13">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a>
                                 </li>
-                                <li class="list-decimal font-normal text-lg text-gray-500">
+                                <li class="list-decimal text-gray-500">
                                     <a href="#14"> HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
                                         YOU?</a>
                                 </li>
                             </ul>
                             <ul
-                                class="flex flex-col ml-8 gap-10 list-outside list-decimal font-manrope font-bold text-3xl">
+                                class="flex flex-col ml-8 gap-10 list-outside list-decimal font-bold text-md">
                                 <li id="01" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         WHAT INFORMATION DO WE COLLECT?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
                                         Personal information you disclose to us
 
                                         In Short: We collect personal information that you provide to us.
@@ -264,10 +263,10 @@
                                     </p>
                                 </li>
                                 <li id="02" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         HOW DO WE PROCESS YOUR INFORMATION?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
                                         In Short: We process your information to provide, improve, and administer our
                                         Services, communicate with you, for security and fraud prevention, and to comply
                                         with law. We may also process your information for other purposes with your
@@ -289,7 +288,7 @@
                                     </p>
                                 </li>
                                 <li id="03" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?
                                     </h2>
                                     <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
@@ -320,10 +319,10 @@
                                 </li>
 
                                 <li id="04" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
                                         In Short: We may use cookies and other tracking technologies to collect and
                                         store your information.
@@ -336,10 +335,10 @@
                                 </li>
 
                                 <li id="05" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         HOW DO WE HANDLE YOUR SOCIAL LOGINS?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
                                         In Short: If you choose to register or log in to our Services using a social
                                         media account, we may have access to certain information about you.
@@ -364,10 +363,10 @@
                                 </li>
 
                                 <li id="06" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         HOW LONG DO WE KEEP YOUR INFORMATION?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
                                         In Short: We keep your information for as long as necessary to fulfill the
                                         purposes outlined in this privacy notice unless otherwise required by law.
@@ -388,9 +387,9 @@
                                 </li>
 
                                 <li id="08" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         HOW DO WE KEEP YOUR INFORMATION SAFE? </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
 
                                         In Short: We aim to protect your personal information through a system of
@@ -411,10 +410,10 @@
                                 </li>
 
                                 <li id="09" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         WHAT ARE YOUR PRIVACY RIGHTS?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
                                         In Short: You may review, change, or terminate your account at any time.
 
@@ -452,10 +451,10 @@
                                 </li>
 
                                 <li id="010" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         CONTROLS FOR DO-NOT-TRACK FEATURES?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
                                         Most web browsers and some mobile operating systems and mobile applications
                                         include a Do-Not-Track ( "DNT" ) feature or setting you can activate to signal
@@ -471,11 +470,11 @@
                                 </li>
 
                                 <li id="011" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class=" font-bold lg:text-xl text-md text-gray-900">
                                         DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?
 
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
 
                                         In Short: You may have additional rights based on the country you reside in.
@@ -509,10 +508,10 @@
                                 </li>
 
                                 <li id="012" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class=" font-bold lg:text-xl text-md text-gray-900">
                                         DO WE MAKE UPDATES TO THIS NOTICE?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
 
                                         In Short: Yes, we will update this notice as necessary to stay compliant with
@@ -530,10 +529,10 @@
 
 
                                 <li id="013" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
 
                                         If you have questions or comments about this notice, you may email us at
                                         sharemed915@gmail.com or contact us by post at:
@@ -545,11 +544,12 @@
                                     </p>
                                 </li>
 
+
                                 <li id="014" class="list-decimal">
-                                    <h2 class="font-manrope font-bold lg:text-3xl text-2xl text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
                                         HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
                                         Based on the applicable laws of your country, you may have the right to request
                                         access to the personal information we collect from you, change that information,
                                         or delete it. To request to review, update, or delete your personal information,
@@ -563,18 +563,15 @@
                 </div>
             </section>
         </div>
-        <Footer />
     </body>
 
 </template>
 
-<script>
+<script setup>
 
-import NavbarVue from "../LandingPage/Navbar.vue";
-import Footer from "../LandingPage/Footer.vue";
-export default {
-    components: { Footer, NavbarVue },
-};
+import GuestLayout from '@/Layouts/GuestLayout.vue';
+
+defineOptions({ layout: GuestLayout })
 </script>
 
 <style lang="scss" scoped></style>
