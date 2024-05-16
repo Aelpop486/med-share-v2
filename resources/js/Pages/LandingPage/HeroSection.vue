@@ -1,7 +1,7 @@
 <script>
 </script>
 <template>
-     <div class=" bg-[#EAF0FF] py-12 sm:py-16 lg:py-20 lg:pb-36">
+     <div class=" bg-[#f3f4f6] py-12 sm:py-16 lg:py-20 lg:pb-36 ">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto grid max-w-lg grid-cols-1 gap-y-12 lg:max-w-full lg:grid-cols-2 lg:items-center lg:gap-x-8">
         <div>
