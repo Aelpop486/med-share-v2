@@ -15,8 +15,8 @@ class SpecialtySeeder extends Seeder
     public function run(): void
     {
         specialty::create([
-            'titel' => 'specialty 1',
-            'discription' => 'specialty description 1',
+            'title' => 'specialty 1',
+            'description' => 'specialty description 1',
             'image' => 'specialty1.jpg',
             'admin_id' => '1',
         ]);

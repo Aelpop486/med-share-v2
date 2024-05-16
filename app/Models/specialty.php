@@ -13,9 +13,10 @@ class specialty extends Model
     protected $table = "specialties";
 
     protected $fillable = [
-        'titel',
+        'title',
         'image',
         'description',
+        'admin_id',
     ];
 
     public function charties() : HasMany

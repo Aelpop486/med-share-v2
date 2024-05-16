@@ -48,7 +48,7 @@ class SpecialtyController extends Controller
     /**
      * Display the specified resource.
      */
-    
+
     public function edit(specialty $specialty)
     {
         return Inertia::render('admins/specialties/edit', [

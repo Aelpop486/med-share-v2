@@ -22,10 +22,9 @@ class SpecialityStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255|unique:specialities,title',
+            'title' => 'required|string|max:255|unique:specialties,title',
             'description' => 'required|string|max:255',
             'image' => 'required|image|mimes:png,jpg,jpeg,svg|max:4048',
-            'admin_id' => 'required|exists:admins,id',
         ];
     }
 }
