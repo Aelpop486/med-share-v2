@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth:web']], function () {
     })->name('dashboardView');
 
 
-    Route::get('/specialties', function () {
+    Route::get('/Allspecialties', function () {
         $specialties = specialty::paginate(10);
         return Inertia::render('admins/specialties/majors', [
             'specialties' => $specialties
@@ -74,7 +74,7 @@ Route::group(['middleware' => ['auth:web']], function () {
         ]);
     })->name('systemUsers');
 
-    Route::get('/charities', function () {
+    Route::get('/Allcharities', function () {
         $charities = charit::paginate(20);
         return Inertia::render('admins/Charity/index', [
             'charities' => $charities

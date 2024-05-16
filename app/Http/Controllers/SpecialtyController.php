@@ -48,17 +48,7 @@ class SpecialtyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request)
-    {
-        $charity = charit::find($request->id)->with(['users'],['admin'])->get();
-        return Inertia::render('admins/specialties/index', [
-            'charity' => $charity
-        ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
     public function edit(specialty $specialty)
     {
         return Inertia::render('admins/specialties/edit', [

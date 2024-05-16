@@ -6,20 +6,31 @@
                     class=" flex-col justify-center sm:flex-row mt-10  rounded-2xl bg-white"
                 >
                     <div class=" text-center sm:pr-8 sm:py-8">
+                        <form class="p-4 md:p-5"  @submit.prevent="submit">
                         <div
                             class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-400 text-gray-600"
                         >
                             <img
                                 class="w-20 h-20 rounded-full"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfhk7r0ysYUeoklEp9XpCCCvf346u8U2dBow&s"
+                                src=""
                                 alt=""
                             />
                         </div>
+                         <label
+                                class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                for="file_input"
+                                >Upload Photo</label
+                            >
+                            <input
+                                class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                id="file_input"
+                                type="file"
+                                @input="form.image = $event.target.files[0]"
+                            />
 
 
 
 
-                          <form class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
                         <label for="id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User Id</label>
@@ -75,6 +86,13 @@ const form = useForm({
     language:'',
 
 });
+
+const submit = () => {
+    form.post(route("users.store"), {
+        onFinish: () => Swal.fire("Created successfully", "", "success"),
+    });
+};
+
 
 
 </script>

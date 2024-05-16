@@ -79,7 +79,7 @@
             Charities
         </h2>
         <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
-        <CharitiesTable/>
+        <CharitiesTable  :charities="charities"/>
 
     </AdminsLayout>
 </template>
@@ -88,6 +88,8 @@
 import { Link } from '@inertiajs/vue3';
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 import CharitiesTable from '@/Components/CharitiesTable.vue';
+defineProps({charities: Object});
+
 
 </script>
 

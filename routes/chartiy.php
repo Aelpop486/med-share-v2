@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth:charits']], function () {
         ]);
     })->name('DonationManagement');
 
-    Route::get('/CharuityProfile', function () {
+    Route::get('/CharityProfile', function () {
         $charity = charit::where("id", Auth::user()->id)->get();
         return Inertia::render('charities/CharityProfile/index', [
             'charity' => $charity
@@ -56,7 +56,7 @@ Route::group(['middleware' => ['auth:charits']], function () {
     })->name('CharityProfile');
 
     Route::get('/CharityUsers', function () {
-        $users = Charity_users::where('charity_id', '=', Auth::user()->id)->paginate(10);
+        $users = Charity_users::where('charity_id', Auth::user()->id)->paginate(10);
         return Inertia::render('charities/CharityUsers/index', [
             'users' => $users
         ]);

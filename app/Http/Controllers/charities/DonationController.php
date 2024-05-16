@@ -20,8 +20,9 @@ class DonationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(donation $donation)
+    public function edit(Request $request)
     {
+        $donation = donation::where('id', $request->id)->with(['images'],['address'],['city'],['user'])->get();
         return Inertia::render('charities/Donation/edit',[
             'donation'=>$donation
         ]);
