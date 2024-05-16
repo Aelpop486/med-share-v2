@@ -264,7 +264,7 @@
                                 </svg>
                             </div>
                             <input
-                                v-model="form.name"
+                                v-model="form.subject"
                                 required
                                 autofocus
                                 autocomplete="name"
@@ -334,7 +334,7 @@ const form = useForm({
 
 const submit = () => {
     form.post(route("Contact"), {
-        onFinish: () => Swal.fire("Registered successfully", "", "success"),
+        onFinish: () => Swal.fire("Contacted successfully", "", "success"),
     });
 };
 </script>
