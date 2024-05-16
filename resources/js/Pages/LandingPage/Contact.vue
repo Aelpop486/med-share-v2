@@ -275,7 +275,7 @@
                             />
                             <InputError
                                 class="mt-2"
-                                :message="form.errors.name"
+                                :message="form.errors.subject"
                             />
                         </div>
                     </div>
@@ -333,7 +333,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route("Contact"), {
+    form.post(route("contact.store"), {
         onFinish: () => Swal.fire("Contacted successfully", "", "success"),
     });
 };
