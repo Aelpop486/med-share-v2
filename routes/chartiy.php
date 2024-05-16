@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\charities\CharityContactController;
 use Inertia\Inertia;
 use App\Models\charit;
 use App\Models\donation;
@@ -42,7 +43,7 @@ Route::group(['middleware' => ['auth:charits']], function () {
     })->name('CharityDashboard');
 
     Route::get('/DonationManagement', function () {
-        $donations = donation::where(['state', '!=', 'pending'],['charit_id', Auth::user()->id])->paginate(20);
+        $donations = donation::where(['state', '!=', 'pending'], ['charit_id', Auth::user()->id])->paginate(20);
         return Inertia::render('charities/DonationManagement/index', [
             'donations' => $donations
         ]);
@@ -62,6 +63,16 @@ Route::group(['middleware' => ['auth:charits']], function () {
         ]);
     })->name('CharityUsers');
 
+    Route::get('/Help&Support', function () {
+        return Inertia::render('charities/Help&Support/index');
+    })->name('Help&Support');
+
+    Route::get('/charitySettings', function () {
+        return Inertia::render('charities/Settings/index');
+    })->name('charitySettings');
+
+
+    Route::post('contact', CharityContactController::class)->name('CharityContact.store');
     Route::resource('Charitydonations', DonationController::class);
     Route::resource('profile', CharityProfileController::class);
     Route::resource('Charityusers', CharityUsersController::class);

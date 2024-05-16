@@ -77,6 +77,7 @@ Route::group(['middleware' => ['auth:web']], function () {
         ]);
     })->name('charities');
 
+    Route::post('contact', ContactController::class)->name('contact.store');
 
     Route::resource('charities', CharitController::class);
     Route::resource('donations', DonationController::class);
@@ -111,8 +112,6 @@ Route::get('/pages', function () {
 Route::get('/Contact', function () {
     return Inertia::render('LandingPage/Contact');
 })->name('Contact');
-
-Route::post('contact', ContactController::class)->name('contact.store');
 
 Route::get('/Services', function () {
     return Inertia::render('LandingPage/Services');
