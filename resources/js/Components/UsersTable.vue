@@ -29,7 +29,7 @@
                     <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
                         <div class="flex items-center space-x-3 w-full md:w-auto">
 
-                            <!-- <LinkLink :href="route('users.create')" class="block  px-2 text-sm"><CreateButton/></LinkLink> -->
+                            <Link :href="route('users.create')" class="block  px-2 text-sm"><CreateButton/></Link>
                             <div id="filterDropdown" class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
                                 <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose User</h6>
                                 <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
@@ -75,15 +75,14 @@
                         </thead>
                         <tbody>
                             <tr class="border-b dark:border-gray-700" v-for="(user,index) in users.data" :key="index">
-                                <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{}}</th>
-                                <td class="px-4 py-3"> </td>
-                                <td class="px-4 py-3">{{}}</td>
-                                <td class="px-4 py-3">{{}}</td>
+                                <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{user.id}}</th>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3">{{user.name}}</td>
                                 <td class="px-4 py-3">{{}}</td>
                                 <td class="px-4 py-3">{{}}</td>
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <div class="py-1">
-                                            <!-- <Link :href="route('users.edit',{user:user.id})" class="block px-2 text-sm"><EditButton/></Link> -->
+                                            <Link :href="route('users.edit',{user:user.id})" class="block px-2 text-sm"><EditButton/></Link>
                                         </div>
                                         <div class="py-1">
                                                 <a href="#" class="block  px-2 text-sm"><DeleteButton/></a>
@@ -143,7 +142,7 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import { Link } from "@inertiajs/vue3";
 import DeleteButton from '@/Components/DeleteButton.vue';
 import EditButton from '@/Components/EditButton.vue';
 import CreateButton from '@/Components/CreateButton.vue';
