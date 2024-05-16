@@ -18,7 +18,7 @@ class CharitySeeder extends Seeder
             'name' => 'charity',
             'email' => 'charity@gmail.com',
             'password' => Hash::make(12345678),
-            'specialty_id' => 2,
+            'specialty_id' => 1,
         ]);
     }
 }

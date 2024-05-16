@@ -7,23 +7,28 @@
             >
                 <div class="text-center sm:pr-8 sm:py-8">
                     <form class="p-4 md:p-5" @submit.prevent="submit">
-                        <div
-                            class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-400 text-gray-600"
-                        >
-                            <img class="w-20 h-20 rounded-full" src="" alt="" />
-                        </div>
-                        <label
-                            class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            for="file_input"
-                            >Upload Photo</label
-                        >
-                        <input
-                            class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            id="file_input"
-                            type="file"
-                            @input="form.image = $event.target.files[0]"
-                        />
+                         <div class="flex flex-col justify-center mb-4">
+                            <div class="shrink-0 mb-6 justify-center flex">
+                                <img
+                                    class="h-20 w-20 bg-slate-300 object-cover rounded-full"
+                                    src=""
+                                    alt=""
+                                />
+                            </div>
 
+                            <label
+                                class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                for="file_input"
+                                >Upload Photo</label
+                            >
+                            <input
+                                class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                id="file_input"
+                                type="file"
+                                @input="form.image = $event.target.files[0]"
+
+                            />
+                        </div>
                         <div class="grid gap-4 mb-4 grid-cols-2">
                             <div class="col-span-2">
                                 <label

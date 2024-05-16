@@ -62,9 +62,9 @@ Route::group(['middleware' => ['auth:charits']], function () {
         ]);
     })->name('CharityUsers');
 
-    Route::resource('donations', DonationController::class);
+    Route::resource('Charitydonations', DonationController::class);
     Route::resource('profile', CharityProfileController::class);
-    Route::resource('users', CharityUsersController::class);
+    Route::resource('Charityusers', CharityUsersController::class);
 });
 
 

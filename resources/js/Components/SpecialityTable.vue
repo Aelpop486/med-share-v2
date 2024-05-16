@@ -73,10 +73,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b dark:border-gray-700" v-for="(specialty,index) in specialties.data" :key="index">
-                                <td class="px-4 py-3">{{}}</td>
-                                <td class="px-4 py-3">{{}}</td>
-                                <td class="px-4 py-3">{{}}</td>
+                            <tr class="border-b dark:border-gray-700" v-for="(charity,index) in charities.data" :key="index">
+                                <td class="px-4 py-3">{{ charity.id }}</td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3">{{ charity.name  }}</td>
 
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <div class="py-1">
@@ -144,7 +144,7 @@ import { Link } from '@inertiajs/vue3';
 import DeleteButton from '@/Components/DeleteButton.vue';
 import EditButton from '@/Components/EditButton.vue';
 import CreateButton from '@/Components/CreateButton.vue';
-defineProps({specialties: Object});
+defineProps({charities: Object});
 
 
 </script>

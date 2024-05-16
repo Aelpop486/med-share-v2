@@ -17,7 +17,7 @@ class SpecialtyController extends Controller
      */
     public function index(Request $request)
     {
-        $charities = charit::where('specialty_id',$request->id)->paginate(10);
+        $charities = charit::where('specialty_id',$request->specialty_id)->paginate(10);
         return Inertia::render('admins/specialties/index', [
             'charities' => $charities
         ]);

@@ -54,13 +54,13 @@ Route::group(['middleware' => ['auth:web']], function () {
 
 
     Route::get('/Allspecialties', function () {
-        $specialties = specialty::paginate(10);
+        $specialties = specialty::all();
         return Inertia::render('admins/specialties/majors', [
             'specialties' => $specialties
         ]);
     })->name('specialties');
 
-    Route::get('/users', function () {
+    Route::get('/Allusers', function () {
         $user = User::paginate(20);
         return Inertia::render('admins/Users/index', [
             'users' => $user
