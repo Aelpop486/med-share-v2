@@ -258,6 +258,11 @@ const form = useForm({
     image: '',
 
 });
+const submit = () => {
+    form.post(route("donations.update"), {
+        onFinish: () => Swal.fire("Updated successfully", "", "success"),
+    });
+};
 
 // initialize components based on data attribute selectors
 onMounted(() => {

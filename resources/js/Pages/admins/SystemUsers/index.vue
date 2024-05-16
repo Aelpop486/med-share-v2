@@ -44,7 +44,7 @@
 
 
 
-<SystemUsersTable/>
+<SystemUsersTable :admins="admins"/>
 
     </AdminsLayout>
 </template>
@@ -54,6 +54,7 @@ import AdminsLayout from '@/Layouts/AdminsLayout.vue';
 import SystemUsersTable from '@/Components/SystemUsersTable.vue';
 
 import { Link } from "@inertiajs/vue3";
+defineProps({admins:Object})
 
 </script>
 

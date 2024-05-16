@@ -31,11 +31,22 @@ class UserController extends Controller
         return back()->with('success', 'User created successfully');
     }
 
-    public function edit(User $user)
+    public function edit(Request $request)
     {
+        $user = User::find($request->id)->with(['addresses'],['donations'])->get();
         return Inertia::render('admins/Users/edit', [
             'user' => $user
         ]);
+    }
+
+    public function update(UserStoreRequest $request, User $user)
+    {
+        $validatedData = $request->validated();
+        if ($request->hasFile("image")) {
+            $validatedData["image"] = ImageService::uploadImage($request->file("image"), "users");
+        }
+        $user->update($validatedData);
+        return back()->with('success', 'User updated successfully');
     }
 
 

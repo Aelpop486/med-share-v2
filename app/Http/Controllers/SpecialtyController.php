@@ -17,7 +17,7 @@ class SpecialtyController extends Controller
      */
     public function index(Request $request)
     {
-        $charities = charit::where('specialty_id',$request->id)->with(['users'])->paginate(10);
+        $charities = charit::where('specialty_id',$request->specialty_id)->paginate(10);
         return Inertia::render('admins/specialties/index', [
             'charities' => $charities
         ]);
@@ -48,17 +48,7 @@ class SpecialtyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request)
-    {
-        $charity = charit::find($request->id)->with(['images'])->get();
-        return Inertia::render('admins/specialties/index', [
-            'charity' => $charity
-        ]);
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(specialty $specialty)
     {
         return Inertia::render('admins/specialties/edit', [

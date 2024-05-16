@@ -16,6 +16,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
 use App\Http\Requests\CharityStoreRequest;
+use App\Models\specialty;
 
 class RegisteredUserController extends Controller
 {
@@ -24,7 +25,10 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Auth/Register');
+        $specialties = specialty::all();
+        return Inertia::render('Auth/Register',[
+            'specialties' => $specialties
+        ]);
     }
 
     /**

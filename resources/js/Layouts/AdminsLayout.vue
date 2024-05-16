@@ -102,7 +102,7 @@
                </Link>
             </li>
             <li>
-               <Link :href="route('charities.index')"
+               <Link :href="route('charities')"
                   class=" active:text-yellow-400 flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -114,7 +114,7 @@
                </Link>
             </li>
             <li>
-               <Link :href="route('specialties.index')"
+               <Link :href="route('specialties')"
                   class=" active:text-yellow-400 flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -127,7 +127,7 @@
             </li>
 
             <li>
-               <Link :href="route('users.index')"
+               <Link :href="route('users')"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -140,7 +140,7 @@
             </li>
 
             <li>
-               <Link :href="route('admins.index')"
+               <Link :href="route('systemUsers')"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -174,7 +174,7 @@
                      d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
                </svg>
                <Link :href="route('logout')" method="post" class="flex-1 ms-3 whitespace-nowrap">
-                  Sign Out 
+                  Sign Out
                </Link>
                </Link>
             </li>

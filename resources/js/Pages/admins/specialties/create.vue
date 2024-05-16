@@ -108,7 +108,7 @@
                 class="flex flex-col justify-center sm:flex-row mt-10 rounded-xl"
             >
                 <div class="w-3/4 text-center sm:pr-8 sm:py-8">
-                    <form class="p-4 md:p-5">
+                    <form class="p-4 md:p-5" @submit.prevent="submit">
                         <div class="flex flex-col justify-center mb-4">
                             <div class="shrink-0 mb-6 justify-center flex">
                                 <img
@@ -127,6 +127,7 @@
                                 class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 id="file_input"
                                 type="file"
+                                @input="form.image = $event.target.files[0]"
                             />
                         </div>
                         <div class="grid gap-4 mb-4 grid-cols-2">
@@ -199,6 +200,11 @@ const form = useForm({
     image: '',
 
 });
+const submit = () => {
+    form.post(route("specialties.store"), {
+        onFinish: () => Swal.fire("Created successfully", "", "success"),
+    });
+};
 </script>
 
 <style lang="scss" scoped></style>

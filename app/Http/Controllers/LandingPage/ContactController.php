@@ -1,24 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\LandingPage;
+namespace App\Http\Controllers\landingPage;
 
-use Inertia\Inertia;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ContactStoreRequest;
-use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    public function index()
-    {
-        return Inertia::render('LandingPage/Contact');
-    }
-
-    public function store(ContactStoreRequest $request)
+    /**
+     * Handle the incoming request.
+     */
+    public function __invoke(ContactController $request)
     {
         $validatedData = $request->validated();
         $message = Contact::create($validatedData);
-        return to_route('Contact');
+        return back()->with('success', 'Message sent successfully');
     }
 }
