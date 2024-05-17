@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
 
 class ProfileController extends Controller
 {   
@@ -24,21 +25,30 @@ class ProfileController extends Controller
         ]);
     }
 
-    //  Update user's profile.
 
     public function updateProfile(Request $request)
     {
-        $user = $request->user(); 
+        $user = $request->user();
+    
         $validatedData = $request->validate([
             'name' => 'string|max:255',
             'phone' => 'string|max:255',
-            'image' => 'string|max:255',
+            'image' => 'string|max:255', 
             'national_id' => 'string|max:255',
             'gender' => 'in:male,female',
-            'date_of_birth' => 'date', // Change the validation rule to date
+            'date_of_birth' => 'date', 
         ]);
+    
+        if ($request->has('image')) {
+            $user_image = ImageService::uploadImages($request->image, 'Users');
+            $validatedData['image'] = $user_image; 
+        }
+    
         $user->update($validatedData);
-        
-        return response()->json(['message' => 'Profile updated successfully']);
-    }
+  
+        return response()->json([
+            'message' => 'Profile updated successfully',
+            'user' => $user
+        ]);
+    }        
 }
