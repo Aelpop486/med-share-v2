@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Support\Facades\Route;
@@ -32,11 +33,11 @@ Route::post('/password/reset', [ResetPasswordController::class, 'resetPassword']
 
 //         ---          Profile           ---
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::group(['middleware' => ['auth:users'], 'as' => 'users.'], function () {
     Route::get('/profile', [ProfileController::class, 'getProfile']);
     Route::put('/profile', [ProfileController::class, 'updateProfile']);
-    
-//         ---          Donations           ---
+
+    //         ---          Donations           ---
     Route::apiResource('/donations', DonationController::class);
     Route::apiResource('/addresses', AddressController::class);
 });
@@ -82,7 +83,3 @@ Route::middleware('auth:sanctum')->group(function () {
 // });
 //         ---          Donations           ---
 //Route::apiResource('/donations', DonationController::class);
-
-
-
-
