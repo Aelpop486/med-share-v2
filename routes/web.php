@@ -30,7 +30,7 @@ use App\Http\Controllers\LandingPage\ContactController;
 
 
 // -----Create END---
-Route::group(['middleware' => ['auth:web']], function () {
+Route::group(['middleware' => ['auth:web'], 'as' => 'admins.'], function () {
 
     Route::get('/govDonations', function () {
         $cities = City::all();
@@ -117,9 +117,9 @@ Route::get('/Services', function () {
     return Inertia::render('LandingPage/Services');
 })->name('Services');
 
-Route::get('/chrities-join-us', function () {
-    return Inertia::render('LandingPage/Services');
-})->name('Services');
+// Route::get('/chrities-join-us', function () {
+//     return Inertia::render('LandingPage/Services');
+// })->name('Services');
 
 Route::get('/privacy', function () {
     return Inertia::render('LandingPage/Privacy');

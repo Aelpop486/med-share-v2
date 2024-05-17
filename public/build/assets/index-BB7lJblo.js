@@ -1,0 +1,1 @@
+import{_ as t}from"./AdminsLayout-BnUxbHtE.js";import{o as e,f as o}from"./app-xfYODjfb.js";import"./IMG_1525-93Jb5LtC.js";import"./index-Bp9WpJq9.js";const c=Object.assign({layout:t},{__name:"index",setup(s){return(a,n)=>(e(),o("div",null,"HEllo settings admins"))}});export{c as default};

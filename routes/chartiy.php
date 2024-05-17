@@ -33,7 +33,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::group(['middleware' => ['auth:charits']], function () {
+Route::group(['middleware' => ['auth:charits'], 'as' => 'charits.'], function () {
 
     Route::get('/CharityDashboard', function () {
         $donation = donation::where('state', 'pending')->paginate(20);
@@ -109,4 +109,3 @@ Route::group(['middleware' => ['auth:charits']], function () {
 
 
 
-require __DIR__ . '/auth.php';

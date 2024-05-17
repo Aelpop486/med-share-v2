@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as e,f as s,s as n}from"./app-xfYODjfb.js";const r={},c={class:"w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-[#333] hover:bg-black focus:outline-none"};function a(o,l){return e(),s("button",c,[n(o.$slots,"default")])}const d=t(r,[["render",a]]);export{d as P};
