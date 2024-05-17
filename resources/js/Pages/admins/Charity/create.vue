@@ -132,6 +132,8 @@
                                     type="file"
                                     @input="form.image = $event.target.files[0]"
                                 />
+                                                    <InputError class="mt-2" :message="form.errors.image" />
+
                             </div>
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
@@ -149,6 +151,8 @@
                                         placeholder="Charity Name"
                                         required
                                     />
+                                                        <InputError class="mt-2" :message="form.errors.name" />
+
                                 </div>
                                 <div class="col-span-2">
                                     <label
@@ -165,6 +169,8 @@
                                         placeholder="Phone"
                                         required
                                     />
+                                                        <InputError class="mt-2" :message="form.errors.phone" />
+
                                 </div>
                                 <div class="col-span-2">
                                     <label
@@ -181,6 +187,8 @@
                                         placeholder="Email"
                                         required
                                     />
+                                                        <InputError class="mt-2" :message="form.errors.email" />
+
                                 </div>
                                 <div class="col-span-2">
                                     <label
@@ -196,6 +204,8 @@
                                         placeholder="Website.com"
                                         required
                                     />
+                                                        <InputError class="mt-2" :message="form.errors.website_link" />
+
                                 </div>
                                 <div class="col-span-2">
                                     <label
@@ -214,6 +224,8 @@
                                         <option value>Major 3</option>
                                         <option value>Major 4</option>
                                     </select>
+                                                        <InputError class="mt-2" :message="form.errors.major" />
+
                                 </div>
                                 <div class="col-span-2">
                                     <label
@@ -223,13 +235,15 @@
                                     >
                                     <select
                                         id="category"
-                                        v-model="form.isAtive"
+                                        v-model="form.isActive"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     >
                                         <option selected>-</option>
                                         <option value>Active</option>
                                         <option value>Not Active</option>
                                     </select>
+                                                        <InputError class="mt-2" :message="form.errors.isActive" />
+
                                 </div>
 
                                 <div class="col-span-2">
@@ -245,6 +259,8 @@
                                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Write description here"
                                     ></textarea>
+                                                        <InputError class="mt-2" :message="form.errors.description" />
+
                                 </div>
                             </div>
                             <button
@@ -285,7 +301,7 @@ const form = useForm({
     phone: "",
     website_link: "",
     major: "",
-    isAtive: "",
+    isActive: "",
     description: "",
     image: "",
 });
