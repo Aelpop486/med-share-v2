@@ -1,32 +1,31 @@
 <template>
-  <Bar
-    id="my-chart-id"
-    :options="chartOptions"
-    :data="chartData"
-  />
-</template>
+    <div class="h-96 w-full">
+      <div id="chart" class="h-full w-full"></div>
+    </div>
+  </template>
 
-<script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-import { Colors } from 'chart.js';
-ChartJS.register(Colors);
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+  <script setup>
+  import { ref, onMounted } from 'vue';
+  import ApexCharts from 'apexcharts';
 
-export default {
-  name: 'BarChart',
-  components: { Bar },
-  data() {
-    return {
-      chartData: {
-        labels: [ 'January', 'February', 'March','April','May' ],
-            datasets: [{ data: [2, 12, 22,29,50] }],
+  const chart = ref(null);
+
+  onMounted(() => {
+    const options = {
+      chart: {
+        type: 'line',
+        height: 350,
       },
-      chartOptions: {
-          responsive: true
-
+      series: [{
+        name: 'series1',
+        data: [12, 19, 3, 5, 2, 3, 7, 8, 9, 10, 11, 12],
+      }],
+      xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       },
-    }
-  }
-}
-</script>
+    };
+
+    chart.value = new ApexCharts(document.getElementById('chart'), options);
+    chart.value.render();
+  });
+  </script>
