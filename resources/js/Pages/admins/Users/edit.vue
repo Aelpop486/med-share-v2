@@ -154,7 +154,7 @@ const form = useForm({
     language: "",
 });
 const submit = () => {
-    form.post(route("users.update"), {
+    form.post(route("admins.users.update"), {
         onFinish: () => Swal.fire("Updated successfully", "", "success"),
     });
 };

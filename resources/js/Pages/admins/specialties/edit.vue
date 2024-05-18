@@ -214,7 +214,7 @@ const form = useForm({
     image: "",
 });
 const submit = () => {
-    form.post(route("specialties.update"), {
+    form.post(route("admins.specialties.update"), {
         onFinish: () => Swal.fire("Updated successfully", "", "success"),
     });
 };

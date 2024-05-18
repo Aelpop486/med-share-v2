@@ -30,7 +30,7 @@
                     <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
                         <div class="flex items-center space-x-3 w-full md:w-auto">
 
-                            <!-- <a :href="route('specialties.create')" class="block  px-2 text-sm"><CreateButton/></a> -->
+                            <!-- <a :href="route('admins.specialties.create')" class="block  px-2 text-sm"><CreateButton/></a> -->
                             <div id="filterDropdown" class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
                                 <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose Charity</h6>
                                 <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
@@ -80,7 +80,7 @@
 
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <div class="py-1">
-                                            <!-- <Link :href="route('specialties.edit',{specialty:specialty.id})" class="block px-2 text-sm"><EditButton/></Link> -->
+                                            <!-- <Link :href="route('admins.specialties.edit',{specialty:specialty.id})" class="block px-2 text-sm"><EditButton/></Link> -->
                                         </div>
                                         <div class="py-1">
                                                 <a href="#" class="block  px-2 text-sm"><DeleteButton/></a>

@@ -259,7 +259,7 @@ const form = useForm({
 
 });
 const submit = () => {
-    form.post(route("donations.update"), {
+    form.post(route("admins.donations.update"), {
         onFinish: () => Swal.fire("Updated successfully", "", "success"),
     });
 };

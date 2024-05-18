@@ -10,12 +10,14 @@ class ImageService
     {
         if ($image && $image->isValid()) {
             $imageName = time() . uniqid() . '.' . $image->getClientOriginalExtension();
-            $path = public_path("storage/$folder");
-            $image->move($path, $imageName);
-            return $path . '/' . $imageName; // Return full path
+            $relativePath = "storage/$folder/$imageName";
+            $path = public_path($relativePath); // Full path
+            $image->move(dirname($path), $imageName);
+            return $relativePath; // Return relative path
         }
         return null;
     }
+
 
     public static function uploadImages($images, $folder)
     {

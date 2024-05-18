@@ -82,7 +82,7 @@
                             class="flex items-center space-x-3 w-full md:w-auto"
                         >
                             <Link
-                                :href="route('charities.create')"
+                                :href="route('admins.charities.create')"
                                 class="block px-2 text-sm"
                                 ><CreateButton
                             /></Link>
@@ -204,7 +204,7 @@
                                     <div class="py-1">
                                         <Link
                                             :href="
-                                                route('charities.edit', {
+                                                route('admins.charities.edit', {
                                                     id: charity.id,
                                                 })
                                             "

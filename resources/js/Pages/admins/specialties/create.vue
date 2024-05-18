@@ -206,7 +206,7 @@ const form = useForm({
 
 });
 const submit = () => {
-    form.post(route("specialties.store"), {
+    form.post(route("admins.specialties.store"), {
         onFinish: () => Swal.fire("Created successfully", "", "success"),
     });
 };
