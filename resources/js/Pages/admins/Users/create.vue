@@ -176,7 +176,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route("users.store"), {
+    form.post(route("admins.users.store"), {
         onFinish: () => Swal.fire("Created successfully", "", "success"),
     });
 };

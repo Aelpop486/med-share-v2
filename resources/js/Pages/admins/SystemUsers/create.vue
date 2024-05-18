@@ -156,7 +156,7 @@ const form = useForm({
     image: "",
 });
 const submit = () => {
-    form.post(route("admins.store"), {
+    form.post(route("admins.admins.store"), {
         onFinish: () => Swal.fire("Created successfully", "", "success"),
     });
 };

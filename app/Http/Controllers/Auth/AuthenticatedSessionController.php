@@ -36,11 +36,11 @@ class AuthenticatedSessionController extends Controller
         if (Auth::guard('web')->attempt($credentionlas)) {
             $request->session()->regenerate();
 
-            return to_route('dashboardView');
+            return to_route('admins.dashboardView');
         } elseif (Auth::guard('charits')->attempt($credentionlas)) {
             $request->session()->regenerate();
             # code...
-            return to_route('CharityDashboard');
+            return to_route('charits.CharityDashboard');
         }
         return back()->withErrors(
             [
