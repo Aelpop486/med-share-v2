@@ -213,9 +213,11 @@
                                         /></Link>
                                     </div>
                                     <div class="py-1">
-                                        <a href="#" class="block px-2 text-sm"
+                                        <Link :href="route('admins.charities.destroy', {
+                                            id:charity.id
+                                        })" class="block px-2 text-sm"
                                             ><DeleteButton
-                                        /></a>
+                                        /></Link>
                                     </div>
                                 </td>
                             </tr>

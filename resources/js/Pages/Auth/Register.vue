@@ -228,8 +228,7 @@ const submit = () => {
             </div>
 
             <button
-                class="w-full h-12 rounded-full bg-[#0155A5] hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center">Send
-                message <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                class="w-full h-12 rounded-full bg-[#0155A5] hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center">Register <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M7.5 15L11.0858 11.4142C11.7525 10.7475 12.0858 10.4142 12.0858 10C12.0858 9.58579 11.7525 9.25245 11.0858 8.58579L7.5 5"
                         stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
