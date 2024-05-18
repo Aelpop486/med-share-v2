@@ -196,7 +196,7 @@
 
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
-
+import InputError from '@/Components/InputError.vue';
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
 const form = useForm({

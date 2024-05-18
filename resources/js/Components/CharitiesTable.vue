@@ -214,7 +214,7 @@
                                     </div>
                                     <div class="py-1">
                                         <Link :href="route('admins.charities.destroy', {
-                                            id:charity.id
+                                            charity:charity.id
                                         })" class="block px-2 text-sm"
                                             ><DeleteButton
                                         /></Link>

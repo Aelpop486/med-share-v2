@@ -103,44 +103,45 @@
         <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
 
         <!-- Main modal -->
-        <div class="container px-5 py-6 ">
-            <div class=" mx-auto bg-white p-8 rounded-2xl" >
-                <!-- image upload -->
-                <div class="shrink-0 mb-6 justify-center flex">
-                    <img
-                        class="h-20 w-20 bg-slate-300 object-cover rounded-full"
-                        src=""
-                        alt=""
-                    />
-                </div>
-                <label
-                    class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    for="file_input"
-                    >Upload Photo</label
-                >
-                <input
-                    class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                    id="file_input"
-                    type="file"
-                    @input="form.image = $event.target.files[0]"
-
-                />
-               <!-- image upload End -->
+        <div class="container px-5 py-6">
+            <div class="mx-auto bg-white p-8 rounded-2xl">
                 <!-- Form -->
-                <form class="grid grid-cols-4 gap-6 w-full p-4 md:p-5">
-                    <div class="col-span-2 justify-center mb-4">
-                         <div class="col-span-2">
-                      <label for="id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Admin Id</label>
-                      <input type="number" name="id" id="id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full mb-2 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Admin ID" required="">
-                  </div>
-                        <div class="col-span-2">
+                <form
+                    class="  w-full p-4 md:p-5"
+                    @submit.prevent="submit"
+                >
+                <div class="">
+                    <!-- image upload -->
+                    <div class="shrink-0 mb-6 justify-center flex">
+                        <img
+                            class="h-20 w-20 bg-slate-300 object-cover rounded-full"
+                            src=""
+                            alt=""
+                        />
+                    </div>
+                    <label
+                        class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        for="file_input"
+                        >Upload Photo</label
+                    >
+                    <input
+                        class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        id="file_input"
+                        type="file"
+                        @input="form.image = $event.target.files[0]"
+                    />
+                    <!-- image upload End -->
+                </div>
+                  <div class="grid grid-cols-2 gap-6 ">
+                      <div class="  ">
+                        <div class="mt-4">
                             <label
                                 for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Name</label
                             >
                             <input
-                            v-model="form.name"
+                                v-model="form.name"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -148,15 +149,19 @@
                                 placeholder="Charity Name"
                                 required=""
                             />
+                             <InputError
+                                class="mt-2"
+                                :message="form.errors.name"
+                            />
                         </div>
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
                                 for="phone"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Phone</label
                             >
                             <input
-                            v-model="form.phone"
+                                v-model="form.phone"
                                 type="text"
                                 name="phone"
                                 id="phone"
@@ -164,15 +169,19 @@
                                 placeholder="Phone"
                                 required=""
                             />
+                             <InputError
+                                class="mt-2"
+                                :message="form.errors.phone"
+                            />
                         </div>
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
                                 for="email"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Email</label
                             >
                             <input
-                            v-model="form.email"
+                                v-model="form.email"
                                 type="email"
                                 name="email"
                                 id="email"
@@ -180,48 +189,55 @@
                                 placeholder="Email"
                                 required=""
                             />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.email"
+                            />
                         </div>
-                         <div class="col-span-2">
-                                    <label
-                                        for="email"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Password</label
-                                    >
-                                    <input
-                                        v-model="form.password"
-                                        type="password"
-                                        name="password"
-                                        id="password"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Password"
-                                        required
-                                    />
-                                                        <InputError class="mt-2" :message="form.errors.password" />
-
-                                </div>
-                                                                <div class="col-span-2">
-                                    <label
-                                        for="password_confirmation"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Confirm Password</label
-                                    >
-                                    <input
-                                        v-model="form.password_confirmation"
-                                        type="password"
-                                        name="password_confirmation"
-                                        id="password_confirmation"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Confirm Password"
-                                        required
-                                    />
-                                                        <InputError class="mt-2" :message="form.errors.password_confirmation" />
-
-                                </div>
-                            </div>
-                            <div class="mb-4 col-span-2">
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
-
+                                for="email"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Password</label
+                            >
+                            <input
+                                v-model="form.password"
+                                type="password"
+                                name="password"
+                                id="password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Password"
+                                required
+                            />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.password"
+                            />
+                        </div>
+                        <div class="mt-4">
+                            <label
+                                for="password_confirmation"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Confirm Password</label
+                            >
+                            <input
+                                v-model="form.password_confirmation"
+                                type="password"
+                                name="password_confirmation"
+                                id="password_confirmation"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Confirm Password"
+                                required
+                            />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.password_confirmation"
+                            />
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="mt-4">
+                            <label
                                 for="website"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Website URL</label
@@ -234,18 +250,16 @@
                                 placeholder="Website.com"
                                 required
                             />
-
                         </div>
 
-                        <div class="col-span-2">
-
+                        <div class="mt-4">
                             <label
                                 for="category"
-                                class="block mb-2 text-sm  font-medium text-gray-900 dark:text-white"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Major</label
                             >
                             <select
-                            v-model="form.major"
+                                v-model="form.major"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             >
@@ -256,14 +270,14 @@
                                 <option value="">Major 4</option>
                             </select>
                         </div>
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
                                 for="category"
-                                class="block mb-2 text-sm  font-medium text-gray-900 dark:text-white"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Status</label
                             >
                             <select
-                            v-model="form.isAtive"
+                                v-model="form.isAtive"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             >
@@ -273,7 +287,7 @@
                             </select>
                         </div>
 
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
                                 for="description"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -281,7 +295,7 @@
                                 Description</label
                             >
                             <textarea
-                            v-model="form.description"
+                                v-model="form.description"
                                 id="description"
                                 rows="4"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -289,10 +303,12 @@
                             ></textarea>
                         </div>
                     </div>
-                </form>
+
+
+                </div>
                 <button
                     type="submit"
-                    class="text-white inline-flex w-full items-center bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                    class="text-white inline-flex w-full mt-12 items-center bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                 >
                     <svg
                         class="me-1 -ms-1 w-5 h-5"
@@ -308,6 +324,7 @@
                     </svg>
                     Create
                 </button>
+                </form>
                 <!-- Form End -->
             </div>
         </div>
@@ -316,7 +333,7 @@
 
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
-
+import InputError from '@/Components/InputError.vue';
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
 
