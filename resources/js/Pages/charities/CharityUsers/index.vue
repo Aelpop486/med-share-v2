@@ -192,7 +192,7 @@
                              class="flex items-center space-x-3 w-full md:w-auto"
                          >
                              <Link
-                                 :href="route('Charityusers.create')"
+                                 :href="route('charits.Charityusers.create')"
                                  class="block px-2 text-sm"
                                  ><CreateButton
                              /></Link>
@@ -450,19 +450,8 @@ defineOptions({ layout: charitiesLayout });
 // defineProps({users: Object});
 
 
-const form = useForm({
-    name: '',
-    email: '',
-    phone: '',
-    role:'',
-    image: '',
 
-});
-const submit = () => {
-    form.post(route("Charityusers.store"), {
-        onFinish: () => Swal.fire("Created successfully", "", "success"),
-    });
-};
+
 
 
 

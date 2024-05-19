@@ -169,7 +169,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.get(route("Contact"), {
+    form.get(route("charits.CharityContact.store"), {
         onFinish: () => Swal.fire("Sent successfully", "", "success"),
     });
 };

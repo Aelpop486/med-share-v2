@@ -109,6 +109,7 @@
   </div>
 
  <div class="container px-5 py-6">
+
             <div class="lg:w-3/6 mx-auto bg-white rounded-2xl">
                 <div class="rounded-xl">
                     <div class="text-center sm:pr-8 sm:py-8">
@@ -286,13 +287,14 @@ import charitiesLayout from "@/Layouts/charitesLayout.vue";
 defineOptions({ layout: charitiesLayout });
 
 const form = useForm({
-    title: '',
+    Name: '',
+    password  : '',
     description: '',
     image: '',
 
 });
 const submit = () => {
-    form.post(route("specialties.store"), {
+    form.post(route("charits.Charityusers.store"), {
         onFinish: () => Swal.fire("Created successfully", "", "success"),
     });
 };
