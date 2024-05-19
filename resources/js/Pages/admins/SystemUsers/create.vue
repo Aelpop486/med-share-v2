@@ -117,27 +117,11 @@
                         </select>
                     </div> -->
 
-                            <div class="col-span-2">
-                                <label
-                                    for="description"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                >
-                                    Notes</label
-                                >
-                                <textarea
-                                    v-model="form.description"
-                                    id="description"
-                                    rows="4"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Write product description here"
-                                ></textarea>
-                                                    <InputError class="mt-2" :message="form.errors.description" />
 
-                            </div>
                         </div>
                         <button
                             type="submit"
-                            class="text-white inline-flex w-full items-center bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            class="text-white inline-flex mt-6 w-full items-center bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                         >
                             <svg
                                 class="me-1 -ms-1 w-5 h-5"
@@ -162,7 +146,7 @@
 
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
-
+import InputError from '@/Components/InputError.vue';
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
 const form = useForm({
@@ -171,7 +155,6 @@ const form = useForm({
     password: "",
     password_confirmation: "",
     // role: "",
-    description: "",
     image: "",
 });
 const submit = () => {
