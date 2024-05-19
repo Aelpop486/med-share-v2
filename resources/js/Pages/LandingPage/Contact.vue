@@ -58,8 +58,8 @@
                             <p
                                 class="text-gray-500 text-sm font-normal leading-5 transition-all duration-500 group-hover:text-white"
                             >
-                                We Provide Various Methods For You To Carry Out
-                                All Transactions Related To Your Finances
+                                +20 155-4322-389 <br>
+                                +20 122-7405-709
                             </p>
                         </div>
                         <div
@@ -94,14 +94,12 @@
                             <h5
                                 class="text-gray-900 text-xl font-semibold leading-8 mb-3 transition-all duration-500 group-hover:text-white"
                             >
-                                Pagedone Blog
+                                Email
                             </h5>
                             <p
                                 class="text-gray-500 text-sm font-normal leading-5 transition-all duration-500 group-hover:text-white"
                             >
-                                We have the most up-to-date security to support
-                                the security of all our customers in carrying
-                                out all transactions.
+                              sharemed915@gmail.com
                             </p>
                         </div>
                     </div>
