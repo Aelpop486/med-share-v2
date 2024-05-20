@@ -168,62 +168,13 @@
                     </p>
                 </details>
             </div>
-        </div>
-    </div>
 
-    <div class="mx-auto px-5 bg-[#EAF0FF] min-h-sceen">
-        <div class="flex flex-col items-center">
-            <h2 class="font-bold text-5xl mt-5 tracking-tight">
-                FAQ
-            </h2>
-        </div>
-        <div class="grid  w-[75%] mx-auto mt-8">
-            <div class="p-5 border-[3px] border-[#0155A5] text-black font-bold text-xl bg-white  mb-8  rounded-lg">
-                <details class="group">
-                    <summary
-                        class="flex justify-between items-center cursor-pointer list-none border-full ">
-                        <span>
-                            What is the goal of your medication donation program?
-                        </span>
-                        <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
-                                width="24">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn p-3 border-t-[1px]">
-                        We aim to facilitate the process of donating treatments for those entitled to them who suffer from difficulties in obtaining the necessary treatments.
-                    </p>
-                </details>
-            </div>
-
-            <div class="p-5  border-[3px] border-[#0155A5] text-black font-bold text-xl bg-white mb-8 rounded-lg">
-                <details class="group">
-                    <summary class="flex justify-between items-center cursor-pointer list-none">
-                        <span>
-                            How can users contribute to the program?
-                        </span>
-                        <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
-                                width="24">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="text-neutral-600 mt-3 mb-8 group-open:animate-fadeIn border-t-[1px]">
-                        Users can contribute by uploading a photo of the treatments they wish to donate to the program.
-                    </p>
-                </details>
-            </div>
 
             <div class="p-5 border-[3px] border-[#0155A5] text-black font-bold text-xl bg-white mb-8 rounded-lg">
                 <details class="group">
                     <summary class="flex justify-between items-center cursor-pointer list-none">
                         <span>
-                            What are the next steps after uploading the image?
+                            Can users trust the process of collecting and distributing medications?
                         </span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
@@ -234,16 +185,18 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 group-open:animate-fadeIn border-t-[1px]">
-                        Once the photo is uploaded, a representative from the charity is sent to receive the treatment from the user and distribute it to those in need.
+                        Yes, we work diligently to ensure transparency and reliability in the process of collecting and distributing medications to
+                        ensure they reach those in need correctly.
                     </p>
                 </details>
             </div>
+
 
             <div class="p-5 border-[3px] border-[#0155A5] text-black font-bold text-xl bg-white mb-8 rounded-lg">
                 <details class="group">
                     <summary class="flex justify-between items-center cursor-pointer list-none">
                         <span>
-                            Are there certain conditions for the treatments provided?
+                            Can users contact you for more information?
                         </span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
@@ -254,16 +207,17 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 group-open:animate-fadeIn border-t-[1px]">
-                        We require that treatments be unused and in good condition to ensure they are effectively distributed to those in need
+                        Certainly, users can contact us through the contact section in the our website to get answers to any inquiries or questions they may have.
                     </p>
                 </details>
             </div>
+
 
             <div class="p-5 border-[3px] border-[#0155A5] text-black font-bold text-xl bg-white mb-8 rounded-lg">
                 <details class="group">
                     <summary class="flex justify-between items-center cursor-pointer list-none">
                         <span>
-                            What are the main advantages of using the Treatment Donation Program?
+                            What types of medications can I donate?
                         </span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
@@ -274,72 +228,13 @@
                         </span>
                     </summary>
                     <p class="text-neutral-600 mt-3 group-open:animate-fadeIn border-t-[1px]">
-                        It gives users the opportunity to contribute to good deeds and improve the lives of others with ease.
-                    </p>
-                </details>
-            </div>
-
-            <div class="p-5 border-[3px] border-[#0155A5] text-black font-bold text-xl bg-white mb-8 rounded-lg">
-                <details class="group">
-                    <summary class="flex justify-between items-center cursor-pointer list-none">
-                        <span>
-                            Is there cooperation with charities?
-                        </span>
-                        <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
-                                width="24">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn border-t-[1px]">
-                        Yes, we cooperate with charities to effectively facilitate the process of collecting and distributing treatments to those in need.
-                    </p>
-                </details>
-            </div>
-
-            <div class="p-5 border-[3px] border-[#0155A5] text-black font-bold text-xl bg-white mb-8 rounded-lg">
-                <details class="group">
-                    <summary class="flex justify-between items-center cursor-pointer list-none">
-                        <span>
-                            Is there cooperation with charities?
-                        </span>
-                        <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
-                                width="24">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn border-t-[1px]">
-                        Yes, we cooperate with charities to effectively facilitate the process of collecting and distributing treatments to those in need.
-                    </p>
-                </details>
-            </div>
-
-            <div class="p-5 border-[3px] border-[#0155A5] text-black font-bold text-xl bg-white mb-8 rounded-lg">
-                <details class="group">
-                    <summary class="flex justify-between items-center cursor-pointer list-none">
-                        <span>
-                            Can I get more information about the developers behind the software?
-                        </span>
-                        <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
-                                width="24">
-                                <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                        </span>
-                    </summary>
-                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn border-t-[1px]">
-                        Of course, you can find more information about our team and our vision on the developer page of the program
+                        You can donate any type of medications that are in good condition and suitable for distribution to those in need.
                     </p>
                 </details>
             </div>
         </div>
     </div>
+
 
 </template>
 <script setup>

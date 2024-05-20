@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             // CitiesSeeder::class,
             // SpecialtySeeder::class,
             // CharitySeeder::class,
-            CharityUsersSeeder::class
+            // CharityUsersSeeder::class
         ]);
 
     }
