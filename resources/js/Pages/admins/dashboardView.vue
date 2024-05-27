@@ -45,20 +45,21 @@
             <Statistics />
         </div>
 
-        <div class="grid grid-cols-4 ">
-            <div class="col-span-2">
-                        <Charts class="my-20 bg-white rounded-xl p-2" />
+        <div class="grid xl:grid-cols-4  md:grid-cols-1 mt-10 ">
+            <div class="xl:col-span-2 ">
+                        <Charts class="my-20 bg-white rounded-xl p-4 "  />
 
             </div>
-            <div class="col-span-1">
+            <div class="xl:col-span-1 lg:mx-auto ">
                         <LastUsers />
 
             </div>
-            <div class="col-span-1">
+            <div class="xl:col-span-1 lg:mx-auto">
                         <LastDonetion />
 
             </div>
         </div>
+
 
         <DonationTable />
     </AdminsLayout>
