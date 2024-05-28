@@ -73,8 +73,8 @@ Route::group(['middleware' => ['auth:charits'], 'as' => 'charits.'], function ()
 
 
     Route::post('contact', CharityContactController::class)->name('CharityContact.store');
-    Route::resource('Charitydonations', DonationController::class);
-    Route::resource('profile', CharityProfileController::class);
+    Route::resource('Charitydonations', DonationController::class)->except('create','show','store');
+    Route::resource('profile', CharityProfileController::class)->only('update','destroy');
     Route::resource('Charityusers', CharityUsersController::class);
 });
 
