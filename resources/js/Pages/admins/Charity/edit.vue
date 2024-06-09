@@ -364,12 +364,12 @@
 <script setup>
 import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
-import AdminsLayout from "@/Layouts/AdminsLayout.vue";
-defineOptions({ layout: AdminsLayout });
-import CharitiesUsersTable from "@/Components/CharitiesUsersTable.vue";
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import AdminsLayout from "@/Layouts/AdminsLayout.vue";
+import CharitiesUsersTable from "@/Components/CharitiesUsersTable.vue";
+defineOptions({ layout: AdminsLayout });
+// defineProps({donation:Object})
 import SaveButton from "@/Components/SaveButton.vue";
-defineProps({donation:Object})
 // initialize components based on data attribute selectors
 onMounted(() => {
     initFlowbite();

@@ -298,7 +298,7 @@
                              </tr>
                          </thead>
                          <tbody>
-                             <!-- v-for="(charity, index) in charities.data"
+                             <!-- v-for="(Charityusers, index) in Charityusers.data"
                                  :key="index" -->
                              <tr
                                  class="border-b dark:border-gray-700"

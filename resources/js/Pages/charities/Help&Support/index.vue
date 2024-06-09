@@ -1,10 +1,12 @@
 <template>
-    <div class="my-24">
+    <div class="p-20 my-12  ">
         <div
             class="grid sm:grid-cols-2 items-center gap-16 p-16 mx-auto max-w-5xl bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] text-[#333] font-[sans-serif]"
         >
-            <div>
-                <h1 class="text-3xl font-extrabold">Let's Talk</h1>
+       
+        <div>
+            <img src="@/Images/IMG_1525.svg" class="h-12 m-3" alt="MedShare-logo" />
+            <h1 class="text-3xl font-extrabold">Let's Talk</h1>
                 <p class="text-sm text-gray-400 mt-3">
                     Have some big idea or brand to develop and need help? Then
                     reach out we'd love to hear about your project and provide
@@ -101,7 +103,7 @@
                 </div>
             </div>
 
-            <form class="ml-auo space-y-4" @submit.prevent="submit">
+            <form class=" space-y-4" @submit.prevent="submit">
                 <input
                     type="text"
                     placeholder="Name"

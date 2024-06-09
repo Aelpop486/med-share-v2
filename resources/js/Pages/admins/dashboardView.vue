@@ -47,7 +47,7 @@
 
         <div class="grid xl:grid-cols-4  md:grid-cols-1 mt-10 ">
             <div class="xl:col-span-2 ">
-                        <Charts class="my-20 bg-white rounded-xl p-4 "  />
+                        <Charts class="my-4 bg-white rounded-xl p-2 "  />
 
             </div>
             <div class="xl:col-span-1 lg:mx-auto ">
@@ -61,7 +61,7 @@
         </div>
 
 
-        <DonationTable />
+        <DonationTable :donations="donations" />
     </AdminsLayout>
 </template>
 
@@ -73,6 +73,8 @@ import Statistics from "@/Components/Statistics.vue";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 import LastUsers from "@/Components/LastUsers.vue";
 import DonationTable from "@/Components/DonationTable.vue";
+// defineProps({donations:Object})
+
 
 </script>
 

@@ -58,9 +58,10 @@
                         </li>
 
                         <li>
-                           <a href="#"
-                              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                              role="menuitem">Sign out</a>
+                           <Link :href="route('logout')" method="post"
+                              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
+                           Sign Out
+                           </Link>
                         </li>
                      </ul>
                   </div>
@@ -174,7 +175,7 @@
                      d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
                </svg>
                <Link :href="route('logout')" method="post" class="flex-1 ms-3 whitespace-nowrap">
-                  Sign Out
+               Sign Out
                </Link>
                </Link>
             </li>
