@@ -50,9 +50,9 @@ class CharitController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request)
+    public function edit(charit $charity)
     {
-        $charity = charit::find($request->id)->with(['specialty'],['users'],['admin'])->get();
+        $charity = charit::find($charity->id)->with(['specialty'],['admin'])->get();
         $specialty = specialty::all();
         return Inertia::render('admins/Charity/edit',[
             'charity'=>$charity,
