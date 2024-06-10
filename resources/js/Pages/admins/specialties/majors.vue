@@ -85,11 +85,11 @@
 </template>
 
 <script setup>
-import AdminsLayout from "@/Layouts/AdminsLayout.vue";
-defineOptions({ layout: AdminsLayout })
-import CreateButton from "@/Components/CreateButton.vue";
-defineProps({ specialties: Object });
 import { Link } from '@inertiajs/vue3';
+import AdminsLayout from "@/Layouts/AdminsLayout.vue";
+import CreateButton from "@/Components/CreateButton.vue";
+defineOptions({ layout: AdminsLayout })
+defineProps({ specialties: Object });
 
 
 </script>

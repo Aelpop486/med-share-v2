@@ -38,7 +38,7 @@
                                 class="text-[#007bff] text-sm ml-3"
                             >
                                 <small class="block">Mail</small>
-                                <strong>https://veilmail.io/e/FkKh7o</strong>
+                                <strong>-</strong>
                             </a>
                         </li>
                     </ul>
@@ -171,7 +171,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.get(route("charits.CharityContact.store"), {
+    form.post(route("charits.CharityContact.store"), {
         onFinish: () => Swal.fire("Sent successfully", "", "success"),
     });
 };
