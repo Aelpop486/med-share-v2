@@ -17,7 +17,7 @@ class AddressSeeder extends Seeder
             'address' => 'alexandria',
             'latitude' => '30.033333',
             'longitude' => '31.233334',
-            'user_id' => 12,
+            'user_id' => 1,
             'city_id' => 2
         ]);
     }

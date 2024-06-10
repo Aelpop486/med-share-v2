@@ -156,6 +156,8 @@ const submit = () => {
         onFinish: () => Swal.fire("Created successfully", "", "success"),
     });
 };
+
+
 </script>
 
 <style lang="scss" scoped></style>

@@ -24,7 +24,7 @@ class DonationController extends Controller
     {
         $donation = donation::where('id', $request->id)->with(['images','address','city','user'])->get();
         // dd($donation);
-        return Inertia::render('charities/Donation/edit',[
+        return Inertia::render('charities/DonationManagement/edit',[
             'donation'=>$donation
         ]);
     }

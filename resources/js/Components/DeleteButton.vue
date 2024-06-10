@@ -36,4 +36,6 @@
 document.addEventListener("", function(event) {
   document.getElementById('deleteButton').click();
 });
+
+
 </script>

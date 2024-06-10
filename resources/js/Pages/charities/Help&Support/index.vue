@@ -3,7 +3,7 @@
         <div
             class="grid sm:grid-cols-2 items-center gap-16 p-16 mx-auto max-w-5xl bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] text-[#333] font-[sans-serif]"
         >
-       
+
         <div>
             <img src="@/Images/IMG_1525.svg" class="h-12 m-3" alt="MedShare-logo" />
             <h1 class="text-3xl font-extrabold">Let's Talk</h1>
@@ -106,47 +106,19 @@
             <form class=" space-y-4" @submit.prevent="submit">
                 <input
                     type="text"
-                    placeholder="Name"
-                    v-model="name"
+                    placeholder="Subject"
+                    v-model="form.subject"
                     class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
                 />
-                <input
-                    type="text"
-                    placeholder="charityName"
-                    v-model="charityName"
-                    class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
-                />
-                <input
-                    type="email"
-                    placeholder="Email"
-                    v-model="email"
-                    class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
-                />
-                <input
-                    type="text"
-                    placeholder="Phone"
-                    v-model="phone"
-                    class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
-                />
+
                 <textarea
                     placeholder="Message"
                     rows="6"
-                    v-model="description"
+                    v-model="form.message"
                     class="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]"
                 ></textarea>
-                <label
-                    class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    for="file_input"
-                    >Upload Photo</label
-                >
-                <input
-                    class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                    id="file_input"
-                    type="file"
-                    @input="form.image = $event.target.files[0]"
-                />
                 <button
-                    type="button"
+                     type="submit"
                     class="text-white bg-gray-700 hover:bg-gray-800 font-semibold rounded-md text-sm px-4 py-2.5 w-full"
                 >
                     Send
@@ -158,16 +130,14 @@
 
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
+import Swal from 'sweetalert2'
+
 
 import charitiesLayout from "@/Layouts/charitesLayout.vue";
 defineOptions({ layout: charitiesLayout });
 const form = useForm({
-    name: "",
-    charityName: "",
-    email: "",
-    phone: "",
-    description: "",
-    image: "",
+    subject: "",
+    message: "",
 });
 
 const submit = () => {

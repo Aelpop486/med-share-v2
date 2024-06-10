@@ -16,7 +16,7 @@ class donation extends Model
 
     protected $fillable = [
         'description',
-        'status',
+        'state',
         'user_id',
         'city_id',
         'charity_id',

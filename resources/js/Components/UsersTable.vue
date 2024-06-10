@@ -86,7 +86,7 @@
                                             <Link :href="route('admins.users.edit',{user:user.id})" class="block px-2 text-sm"><EditButton/></Link>
                                         </div>
                                         <div class="py-1">
-                                                <a href="#" class="block  px-2 text-sm"><DeleteButton/></a>
+                                                <a href="#" class="block  px-2 text-sm" ><DeleteButton/></a>
                                         </div>
                                 </td>
                             </tr>
@@ -149,7 +149,9 @@ import EditButton from '@/Components/EditButton.vue';
 import CreateButton from '@/Components/CreateButton.vue';
 defineProps({users:Object})
 
-
+const deleted=()=>{
+    Swal.fire("SweetAlert2 is working!");
+}
 
 </script>
 

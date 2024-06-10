@@ -101,7 +101,7 @@ const form = useForm({
 
 });
 const submit = () => {
-    form.post(route("admins.admins.update"), {
+    form.put(route("admins.admins.update"), {
         onFinish: () => Swal.fire("Updated successfully", "", "success"),
     });
 };
