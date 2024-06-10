@@ -23,7 +23,7 @@ class DonationController extends Controller
     public function edit(Request $request)
     {
         $donation = donation::where('id', $request->id)->with(['images','address','city','user'])->get();
-        dd($donation);
+        // dd($donation);
         return Inertia::render('charities/Donation/edit',[
             'donation'=>$donation
         ]);
