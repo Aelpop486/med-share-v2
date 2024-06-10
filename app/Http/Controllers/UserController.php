@@ -33,7 +33,7 @@ class UserController extends Controller
 
     public function edit(Request $request)
     {
-        $user = User::find($request->id)->with(['addresses'],['donations'])->get();
+        $user = User::find($request->id)->with(['addresses','donations'])->get();
         return Inertia::render('admins/Users/edit', [
             'user' => $user
         ]);

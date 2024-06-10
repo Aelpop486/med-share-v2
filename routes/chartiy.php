@@ -43,7 +43,8 @@ Route::group(['middleware' => ['auth:charits'], 'as' => 'charits.'], function ()
     })->name('CharityDashboard');
 
     Route::get('/DonationManagement', function () {
-        $donations = donation::where(['state', '!=', 'pending'], ['charit_id', Auth::user()->id])->paginate(20);
+        $donations = donation::where('state', '!=', 'pending')->where('charit_id', Auth::user()->id)->with(['user.addresses','city'])->paginate(20);
+        // dd($donations);
         return Inertia::render('charities/DonationManagement/index', [
             'donations' => $donations
         ]);
