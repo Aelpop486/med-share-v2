@@ -63,7 +63,7 @@ class AdminController extends Controller
     public function destroy(admin $admin)
     {
         $admin->delete();
-        return to_route('admins.admins.destroy')->with('success', 'Admin deleted successfully');
+        return to_route('admins.admins.index')->with('success', 'Admin deleted successfully');
     }
 
 }

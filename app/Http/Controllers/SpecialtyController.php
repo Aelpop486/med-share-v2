@@ -77,6 +77,6 @@ class SpecialtyController extends Controller
     public function destroy(specialty $specialty)
     {
         $specialty->delete();
-        return to_route('admins.specialties.destroy')->with('success', 'Specialty deleted successfully');
+        return to_route('admins.specialties.index')->with('success', 'Specialty deleted successfully');
     }
 }
