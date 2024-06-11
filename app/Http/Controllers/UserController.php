@@ -31,9 +31,9 @@ class UserController extends Controller
         return back()->with('success', 'User created successfully');
     }
 
-    public function edit(Request $request)
+    public function edit(User $user)
     {
-        $user = User::find($request->id)->with(['addresses','donations'])->get();
+        User::with(['addresses','donations'])->get();
         return Inertia::render('admins/Users/edit', [
             'user' => $user
         ]);

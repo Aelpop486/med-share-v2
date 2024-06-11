@@ -52,7 +52,7 @@ class CharitController extends Controller
      */
     public function edit(charit $charity)
     {
-        $charity = charit::find($charity->id)->with(['specialty','users','admin'])->get();
+        charit::with(['specialty','users','admin'])->get();
         // dd($charity);
         $specialty = specialty::all();
         return Inertia::render('admins/Charity/edit',[
