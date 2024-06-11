@@ -20,7 +20,7 @@ class CharityUsersSeeder extends Seeder
             'phone' => '123456789',
             'isActive' => 1,
             'role' => 'admin',
-            'charity_id' => 1,
+            'charit_id' => 1,
 
         ]);
     }

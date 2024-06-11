@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class DonationController extends Controller
 {
-    public function index(donation $donations)
+    public function index(Request $request)
     {
-        $donations = donation::where('city_id', $donations->city_id)->with(['user','city'])->paginate(20);
+        $donations = donation::where('city_id', $request->city_id)->with(['user','city'])->paginate(20);
         return Inertia::render('admins/Donations/index',[
             'donations'=>$donations
         ]);
