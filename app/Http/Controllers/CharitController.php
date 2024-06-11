@@ -82,6 +82,6 @@ class CharitController extends Controller
     public function destroy(charit $charity)
     {
         $charity->delete();
-        return to_route('charities')->with('success', 'Charity deleted successfully');
+        return to_route('admins.charities.destroy')->with('success', 'Charity deleted successfully');
     }
 }

@@ -20,7 +20,7 @@ class donation extends Model
         'user_id',
         'city_id',
         'charity_id',
-        'adress_id',
+        'address_id',
     ];
 
     public function charity() : BelongsTo
