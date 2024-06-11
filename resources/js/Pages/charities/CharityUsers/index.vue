@@ -433,7 +433,7 @@
 </template>
 
 <script setup>
-import { Head, Link, useForm } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import DeleteButton from "@/Components/DeleteButton.vue";
 import EditButton from "@/Components/EditButton.vue";
 import CreateButton from "@/Components/CreateButton.vue";

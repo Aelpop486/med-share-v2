@@ -101,12 +101,9 @@
     </h2>
     <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
     <section class="text-gray-200 body-font">
-        <div class="container px-5 py-24 mx-auto  ">
+        <div class="container px-5 py-24 mx-auto">
             <!-- Edit Section-->
-             <form
-                    class="  w-full p-4 md:p-5"
-                    @submit.prevent="submit"
-                >
+            <form class="w-full p-4 md:p-5" @submit.prevent="submit">
                 <div class="">
                     <!-- image upload -->
                     <div class="shrink-0 mb-6 justify-center flex">
@@ -129,8 +126,8 @@
                     />
                     <!-- image upload End -->
                 </div>
-                  <div class="grid grid-cols-2 gap-6 ">
-                      <div class="  ">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="  ">
                         <div class="mt-4">
                             <label
                                 for="name"
@@ -146,7 +143,7 @@
                                 placeholder="Charity Name"
                                 required=""
                             />
-                             <InputError
+                            <InputError
                                 class="mt-2"
                                 :message="form.errors.name"
                             />
@@ -166,7 +163,7 @@
                                 placeholder="Phone"
                                 required=""
                             />
-                             <InputError
+                            <InputError
                                 class="mt-2"
                                 :message="form.errors.phone"
                             />
@@ -211,7 +208,6 @@
                                 :message="form.errors.password"
                             />
                         </div>
-
                     </div>
                     <div class="">
                         <div class="mt-4">
@@ -281,8 +277,6 @@
                             ></textarea>
                         </div>
                     </div>
-
-
                 </div>
                 <button
                     type="submit"
@@ -302,9 +296,9 @@
                     </svg>
                     Create
                 </button>
-                </form>
+            </form>
             <!-- Edit Section End-->
-                <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700 " />
+            <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
 
             <div class="lg:w-4/6 mx-auto bg-white rounded-3xl">
                 <div class="py-20">
@@ -366,7 +360,7 @@
                     </div>
                 </div>
             </div>
-                            <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700 " />
+            <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
 
             <charities-users-table />
         </div>
@@ -376,31 +370,35 @@
 <script setup>
 import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Head, Link, useForm } from "@inertiajs/vue3";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
-import CharitiesUsersTable from "@/Components/CharitiesUsersTable.vue";
 defineOptions({ layout: AdminsLayout });
-// defineProps({donation:Object})
+// defineProps({charity:Object})
 onMounted(() => {
     initFlowbite();
 });
 
 const form = useForm({
-    name: '',
-    email: '',
-    phone: '',
-    website_link: '',
-    password:'',
-    major: '',
-    isAtive:'',
-    description: '',
-    image: '',
-
+    name: "",
+    email: "",
+    phone: "",
+    website_link: "",
+    password: "",
+    major: "",
+    isAtive: "",
+    description: "",
+    image: "",
 });
 const submit = () => {
-    form.put(route("admins.charities.update"), {
-        onFinish: () => Swal.fire("Created successfully", "", "success"),
-    });
+    form.put(
+        route("admins.charities.update"),
+        // {
+        //     charity: charity.id,
+        // },
+        {
+            onFinish: () => Swal.fire("Created successfully", "", "success"),
+        }
+    );
 };
 </script>
 

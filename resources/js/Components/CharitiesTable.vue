@@ -205,7 +205,7 @@
                                         <Link
                                             :href="
                                                 route('admins.charities.edit', {
-                                                    id: charity.id,
+                                                    charity: charity.id,
                                                 })
                                             "
                                             class="block px-2 text-sm"
@@ -213,7 +213,9 @@
                                         /></Link>
                                     </div>
                                     <div class="py-1">
-                                        <Link :href="route('admins.charities.destroy', {
+                                        <Link
+                                        method="delete"
+                                        :href="route('admins.charities.destroy', {
                                             charity:charity.id
                                         })" class="block px-2 text-sm"
                                             ><DeleteButton
