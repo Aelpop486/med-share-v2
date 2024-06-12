@@ -1,14 +1,8 @@
 <template>
 <section class="bg-[#f3f4f6] dark:bg-gray-900">
     <div class="container px-6 py-10 mx-auto">
-        <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Portfolio
+        <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Cooperate with the largest charities
         </h1>
-
-        <p class="mt-4 text-center text-gray-500 dark:text-gray-300">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
-        </p>
-
-
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
             <div class="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
                 style="background-image:url('https://mekeg.org/assets/v2/img/logo-en.svg')">

@@ -129,4 +129,23 @@ Route::get('/faqs', function () {
     return Inertia::render('LandingPage/Faqs');
 })->name('Faqs');
 
+
+// Linding Page Arabic
+Route::get('/Arabic', function () {
+    return Inertia::render('LandingPage/Arabic');
+})->name('Arabic');
+
+Route::get('/AboutArabic', function () {
+    return Inertia::render('LandingPage/AboutArabic');
+})->name('AboutArabic');
+
+Route::get('/ArabicServices', function () {
+    return Inertia::render('LandingPage/ArabicServices');
+})->name('ArabicServices');
+
+Route::get('/ArabicFaqs', function () {
+    return Inertia::render('LandingPage/ArabicFaqs');
+})->name('ArabicFaqs');
+
+
 require __DIR__ . '/auth.php';
