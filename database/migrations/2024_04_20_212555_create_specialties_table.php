@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('image');
             $table->string('description');
+            $table->foreignId('admin_id')->nullable()->constrained('admins')->onDelete('set null')->onUpdate('set null');
             $table->timestamps();
         });
     }

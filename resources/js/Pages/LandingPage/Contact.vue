@@ -181,7 +181,7 @@
                                 v-model="form.email"
                                 required
                                 autocomplete="username"
-                                type="text"
+                                type="email"
                                 id="default-search"
                                 class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                                 placeholder="Enter Your Email"
@@ -285,7 +285,9 @@
                         </label>
                         <div class="relative">
                             <textarea
-                                v-model="form.description"
+                                v-model="form.message"
+                                required
+                                type="text"
                                 id="description"
                                 class="block w-full h-40 px-4 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-2xl placeholder-gray-400 focus:outline-none resize-none"
                                 placeholder="Write your message"
@@ -327,11 +329,12 @@ const form = useForm({
     name: "",
     email: "",
     phone: "",
-    description: "",
+    subject: "",
+    message: "",
 });
 
 const submit = () => {
-    form.post(route("contact.store"), {
+    form.post(route('admins.contact.store'), {
         onFinish: () => Swal.fire("Contacted successfully", "", "success"),
     });
 };
