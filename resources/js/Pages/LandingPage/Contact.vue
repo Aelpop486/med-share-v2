@@ -269,7 +269,7 @@
                                 type="text"
                                 id="default-search"
                                 class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
-                                placeholder="Enter Your Phone"
+                                placeholder="Enter Your Subject"
                             />
                             <InputError
                                 class="mt-2"
@@ -293,7 +293,7 @@
                         </div>
                     </div>
                     <button
-                        class="w-full h-12 rounded-full bg-blue-700 hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center"
+                        class="w-full h-12 rounded-full bg-[#0155A5] hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center"
                     >
                         Send message
                         <svg
