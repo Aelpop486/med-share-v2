@@ -12,7 +12,7 @@
                 <div
                     class="max-w-xl px-4 space-y-3 mt-6 sm:px-0 md:mt-0 lg:max-w-2xl"
                 >
-                    <h3 class="text-indigo-600 font-semibold">Our Mission</h3>
+                    <h3 class="text-[#0155A5] font-semibold">Our Mission</h3>
                     <p class="text-gray-800 text-3xl font-semibold sm:text-4xl">
                         We seek to reduce medical waste by redistributing unused
                     </p>

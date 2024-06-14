@@ -94,7 +94,7 @@
                 </div>
             </div>
             <Link :href="route('register')"
-             type="button" class="mx-20 flex justify-center items-center mt-16  text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Register now</Link>
+             type="button" class="mx-20 flex justify-center items-center mt-16  text-white bg-[#0155A5] border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Register now</Link>
         </div>
     </section>
 </template>
