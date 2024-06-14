@@ -82,10 +82,16 @@
                                 <td class="px-4 py-3">-----</td>
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <div class="py-1">
-                                            <!-- <Link :href="route('admins.donations.show',{donation:donation.id})" class="block px-2 text-sm"><EditButton/></Link> -->
+                                            <Link :href="route('admins.donations.edit',{donation:donation.id})" class="block px-2 text-sm"><EditButton/></Link>
                                         </div>
                                         <div class="py-1">
-                                                <a href="#" class="block  px-2 text-sm"><DeleteButton/></a>
+                                                <Link
+                                        method="delete"
+                                        :href="route('admins.donations.destroy', {
+                                            donation:donation.id
+                                        })" class="block px-2 text-sm"
+                                            ><DeleteButton
+                                        /></Link>
                                         </div>
                                 </td>
                             </tr>

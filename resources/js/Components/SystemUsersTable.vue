@@ -86,7 +86,13 @@
                                             <Link :href="route('admins.admins.edit',{admin:admin.id})" class="block px-2 text-sm"><EditButton/></Link>
                                         </div>
                                         <div class="py-1">
-                                                <a href="#" class="block  px-2 text-sm"><DeleteButton/></a>
+                                                 <Link
+                                        method="delete"
+                                        :href="route('admins.admins.destroy', {
+                                            admin:admin.id
+                                        })" class="block px-2 text-sm"
+                                            ><DeleteButton
+                                        /></Link>
                                         </div>
                                 </td>
                             </tr>

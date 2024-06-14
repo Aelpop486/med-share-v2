@@ -111,7 +111,7 @@
 
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <div class="py-1">
-                                        <!-- <Link :href="route('admins.specialties.edit',{id:specialty.id})" class="block px-2 text-sm"><EditButton/></Link> -->
+                                        <Link :href="route('admins.specialties.edit',{specialty:specialty.id})" class="block px-2 text-sm"><EditButton/></Link>
                                     </div>
                                     <div class="py-1">
                                         <Link :href="route('admins.specialties.destroy', {
@@ -121,7 +121,7 @@
                                         /></Link>
                                     </div>
                                 </td>
-                            </tr>                
+                            </tr>
                         </tbody>
                     </table>
                 </div>

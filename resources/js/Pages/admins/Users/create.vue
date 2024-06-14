@@ -141,6 +141,7 @@
 import { Head, Link, useForm } from "@inertiajs/vue3";
 import InputError from '@/Components/InputError.vue';
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
+import Swal from 'sweetalert2'
 defineOptions({ layout: AdminsLayout });
 const form = useForm({
     name: "",
