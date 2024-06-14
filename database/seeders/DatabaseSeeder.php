@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
             CitiesSeeder::class,
             SpecialtySeeder::class,
             CharitySeeder::class,
-            // CharityUsersSeeder::class,
-            // UserSeeder::class,
-            // AddressSeeder::class,
-            // DonationSeeder::class
+            CharityUsersSeeder::class,
+            UserSeeder::class,
+            AddressSeeder::class,
+            DonationSeeder::class
         ]);
 
     }

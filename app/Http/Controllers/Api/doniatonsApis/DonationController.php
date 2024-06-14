@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Api\doniatonsApis;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DeleteImageRequest;
 use App\Http\Requests\DonationApiStoreRequest;
 use App\Http\Requests\DonationApiUpdateRequest;
 use App\Http\Requests\UpdateDonationRequest;
 use App\Http\Resources\DonationCollection;
 use App\Http\Resources\DonationResource;
+use App\Models\donation_image;
 use Illuminate\Http\Request;
 use App\Models\donation;
 use App\Services\ImageService;
@@ -65,6 +67,16 @@ class DonationController extends Controller
         return new DonationResource($donation);
     }
 
+    public function addNewImage(Request $request, donation $donation)
+    {
+        return new DonationResource($donation);
+    }
+
+    public function deleteImage(DeleteImageRequest $request)
+    {  
+       $deletedImages = donation_image::whereIn('id', $request->ids)->delete();
+        return response()->json(['message' => 'Donation Updated successfully']);
+    }
     // /**
     //  * Update the specified resource in storage.
     //  */
