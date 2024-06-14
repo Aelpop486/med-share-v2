@@ -38,7 +38,7 @@
                                 class="text-[#007bff] text-sm ml-3"
                             >
                                 <small class="block">Mail</small>
-                                <strong>-</strong>
+                                <strong>MedShare@mail.com</strong>
                             </a>
                         </li>
                     </ul>
