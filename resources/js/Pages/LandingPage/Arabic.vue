@@ -102,15 +102,15 @@
                         class="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100"
                     >
                         <h2
-                            class="mt-4 text-xl font-semibold text-white capitalize"
+                            class="mt-4 text-right text-xl font-semibold text-white capitalize"
                         >
-                            Best website collections
+                            مصر الخير
                         </h2>
                         <a href="https://mekeg.org/en">
                             <p
-                                class="mt-2 text-lg tracking-wider text-blue-400 uppercase"
+                                class="mt-2 text-right text-lg tracking-wider text-blue-400 uppercase"
                             >
-                                Website
+                                موقع
                             </p>
                         </a>
                     </div>
@@ -126,15 +126,15 @@
                         class="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100"
                     >
                         <h2
-                            class="mt-4 text-xl font-semibold text-white capitalize"
+                            class="mt-4 text-right text-xl font-semibold text-white capitalize"
                         >
-                            Block of Ui kit collections
+                        الهلال المصري
                         </h2>
                         <a href="https://www.egyptianrc.org/Arabic/home">
                             <p
-                                class="mt-2 text-lg tracking-wider text-blue-400 uppercase"
+                                class="mt-2 text-right text-lg tracking-wider text-blue-400 uppercase"
                             >
-                                Website
+                                موقع
                             </p>
                         </a>
                     </div>
@@ -150,17 +150,17 @@
                         class="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100"
                     >
                         <h2
-                            class="mt-4 text-xl font-semibold text-white capitalize"
+                            class="mt-4 text-right text-xl font-semibold text-white capitalize"
                         >
-                            Ton’s of mobile mockup
+                            اهل مصر
                         </h2>
                         <a
                             href="https://ahl-masr.ngo/ar/?doing_wp_cron=1718196797.8433630466461181640625"
                         >
                             <p
-                                class="mt-2 text-lg tracking-wider text-blue-400 uppercase"
+                                class="mt-2 text-right text-lg tracking-wider text-blue-400 uppercase"
                             >
-                                Website
+                                موقع
                             </p>
                         </a>
                     </div>
