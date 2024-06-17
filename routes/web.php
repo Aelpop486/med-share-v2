@@ -79,10 +79,10 @@ Route::group(['middleware' => ['auth:web'], 'as' => 'admins.'], function () {
 
     Route::post('contact', ContactController::class)->name('contact.store');
 
-    Route::resource('charities', CharitController::class)->except('show');
+    Route::resource('charities', CharitController::class)->except('show','index');
     Route::resource('donations', DonationController::class)->only('index','edit','destroy');
     Route::resource('specialties', SpecialtyController::class)->except('show');
-    Route::resource('users', UserController::class)->except('show');
+    Route::resource('users', UserController::class)->except('show','index','update');
     Route::resource('admins', AdminController::class)->except('show');
 });
 
