@@ -181,7 +181,7 @@
                                 v-model="form.email"
                                 required
                                 autocomplete="username"
-                                type="text"
+                                type="email"
                                 id="default-search"
                                 class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                                 placeholder="Enter Your Email"
@@ -269,7 +269,7 @@
                                 type="text"
                                 id="default-search"
                                 class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
-                                placeholder="Enter Your Phone"
+                                placeholder="Enter Your Subject"
                             />
                             <InputError
                                 class="mt-2"
@@ -285,7 +285,9 @@
                         </label>
                         <div class="relative">
                             <textarea
-                                v-model="form.description"
+                                v-model="form.message"
+                                required
+                                type="text"
                                 id="description"
                                 class="block w-full h-40 px-4 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-2xl placeholder-gray-400 focus:outline-none resize-none"
                                 placeholder="Write your message"
@@ -293,7 +295,7 @@
                         </div>
                     </div>
                     <button
-                        class="w-full h-12 rounded-full bg-blue-700 hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center"
+                        class="w-full h-12 rounded-full bg-[#0155A5] hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center"
                     >
                         Send message
                         <svg
@@ -327,11 +329,12 @@ const form = useForm({
     name: "",
     email: "",
     phone: "",
-    description: "",
+    subject: "",
+    message: "",
 });
 
 const submit = () => {
-    form.post(route("contact.store"), {
+    form.post(route('admins.contact.store'), {
         onFinish: () => Swal.fire("Contacted successfully", "", "success"),
     });
 };

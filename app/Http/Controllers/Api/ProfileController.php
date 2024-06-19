@@ -41,7 +41,6 @@ class ProfileController extends Controller
             'gender' => 'nullable|in:male,female',
             'date_of_birth' => 'nullable|date', // General date validation
         ]);
-
         // Handle image upload if provided
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "images");
@@ -49,7 +48,6 @@ class ProfileController extends Controller
         if ($request->hasFile("national_id")) {
             $validatedData["national_id"] = ImageService::uploadImage($request->file("national_id"), "national_ids");
         }
-
         // Convert date format if necessary
         if (!empty($request->date_of_birth)) {
             $dateOfBirth = $request->date_of_birth;

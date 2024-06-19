@@ -36,6 +36,9 @@ Route::post('/password/reset', [ResetPasswordController::class, 'resetPassword']
 Route::group(['middleware' => ['auth:users'], 'as' => 'users.'], function () {
     Route::get('/profile', [ProfileController::class, 'getProfile']);
     Route::put('/profile', [ProfileController::class, 'updateProfile']);
+    Route::get('/addNewImage', [DonationController::class,'addNewImage']);
+    Route::post('/deleteImage', [DonationController::class,'deleteImage']);
+
 
     //         ---          Donations           ---
     Route::apiResource('/donations', DonationController::class);

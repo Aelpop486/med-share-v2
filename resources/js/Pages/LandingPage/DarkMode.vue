@@ -16,7 +16,7 @@ export default {
 };
 </script>
 <template>
-    <button @click="toggleDarkMode" class="flex items-center ">
+    <button @click="toggleDarkMode" class="flex items-center dark:text-white">
       <svg
         v-if="isDarkMode"
         xmlns="http://www.w3.org/2000/svg"

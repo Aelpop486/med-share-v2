@@ -26,6 +26,7 @@ class DonationController extends Controller
 
     public function destroy(donation $donation)
     {
+        dd($donation);
         $donation->delete();
         return to_route('admins.donations.index')->with('success', 'Donation deleted successfully');
     }

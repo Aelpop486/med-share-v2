@@ -20,9 +20,9 @@ class DonationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request)
+    public function edit(donation $donation)
     {
-        $donation = donation::where('id', $request->id)->with(['images','address','city','user'])->get();
+        donation::with(['images','address','city','user'])->get();
         // dd($donation);
         return Inertia::render('charities/DonationManagement/edit',[
             'donation'=>$donation
@@ -47,6 +47,6 @@ class DonationController extends Controller
     public function destroy(donation $donation)
     {
         $donation->delete();
-        return to_route('DonationManagement');
+        return back();
     }
 }
