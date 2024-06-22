@@ -1,6 +1,6 @@
 <template>
     <!-- hero -->
-    <div class="bg-[#f3f4f6] py-12 sm:py-16 lg:py-20 lg:pb-36">
+    <div class="bg-[#f3f4f6] py-12 sm:py-16 lg:py-20 lg:pb-36 dark:bg-gray-900 dark:text-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div
                 class="mx-auto grid max-w-lg grid-cols-1 gap-y-12 lg:max-w-full lg:grid-cols-2 lg:items-center lg:gap-x-8"
@@ -14,13 +14,13 @@
                 <div>
                     <div class="">
                         <h1
-                            class="text-4xl text-right text-slate-700 font-bold leading-snug sm:text-5xl sm:leading-snug"
+                            class="text-4xl text-right text-slate-700 dark:text-white font-bold leading-snug sm:text-5xl sm:leading-snug"
                         >
                             نحن نقدم البرامج التي تجعل عملية التبرع أسهل بشكل
                             ملحوظ
                         </h1>
                         <p
-                            class="mt-2 text-lg text-right font-bold text-slate-600 sm:mt-8"
+                            class="mt-2 text-lg text-right font-bold dark:text-white text-slate-600 sm:mt-8"
                         >
                             يمكن للمستخدمين القيام بذلك عن طريق تحميل صورة
                             للعالج المستخدم سابقا فقط. بمجرد تحميل الصورة ، نقوم
@@ -28,10 +28,10 @@
                             بالتعاون مع المؤسسة الخيرية
                         </p>
                         <div
-                            class="mt-8 flex flex-col items-center justify-center sm:flex-row sm:space-x-4 lg:justify-end"
+                            class="mt-8 flex flex-col dark:text-white items-center justify-center sm:flex-row sm:space-x-4 lg:justify-end"
                         >
                             <button
-                                class="mt-4 flex items-center rounded-lg border-2 border-[#1e429f] px-6 py-2 font-medium text-slate-700 transition hover:translate-y-1 hover:text-white hover:bg-[#1e429f]"
+                                class="mt-4 flex items-center dark:text-white rounded-lg border-2 border-[#1e429f] px-6 py-2 font-medium text-slate-700 transition hover:translate-y-1 hover:text-white hover:bg-[#1e429f]"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@
                                 شاهد الان
                             </button>
                             <button
-                                class="relative mt-4 rounded-lg border-2 border-[#1e429f] bg-[#1e429f] px-6 py-2 font-medium text-white transition hover:translate-y-1"
+                                class="relative mt-4 rounded-lg dark:text-white border-2 border-[#1e429f] bg-[#1e429f] px-6 py-2 font-medium text-white transition hover:translate-y-1"
                             >
                                 ابدا الان
                                 <div
@@ -81,7 +81,7 @@
         </div>
     </div>
     <!-- two section -->
-    <section class="bg-[#f3f4f6] dark:bg-gray-900">
+    <section class="bg-[#f3f4f6] dark:bg-gray-900 ">
         <div class="container px-6 py-10 mx-auto">
             <h1
                 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white"
@@ -119,7 +119,7 @@
                 <div
                     class="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
                     style="
-                        background-image: url('https://scontent.fcai20-5.fna.fbcdn.net/v/t39.30808-6/440582692_833017858873940_4609254405662983498_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mUUcIzeUknsQ7kNvgEqZY_X&_nc_ht=scontent.fcai20-5.fna&oh=00_AYDpXHjpfXrRvJq7t6zTIOmnopARCDQ5S7BfYe9P8AGT_w&oe=666F56A0');
+                        background-image: url('https://scontent.fcai20-1.fna.fbcdn.net/v/t39.30808-6/440582692_833017858873940_4609254405662983498_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=wug9etrhcIgQ7kNvgFFFKUJ&_nc_ht=scontent.fcai20-1.fna&oh=00_AYBMPSx4X3-lv4uypwtLwjWN19uC5ugFbVLuITx5Y7lCGA&oe=6675EE20');
                     "
                 >
                     <div
@@ -171,7 +171,7 @@
 
     <!-- three section -->
 
-    <section class="py-14 bg-[#f3f4f6]">
+    <section class="py-14 bg-[#f3f4f6] dark:bg-gray-900 dark:text-white">
         <div class="max-w-screen-xl mx-auto md:px-8">
             <div class="items-center gap-x-12 sm:px-4 md:px-0 lg:flex">
                 <div class="flex-1 sm:hidden lg:block">
@@ -188,12 +188,12 @@
                         مهمتنا
                     </h3>
                     <p
-                        class="text-gray-800 text-3xl font-semibold sm:text-4xl text-right"
+                        class="text-gray-800 text-3xl dark:text-white font-semibold sm:text-4xl text-right"
                     >
                         نسعى للحد من إهدار الموارد الطبية من خلال إعادة توزيع
                         الموارد الغير المستخدمة
                     </p>
-                    <p class="mt-3 text-gray-600 text-right">
+                    <p class="mt-3 text-gray-600 text-right dark:text-white">
                         لتلبية الاحتياجات الطبية العالمية وتحسين الصحة العامة
                         والوقاية من الأمراض من خلال توفير العلاجات الأساسية لمن
                         هم في أمس الحاجة إليها وبناء شراكات قوية مع المؤسسات
@@ -205,11 +205,11 @@
     </section>
 
     <!-- video section -->
-    <div class="bg-[#f3f4f6] pt-20">
-        <h1 class="text-center font-bold text-[#1C2F41] text-4xl">
+    <div class="bg-[#f3f4f6] pt-20 dark:bg-gray-900 dark:text-white">
+        <h1 class="text-center font-bold text-[#1C2F41] dark:text-white text-4xl">
             كيف يمكنني التبرع؟
         </h1>
-        <p class="font-bold text-center text-[#1C2F41] pb-5 text-2xl">
+        <p class="font-bold text-center text-[#1C2F41] dark:text-white pb-5 text-2xl">
             شاهد هذا الفيديو لتتعلم كيفية التبرع
         </p>
         <video

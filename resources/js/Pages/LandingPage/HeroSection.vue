@@ -1,19 +1,19 @@
 <script>
 </script>
 <template>
-     <div class=" bg-[#f3f4f6] py-12 sm:py-16 lg:py-20 lg:pb-36 ">
+     <div class=" bg-[#f3f4f6] py-12 sm:py-16 lg:py-20 lg:pb-36 dark:bg-gray-900">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto grid max-w-lg grid-cols-1 gap-y-12 lg:max-w-full lg:grid-cols-2 lg:items-center lg:gap-x-8">
         <div>
           <div class="text-center lg:text-left">
-            <h1 class="max-w-md  text-4xl text-slate-700 font-bold leading-snug sm:text-5xl sm:leading-snug">
+            <h1 class="max-w-md  text-4xl text-slate-700 dark:text-white font-bold leading-snug sm:text-5xl sm:leading-snug">
                 We offer software that makes the donation process easier  Significantly
             </h1>
-            <p class="mt-2 text-lg font-bold text-slate-600 sm:mt-8">
+            <p class="mt-2 text-lg font-bold dark:text-white text-slate-600 sm:mt-8">
                 Users can do this by uploading a picture of the previously used treatment only. Once the photo is uploaded, we, as an intermediary, organize the process of collecting the treatment and delivering it to people in need in cooperation with the charity
             </p>
             <div class="mt-8 flex flex-col items-center justify-center sm:flex-row sm:space-x-4 lg:justify-start">
-              <button class="relative mt-4 rounded-lg border-2 border-[#1e429f] bg-[#1e429f] px-6 py-2 font-medium text-white transition hover:translate-y-1">
+              <button class="relative dark:text-white mt-4 rounded-lg border-2 border-[#1e429f] bg-[#1e429f] px-6 py-2 font-medium text-white transition hover:translate-y-1">
                 <div class="-scale-x-100 absolute left-0 -bottom-10 hidden h-10 w-10 -rotate-12 text-blue-700 md:inline-flex">
                   <svg viewBox="0 0 82 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 21.3963C0.189514 19.1422 0.475057 16.717 0.554355 14.2852C0.582363 13.435 0.32301 12.6326 1.24839 12.1517C1.43863 12.053 1.7169 11.8956 1.85767 11.9661C4.2446 13.1626 6.90906 13.1934 9.41312 13.8814C11.09 14.3423 12.6519 15.089 13.7134 16.5797C13.9251 16.8774 13.9105 17.3427 14 17.7305C13.6228 17.8077 13.2227 18.01 12.8727 17.9421C10.3283 17.4477 7.78825 16.9245 5.25946 16.353C4.46612 16.1737 4.32244 16.4862 4.22859 17.1961C4.0118 18.8342 3.66769 20.4541 3.43198 22.0899C3.33086 22.7891 3.36905 23.509 3.35123 24.2197C3.34977 24.2791 3.44107 24.3474 3.43052 24.3989C3.32213 24.9318 3.2712 25.8796 3.07114 25.9142C2.49387 26.0144 1.77655 25.8915 1.25603 25.5961C-0.352473 24.6832 0.143681 23.0129 0 21.3963Z" fill="currentColor" />
@@ -22,7 +22,7 @@
                 </div>
                 Get Stared
               </button>
-              <button class="mt-4 flex items-center rounded-lg border-2 border-[#1e429f] px-6 py-2 font-medium text-slate-700 transition hover:translate-y-1 hover:text-white hover:bg-[#1e429f]">
+              <button class="mt-4 flex items-center rounded-lg border-2 dark:text-white border-[#1e429f] px-6 py-2 font-medium text-slate-700 transition hover:translate-y-1 hover:text-white hover:bg-[#1e429f]">
                 Watch the demo
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />

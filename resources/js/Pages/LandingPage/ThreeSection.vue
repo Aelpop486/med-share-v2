@@ -15,7 +15,7 @@
                     </svg>
                     <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">Default Taiwindcss Config</h1>
 
-                    <p class="mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    <p class="mt-2 text-gray-500 dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Dignissim fusce tortor, ac sed malesuada blandit. Et mi gravida sem feugiat.</p>
                 </div>
 
@@ -30,7 +30,7 @@
                     <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">Fully Responsive Components
                     </h1>
 
-                    <p class="mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    <p class="mt-2 text-gray-500 dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Dignissim fusce tortor, ac sed malesuada blandit. Et mi gravida sem feugiat.</p>
                 </div>
 

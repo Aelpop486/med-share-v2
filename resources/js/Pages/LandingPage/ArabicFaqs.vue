@@ -1,6 +1,6 @@
 <template>
 
- <div class="mx-auto px-5 bg-[#EAF0FF] min-h-sceen">
+ <div class="mx-auto px-5 bg-[#EAF0FF] min-h-sceen dark:bg-gray-900 dark:text-white">
         <div class="flex flex-col items-center">
             <h2 class="font-bold text-5xl mt-5 tracking-tight">
                 الاسئله الشائعه

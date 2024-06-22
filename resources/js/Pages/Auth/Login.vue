@@ -52,7 +52,7 @@ function togglePasswordVisibility() {
         <div v-if="status" class="mb-4  font-medium text-sm text-green-600">
             {{ status }}
         </div>
-        <div class="font-[sans-serif] text-[#333]">
+        <div class="font-[sans-serif] text-[#333] dark:bg-gray-900 dark:text-white">
             <div class="min-h-screen flex fle-col items-center justify-center py-6 px-4">
                 <div class="grid md:grid-cols-2 items-center gap-4 max-w-7xl w-full">
                     <div
