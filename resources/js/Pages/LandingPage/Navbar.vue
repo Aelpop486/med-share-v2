@@ -14,7 +14,7 @@
                         alt="MedShare"
                     />
                     <span
-                        class="roo self-center text-[#1e429f] font-bold text-2xl whitespace-nowrap dark:text-white"
+                        class="self-center text-[#1e429f] font-bold text-2xl whitespace-nowrap dark:text-white"
                         >MedShare</span
                     >
                 </a>

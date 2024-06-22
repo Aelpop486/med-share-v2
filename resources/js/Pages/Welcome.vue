@@ -5,7 +5,6 @@
     <HeroSection />
     <!-- second section -->
     <TowSection />
-
     <!-- fifth section -->
     <featuresVue />
     <!-- sixing section -->

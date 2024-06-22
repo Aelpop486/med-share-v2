@@ -147,5 +147,8 @@ Route::get('/ArabicFaqs', function () {
     return Inertia::render('LandingPage/ArabicFaqs');
 })->name('ArabicFaqs');
 
+Route::get('/ContactAarbic', function () {
+    return Inertia::render('LandingPage/ContactAarbic');
+})->name('ContactAarbic');
 
 require __DIR__ . '/auth.php';

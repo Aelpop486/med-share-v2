@@ -1,10 +1,10 @@
 <template>
 
-    <body class="font-inter">
-        <div class="w-full">
+  
+        <div class="w-full dark:bg-gray-900 dark:text-white">
             <div class="w-full">
                 <img src="@/Images/Group 147.svg" class="w-full" alt="">
-                <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl">
+                <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl dark:text-white">
                     PRIVACY POLICY
                 </h1>
             </div>
@@ -15,11 +15,11 @@
                             <ul class="tab-nav flex flex-col md:items-start items-center lg:gap-10 gap-6">
                                  <li>
                                     <a href="#"
-                                        class="font-medium text-base leading-7 hover:text-indigo-600 text-indigo-600">Privacy Policy
+                                        class="font-medium text-base leading-7 hover:text-indigo-600 text-indigo-600 dark:text-white">Privacy Policy
                                         </a>
                                 </li>
                                 <li>
-                                    <a :href="route('pages')" class="font-medium text-base leading-7 ">Terms of Services</a>
+                                    <a :href="route('pages')" class="font-medium text-base leading-7 dark:text-white">Terms of Services</a>
                                 </li>
 
                             </ul>
@@ -36,11 +36,11 @@
                                         stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                                <p class="font-medium text-xl leading-8 text-indigo-600">
+                                <p class="font-medium text-xl leading-8 text-indigo-600 dark:text-white">
                                     Last updated: April 28, 2024
                                 </p>
                             </div>
-                            <p class="font-bold text-[13px] lg:text-lg text-gray-500 mb-5">
+                            <p class="font-bold text-[13px] lg:text-lg text-gray-500 mb-5 dark:text-white">
                                 This privacy notice for MedShare ("we," "us," or "our"), describes how and why we might
                                 collect,
                                 store, use, and/or share ("process") your information when you use our services
@@ -56,7 +56,7 @@
                                 Services. If you
                                 still have any questions or concerns, please contact us at sharemed915@gmail.com. <br>
                             </p>
-                            <p class="font-bold text-[13px] leading-8 text-gray-500 lg:mb-10 mb-8">
+                            <p class="font-bold text-[13px] leading-8 text-gray-500 lg:mb-10 mb-8 dark:text-white">
 
                                 SUMMARY OF KEY POINTS <br>
 
@@ -125,61 +125,61 @@
                                 full.
 
                             </p>
-                            <h5 class="font-bold md:text-xl text-md text-gray-900 mb-4">
+                            <h5 class="font-bold md:text-xl text-md text-gray-900 mb-4 dark:text-white">
                                 TABLE OF CONTENTS
                             </h5>
-                            <ul class="ml-8 lg:mb-10 mb-8 font-bold md:text-xl text-[15px]">
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#01">WHAT INFORMATION DO WE COLLECT?</a>
+                            <ul class="ml-8 lg:mb-10 mb-8 font-bold md:text-xl text-[15px] dark:text-white">
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#01 dark:text-white">WHAT INFORMATION DO WE COLLECT?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#02">HOW DO WE PROCESS YOUR INFORMATION?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#03">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION</a>
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#03 dark:text-white">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#04">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</a>
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#04 dark:text-white">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#05"> HOW DO WE HANDLE YOUR SOCIAL LOGINS?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#06"> HOW LONG DO WE KEEP YOUR INFORMATION?</a>
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#06 dark:text-white"> HOW LONG DO WE KEEP YOUR INFORMATION?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#07"> HOW DO WE KEEP YOUR INFORMATION SAFE?</a>
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#07 dark:text-white"> HOW DO WE KEEP YOUR INFORMATION SAFE?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#08">DO WE COLLECT INFORMATION FROM MINORS?</a>
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#08 dark:text-white">DO WE COLLECT INFORMATION FROM MINORS?</a>
                                 </li>
-                                <li class="list-decimal  text-gray-500">
-                                    <a href="#09"> WHAT ARE YOUR PRIVACY RIGHTS?</a>
+                                <li class="list-decimal  text-gray-500 dark:text-white">
+                                    <a href="#09 dark:text-white"> WHAT ARE YOUR PRIVACY RIGHTS?</a>
                                 </li>
-                                <li class="list-decimal  text-gray-500">
-                                    <a href="#10">CONTROLS FOR DO-NOT-TRACK FEATURES</a>
+                                <li class="list-decimal  text-gray-500 dark:text-white">
+                                    <a href="#10 dark:text-white">CONTROLS FOR DO-NOT-TRACK FEATURES</a>
                                 </li>
-                                <li class="list-decimal  text-gray-500">
-                                    <a href="#11">DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?</a>
+                                <li class="list-decimal  text-gray-500 dark:text-white">
+                                    <a href="#11 dark:text-white">DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#12">DO WE MAKE UPDATES TO THIS NOTICE?</a>
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#12 dark:text-white">DO WE MAKE UPDATES TO THIS NOTICE?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#13">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a>
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#13 dark:text-white">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
-                                    <a href="#14"> HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
+                                <li class="list-decimal text-gray-500 dark:text-white">
+                                    <a href="#14 dark:text-white"> HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
                                         YOU?</a>
                                 </li>
                             </ul>
                             <ul
                                 class="flex flex-col ml-8 gap-10 list-outside list-decimal font-bold text-md">
                                 <li id="01" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         WHAT INFORMATION DO WE COLLECT?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         Personal information you disclose to us
 
                                         In Short: We collect personal information that you provide to us.
@@ -262,11 +262,11 @@
 
                                     </p>
                                 </li>
-                                <li id="02" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="02" class="list-decimal ">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         HOW DO WE PROCESS YOUR INFORMATION?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         In Short: We process your information to provide, improve, and administer our
                                         Services, communicate with you, for security and fraud prevention, and to comply
                                         with law. We may also process your information for other purposes with your
@@ -288,10 +288,10 @@
                                     </p>
                                 </li>
                                 <li id="03" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?
                                     </h2>
-                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500">
+                                    <p class="mt-5 font-normal text-lg leading-8 text-gray-500 dark:text-white">
 
 
                                         In Short: We may share information in specific situations described in this
@@ -319,10 +319,10 @@
                                 </li>
 
                                 <li id="04" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         In Short: We may use cookies and other tracking technologies to collect and
                                         store your information.
@@ -335,10 +335,10 @@
                                 </li>
 
                                 <li id="05" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         HOW DO WE HANDLE YOUR SOCIAL LOGINS?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         In Short: If you choose to register or log in to our Services using a social
                                         media account, we may have access to certain information about you.
@@ -363,10 +363,10 @@
                                 </li>
 
                                 <li id="06" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         HOW LONG DO WE KEEP YOUR INFORMATION?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         In Short: We keep your information for as long as necessary to fulfill the
                                         purposes outlined in this privacy notice unless otherwise required by law.
@@ -387,9 +387,9 @@
                                 </li>
 
                                 <li id="08" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         HOW DO WE KEEP YOUR INFORMATION SAFE? </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         In Short: We aim to protect your personal information through a system of
@@ -410,10 +410,10 @@
                                 </li>
 
                                 <li id="09" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         WHAT ARE YOUR PRIVACY RIGHTS?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         In Short: You may review, change, or terminate your account at any time.
 
@@ -451,10 +451,10 @@
                                 </li>
 
                                 <li id="010" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         CONTROLS FOR DO-NOT-TRACK FEATURES?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         Most web browsers and some mobile operating systems and mobile applications
                                         include a Do-Not-Track ( "DNT" ) feature or setting you can activate to signal
@@ -470,11 +470,11 @@
                                 </li>
 
                                 <li id="011" class="list-decimal">
-                                    <h2 class=" font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class=" font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?
 
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         In Short: You may have additional rights based on the country you reside in.
@@ -508,10 +508,10 @@
                                 </li>
 
                                 <li id="012" class="list-decimal">
-                                    <h2 class=" font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class=" font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         DO WE MAKE UPDATES TO THIS NOTICE?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         In Short: Yes, we will update this notice as necessary to stay compliant with
@@ -529,10 +529,10 @@
 
 
                                 <li id="013" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         If you have questions or comments about this notice, you may email us at
                                         sharemed915@gmail.com or contact us by post at:
@@ -546,10 +546,10 @@
 
 
                                 <li id="014" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         Based on the applicable laws of your country, you may have the right to request
                                         access to the personal information we collect from you, change that information,
                                         or delete it. To request to review, update, or delete your personal information,
@@ -563,7 +563,6 @@
                 </div>
             </section>
         </div>
-    </body>
 
 </template>
 

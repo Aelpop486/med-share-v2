@@ -1,14 +1,14 @@
 <template>
 
-    <body class="font-inter">
-        <div class="w-full">
+
+        <div class="w-full dark:bg-gray-900 ">
             <div class="">
                 <img src="@/Images/Group 145.svg" class="w-full" alt="">
 
-                <h1 class="mb-8 text-center text-gray-900 font-bold font-manrope leading-tight lg:text-5xl text-3xl">
+                <h1 class="mb-8 text-center text-gray-900 dark:text-white font-bold font-manrope leading-tight lg:text-5xl text-3xl">
                     Terms of Services
                 </h1>
-                <p class="text-gray-500 text-lg leading-8 text-center font-normal px-4">
+                <p class="text-gray-500 text-lg leading-8 dark:text-white text-center font-normal px-4">
                     We're here to help! Reach us by phone at [contact number] or email us
                     at [email address] for any queries or concerns.
                 </p>
@@ -19,17 +19,17 @@
                         <div class="w-full md:max-w-[176px] md:border-r md:border-gray-200">
                             <ul class="tab-nav flex flex-col md:items-start items-center lg:gap-10 gap-6">
                                 <li>
-                                    <a href="#" class="font-medium text-base leading-7 text-indigo-600">Terms of Services</a>
+                                    <a href="#" class="font-medium text-base leading-7 dark:text-white text-indigo-600">Terms of Services</a>
                                 </li>
                                 <li>
                                     <a :href="route('Privacy')"
-                                        class="font-medium text-base leading-7 text-gray-500 hover:text-indigo-600">Privacy Policy
+                                        class="font-medium text-base leading-7 text-gray-500 dark:text-white hover:text-indigo-600">Privacy Policy
                                         </a>
                                 </li>
                             </ul>
                         </div>
                         <div class="w-full tab-pane max-md:px-4">
-                            <h2 class="font-manrope font-bold lg:text-4xl text-3xl text-gray-900 mb-5">
+                            <h2 class="font-manrope font-bold lg:text-4xl text-3xl dark:text-white text-gray-900 mb-5">
                                 Terms of Services
                             </h2>
                             <div class="flex items-center gap-3 lg:mb-10 mb-8">
@@ -40,14 +40,14 @@
                                         stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                                <p class="font-medium text-xl leading-8 text-indigo-600">
+                                <p class="font-medium dark:text-white text-xl leading-8 text-indigo-600">
                                     Last updated: April 28, 2024
                                 </p>
                             </div>
-                            <h1 class="font-bold lg:text-xl text-md text-gray-900 mb-5">
+                            <h1 class="font-bold lg:text-xl dark:text-white text-md text-gray-900 mb-5">
                                 AGREEMENT TO OUR LEGAL TERMS
                             </h1>
-                            <p class="font-bold text-[13px] leading-8 text-gray-500 lg:mb-10 mb-8">
+                            <p class="font-bold dark:text-white text-[13px] leading-8 text-gray-500 lg:mb-10 mb-8">
                                 We are MedShare ("Company," "we," "us," "our") , a company
                                 registered in Egypt at Elbitash , alexandria 21928 . We operate
                                 the mobile application MedShare (the "App" ), as well as any
@@ -80,90 +80,90 @@
                                 permitted to use or register for the Services. We recommend that
                                 you print a copy of these Legal Terms for your records.
                             </p>
-                            <h5 class="font-bold md:text-xl text-md text-gray-900 mb-4">
+                            <h5 class="font-bold md:text-xldark:text-white text-md text-gray-900 mb-4">
                                 TABLE OF CONTENTS
                             </h5>
                             <ul class="ml-8 lg:mb-10 mb-8 font-bold text-[15px]">
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#01">OUR SERVICES.</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#02">INTELLECTUAL PROPERTY RIGHTS</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#03"> USER REPRESENTATIONS</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#04">USER REGISTRATION</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#05"> PROHIBITED ACTIVITIES</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#06"> USER GENERATED CONTRIBUTIONS</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#07"> CONTRIBUTION LICENSE</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#08">MOBILE APPLICATION LICENSE</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#09"> SOCIAL MEDIA</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#10">THIRD-PARTY WEBSITES AND CONTENT</a>
                                 </li>
-                                <li class="list-decimal  text-gray-500">
+                                <li class="list-decimal  text-gray-500 dark:text-white">
                                     <a href="#11">SERVICES MANAGEMENT</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#12">PRIVACY POLICY</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#13">TERM AND TERMINATION</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#14"> MODIFICATIONS AND INTERRUPTIONS</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#15">GOVERNING LAW</a>
                                 </li>
-                                <li class="list-decimal  text-gray-500">
+                                <li class="list-decimal  text-gray-500 dark:text-white">
                                     <a href="#16">DISPUTE RESOLUTION</a>
                                 </li>
-                                <li class="list-decimal  text-gray-500">
+                                <li class="list-decimal  text-gray-500 dark:text-white">
                                     <a href="#17">CORRECTIONS</a>
                                 </li>
-                                <li class="list-decimal  text-gray-500">
+                                <li class="list-decimal  text-gray-500 dark:text-white">
                                     <a href="#18">DISCLAIMER</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#19">LIMITATIONS OF LIABILITY</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="20">INDEMNIFICATION</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#21">USER DATA</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#22">ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#23">MISCELLANEOUS</a>
                                 </li>
-                                <li class="list-decimal text-gray-500">
+                                <li class="list-decimal text-gray-500 dark:text-white">
                                     <a href="#24"> CONTACT US</a>
                                 </li>
                             </ul>
                             <ul
                                 class="flex flex-col ml-8 gap-10 list-outside list-decimal font-bold text-md">
-                                <li id="01" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
-                                        OUR SERVICES.
+                                <li id="01" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
+                                        OUR SERVICES
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         The information provided when using the Services is not
                                         intended for distribution to or use by any person or entity
                                         in any jurisdiction or country where such distribution or
@@ -176,11 +176,11 @@
                                         are applicable.
                                     </p>
                                 </li>
-                                <li id="02" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="02" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         INTELLECTUAL PROPERTY RIGHTS
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         We are the owner or the licensee of all intellectual
                                         property rights in our Services, including all source code,
                                         databases, functionality, software, website designs, audio,
@@ -298,11 +298,11 @@
                                         authorities.
                                     </p>
                                 </li>
-                                <li id="03" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="03" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         USER REGISTRATION
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         You may be required to register to use the Services. You
                                         agree to keep your password confidential and will be
                                         responsible for all use of your account and password. We
@@ -313,11 +313,11 @@
                                     </p>
                                 </li>
 
-                                <li id="04" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="04" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         USER REPRESENTATIONS
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         You may be required to register to use the Services. You
                                         agree to keep your password confidential and will be
                                         responsible for all use of your account and password. We
@@ -328,11 +328,11 @@
                                     </p>
                                 </li>
 
-                                <li id="05" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="05" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         PROHIBITED ACTIVITIES
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         You may not access or use the Services for any purpose other
                                         than that for which we make the Services available. The
                                         Services may not be used in connection with any commercial
@@ -405,11 +405,11 @@
                                     </p>
                                 </li>
 
-                                <li id="06" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="06" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         USER GENERATED CONTRIBUTIONS
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         The Services may invite you to chat, contribute to, or
                                         participate in blogs, message boards, online forums, and
                                         other functionality, and may provide you with the
@@ -468,11 +468,11 @@
                                     </p>
                                 </li>
 
-                                <li id="07" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="07" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         CONTRIBUTION LICENSE
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         By posting your Contributions to any part of the Services or
                                         making Contributions accessible to the Services by linking
                                         your account from the Services to any of your social
@@ -517,11 +517,11 @@
                                     </p>
                                 </li>
 
-                                <li id="08" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="08" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         MOBILE APPLICATION LICENSE
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         <Span>Use License</Span> <br />
 
                                         If you access the Services via the App, then we grant you a
@@ -552,7 +552,7 @@
                                         interfaces or our other intellectual property in the design,
                                         development, manufacture, licensing, or distribution of any
                                         applications, accessories, or devices for use with the App.<br>
-                                        <span class="text-black">Apple and Android Devices</span><br>
+                                        <span class="text-black dark:text-white">Apple and Android Devices</span><br>
                                         The following terms apply when you
                                         use the App obtained from either the Apple Store or Google
                                         Play (each an "App Distributor" ) to access the Services:
@@ -595,11 +595,11 @@
                                     </p>
                                 </li>
 
-                                <li id="09" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="09" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         SOCIAL MEDIA
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         As part of the functionality of the Services, you may link your account with
                                         online accounts you have with third-party service providers (each such account,
                                         a "Third-Party Account") by either: (1) providing your Third-Party Account login
@@ -645,12 +645,12 @@
                                     </p>
                                 </li>
 
-                                <li id="010" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="010" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         THIRD-PARTY WEBSITES AND CONTENT
 
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         The Services may contain (or you may be sent via the App) links to other
                                         websites ("Third-Party Websites" ) as well as articles, photographs, text,
@@ -684,12 +684,12 @@
                                 </li>
 
 
-                                <li id="011" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="011" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         SERVICES MANAGEMENT
 
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         We reserve the right, but not the obligation, to: (1) monitor the Services for
@@ -707,11 +707,11 @@
                                     </p>
                                 </li>
 
-                                <li id="012" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="012" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         PRIVACY POLICY
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         We care about data privacy and security. Please review our Privacy Policy:
@@ -727,12 +727,12 @@
                                 </li>
 
 
-                                <li id="013" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="013" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         TERM AND TERMINATION
 
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         These Legal Terms shall remain in full force and effect while you use the
                                         Services. WITHOUT LIMITING ANY OTHER PROVISION OF THESE LEGAL TERMS, WE RESERVE
@@ -754,11 +754,11 @@
                                     </p>
                                 </li>
 
-                                <li id="014" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="014" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         MODIFICATIONS AND INTERRUPTIONS
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         We reserve the right to change, modify, or remove the contents of the Services
@@ -780,11 +780,11 @@
                                     </p>
                                 </li>
 
-                                <li id="015" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="015" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         GOVERNING LAW
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         These Legal Terms shall be governed by and defined following the laws of Egypt .
@@ -795,11 +795,11 @@
                                 </li>
 
 
-                                <li id="016" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="016" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         DISPUTE RESOLUTION
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         You agree to irrevocably submit all disputes related to these Legal Terms or the
@@ -812,11 +812,11 @@
                                 </li>
 
 
-                                <li id="017" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="017" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         DISCLAIMER
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
                                         DISCLAIMER
 
                                         THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT
@@ -849,11 +849,11 @@
                                 </li>
 
 
-                                <li id="018" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="018" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         DISCLAIMER
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
 
@@ -887,11 +887,11 @@
                                 </li>
 
 
-                                <li id="019" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="019" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         LIMITATIONS OF LIABILITY
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR
@@ -903,11 +903,11 @@
                                 </li>
 
 
-                                <li id="020" class="list-decimal">
-                                    <h2 class=" font-bold lg:text-xl text-md text-gray-900">
+                                <li id="020" class="list-decimal dark:text-white">
+                                    <h2 class=" font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         INDEMNIFICATION
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         You agree to defend, indemnify, and hold us harmless, including our
@@ -929,11 +929,11 @@
                                 </li>
 
 
-                                <li id="021" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="021" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         USER DATA
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
 
@@ -948,12 +948,12 @@
                                     </p>
                                 </li>
 
-                                <li id="022" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="022" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES
 
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
                                         Visiting the Services, sending us emails, and completing online forms constitute
@@ -971,11 +971,11 @@
                                     </p>
                                 </li>
 
-                                <li id="023" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="023" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         MISCELLANEOUS
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
 
 
@@ -1000,11 +1000,11 @@
                                 </li>
 
 
-                                <li id="024" class="list-decimal">
-                                    <h2 class="font-bold lg:text-xl text-md text-gray-900">
+                                <li id="024" class="list-decimal dark:text-white">
+                                    <h2 class="font-bold lg:text-xl text-md text-gray-900 dark:text-white">
                                         DISPUTE RESOLUTION
                                     </h2>
-                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500">
+                                    <p class="mt-5 font-bold text-[13px] leading-8 text-gray-500 dark:text-white">
 
                                         In order to resolve a complaint regarding the Services or to receive further
                                         information regarding use of the Services, please contact us at:<br>
@@ -1026,7 +1026,6 @@
             </section>
         </div>
 
-    </body>
 </template>
 
 <script setup>

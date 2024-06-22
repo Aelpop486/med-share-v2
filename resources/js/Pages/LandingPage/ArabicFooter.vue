@@ -1,6 +1,6 @@
 <template>
     <!-- Footer -->
-    <footer class="w-full bg-[#0155A5] py-14">
+    <footer class="w-full bg-[#0155A5] py-14 dark:bg-gray-900 dark:text-white">
         <div class="mx-auto text-white max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto">
                 <a href="/" class="flex justify-center">
