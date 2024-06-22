@@ -31,9 +31,9 @@ const submit = () => {
 
 <template>
 
-    <div class="container mx-auto dark:bg-gray-900 dark:text-white">
+    <div class="mx-auto dark:bg-gray-900 dark:text-white">
 
-        <div class="flex justify-center items-center mt-5 font-bold text-2xl  text-center">
+        <div class="flex justify-center items-center font-bold text-2xl  text-center">
             <h1>
                 👋<br>
                 Register with us now as a charitable organization <br>
@@ -42,7 +42,7 @@ const submit = () => {
         </div>
 
         <form @submit.prevent="submit"
-            class="h-fit bg-white border dark:bg-gray-900 dark:text-white border-slate-200 shadow-xl rounded-2xl lg:p-12 p-8 w-[75%] mb-10 mt-10  max-w-lg md:max-w-3xl lg:max-w-full mx-auto">
+            class="h-fit bg-white border dark:bg-gray-900 dark:text-white border-slate-200 shadow-xl rounded-2xl lg:p-12 p-8 w-[75%] mt-10  max-w-lg md:max-w-3xl lg:max-w-full mx-auto">
 
             <div class="relative mb-8 dark:bg-gray-900 dark:text-white">
                 <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Name
