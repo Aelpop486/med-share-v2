@@ -1,0 +1,1 @@
+import{o as r,c as t,f as e,r as a,F as s}from"./app-Bv2SsfOl.js";import m from"./Navbar-BapNGb4Y.js";import n from"./Footer-BfN-wIyg.js";const u={__name:"GuestLayout",setup(c){return(o,_)=>(r(),t(s,null,[e(m),a(o.$slots,"default"),e(n)],64))}};export{u as _};

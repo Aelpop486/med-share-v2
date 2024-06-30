@@ -178,12 +178,13 @@
                                 ></textarea>
                             </div>
                         </div>
+                       <div class="flex justify-around ">
                         <button
                             type="submit"
-                            class="text-white inline-flex w-full items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                            class="text-white inline-flex  items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                         >
                             <svg
-                                class="me-1 -ms-1 w-5 h-5"
+                                class="me-1 -ms-1 w-5 h-5 "
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -194,8 +195,10 @@
                                     clip-rule="evenodd"
                                 ></path>
                             </svg>
-                            Create
+                            Update
                         </button>
+                        <DeleteButton/>
+                       </div>
                     </form>
                 </div>
             </div>
@@ -205,7 +208,7 @@
 
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
-
+import DeleteButton from "@/Components/DeleteButton.vue";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
 const form = useForm({
