@@ -127,6 +127,7 @@
                                             user: user.id
                                         })" class="block px-2 text-sm">
                                         <DeleteButton />
+
                                         </Link>
                                     </div>
                                 </td>
