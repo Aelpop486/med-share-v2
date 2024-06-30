@@ -10,8 +10,8 @@
 
             <div class="mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-                <video class=" mx-auto w-full h-full rounded-lg" autoplay loop muted>
-                    <source src="@/Images/WhatsApp Video 2024-04-23 at 12.26.03 AM.mp4" type="video/mp4" />
+                <video class=" mx-auto w-full h-[75%] rounded-lg" autoplay loop muted>
+                    <source src="@/Images/MedShare (promo).mp4" type="video/mp4" />
                 </video>
             </div>
         </section>
@@ -21,13 +21,13 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-9">
                     <div class="img-box">
                         <img src="@/Images/55.jpg" alt="About Us tailwind page"
-                            class="max-lg:mx-auto ">
+                            class="max-lg:mx-auto">
                     </div>
                     <div class="lg:pl-[100px] flex items-center">
                         <div class="data w-full">
                             <h2
                                 class="font-manrope font-bold text-xl lg:text-5xl text-black mb-9 max-lg:text-center relative dark:text-white">
-                              
+
 Who is he? </h2>
                             <p class="font-normal text-[12px] leading-8 text-gray-500 max-lg:text-center max-w-2xl mx-auto dark:text-white">
                                 deep gratitude to Engineer Ahmed Sultan, the assistant lecturer at Borj-Elarab-Technological-University. He played a pivotal role in guiding and mentoring us throughout the Web Development course this year. Engineer Ahmed Sultan's extensive experience in Information Technology and Web Development has positively impacted our educational experience.

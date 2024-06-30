@@ -30,7 +30,8 @@
                         <div
                             class="mt-8 flex flex-col dark:text-white items-center justify-center sm:flex-row sm:space-x-4 lg:justify-end"
                         >
-                            <button
+                            <a :href="route('AboutArabic')"
+                            type="button"
                                 class="mt-4 flex items-center dark:text-white rounded-lg border-2 border-[#1e429f] px-6 py-2 font-medium text-slate-700 transition hover:translate-y-1 hover:text-white hover:bg-[#1e429f]"
                             >
                                 <svg
@@ -46,7 +47,7 @@
                                     />
                                 </svg>
                                 شاهد الان
-                            </button>
+                            </a>
                             <button
                                 class="relative mt-4 rounded-lg dark:text-white border-2 border-[#1e429f] bg-[#1e429f] px-6 py-2 font-medium text-white transition hover:translate-y-1"
                             >
