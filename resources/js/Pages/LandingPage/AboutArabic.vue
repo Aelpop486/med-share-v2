@@ -10,8 +10,8 @@
 
             <div class="mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-                <video class=" mx-auto w-full h-full rounded-lg" autoplay loop muted>
-                    <source src="@/Images/WhatsApp Video 2024-04-23 at 12.26.03 AM.mp4" type="video/mp4" />
+                <video class=" mx-auto w-full h-[75%] rounded-lg" autoplay loop muted>
+                    <source src="@/Images/MedShare (promo).mp4" type="video/mp4" />
                 </video>
             </div>
         </section>

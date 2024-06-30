@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth:web'], 'as' => 'admins.'], function () {
     })->name('specialties');
 
     Route::get('/Allusers', function () {
-        $user = User::paginate(20);
+        $user = User::with(['addresses'])->paginate(20);
         return Inertia::render('admins/Users/index', [
             'users' => $user
         ]);
@@ -71,7 +71,7 @@ Route::group(['middleware' => ['auth:web'], 'as' => 'admins.'], function () {
     })->name('systemUsers');
 
     Route::get('/Allcharities', function () {
-        $charities = charit::paginate(20);
+        $charities = charit::with(['specialty'])->paginate(20);
         return Inertia::render('admins/Charity/index', [
             'charities' => $charities
         ]);
