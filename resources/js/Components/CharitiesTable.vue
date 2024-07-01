@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-slate-100 dark:bg-gray-900 p-3 sm:p-5">
+    <section class="bg-slate-100 dark:bg-gray-900 p-3 sm:p-5 ">
         <div class="w-full px-4 lg:px-12">
             <!-- Start coding here -->
             <div

@@ -1,5 +1,5 @@
 <template>
-    <section class="  dark:bg-gray-900 p-3 sm:p-5">
+    <section class="dark:bg-gray-800 dark:text-white p-3 sm:p-5">
         <div class="w-full px-4 lg:px-12">
             <!-- Start coding here -->
             <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden ">
@@ -124,7 +124,7 @@
                                     </div>
                                 </td>
                             </tr>
-                          
+
                         </tbody>
                     </table>
                 </div>

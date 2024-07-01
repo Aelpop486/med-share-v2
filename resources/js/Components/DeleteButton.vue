@@ -1,14 +1,14 @@
 <template>
 
     <!-- Modal toggle -->
-<div class="flex justify-center ">
+<div class="flex justify-center">
     <button id="deleteButton" data-modal-target="deleteModal" data-modal-toggle="deleteModal" class=" px-6 py-2 rounded-md font-semibold tracking-wide cursor-pointer  text-white bg-red-700 rounded-e-lg border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 " type="button">
     Delete
     </button>
 </div>
 
 <!-- Main modal -->
-<div id="deleteModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+<div id="deleteModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full dark:bg-gray-800 dark:text-white">
     <div class="relative p-4 w-full max-w-md h-full md:h-auto">
         <!-- Modal content -->
         <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">

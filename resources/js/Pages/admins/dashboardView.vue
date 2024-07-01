@@ -1,7 +1,7 @@
 <template>
     <!-- slot tmplate link  -->
     <AdminsLayout>
-        <nav class="flex mb-4" aria-label="Breadcrumb">
+        <nav class="flex mb-4 dark:bg-gray-800 dark:text-white" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
                     <Link href="#"
@@ -37,7 +37,7 @@
                 </li>
             </ol>
         </nav>
-        <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
+        <h2 class="mb-4 text-3xl font-extrabold dark:bg-gray-800 leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
             Analytics
         </h2>
         <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
@@ -45,7 +45,7 @@
             <Statistics />
         </div>
 
-        <div class="grid xl:grid-cols-4  md:grid-cols-1 mt-10 ">
+        <div class="grid xl:grid-cols-4 dark:bg-gray-800 dark:text-white md:grid-cols-1 mt-10 ">
             <div class="xl:col-span-2 ">
                         <Charts class="my-4 bg-white rounded-xl p-2 "  />
 
