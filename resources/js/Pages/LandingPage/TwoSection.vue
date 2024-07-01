@@ -16,11 +16,11 @@
             </div>
 
             <div class="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
-                style="background-image:url('https://scontent.fcai20-1.fna.fbcdn.net/v/t39.30808-6/440582692_833017858873940_4609254405662983498_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=wug9etrhcIgQ7kNvgFFFKUJ&_nc_ht=scontent.fcai20-1.fna&oh=00_AYBMPSx4X3-lv4uypwtLwjWN19uC5ugFbVLuITx5Y7lCGA&oe=6675EE20')">
+                style="background-image:url('https://www.hayakarima.com/assets/frontend/img/default_img.jpeg')">
                 <div
                     class="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
-                    <h2 class="mt-4 text-xl font-semibold text-white capitalize">Egyptian Crescent</h2>
-                    <a href="https://www.egyptianrc.org/Arabic/home">
+                    <h2 class="mt-4 text-xl font-semibold text-white capitalize">Haya Karima</h2>
+                    <a href="https://www.hayakarima.com/">
                     <p class="mt-2 text-lg tracking-wider text-blue-400 uppercase ">Website</p>
                 </a>
                 </div>

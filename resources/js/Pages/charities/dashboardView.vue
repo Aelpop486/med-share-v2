@@ -1,5 +1,8 @@
 <template>
-    <nav class="flex mb-4" aria-label="Breadcrumb">
+    <nav
+        class="flex mb-4 dark:bg-gray-800 dark:text-white"
+        aria-label="Breadcrumb"
+    >
         <ol
             class="inline-flex items-center space-x-1 md:space-x-3 rtl:space-x-reverse"
         >
@@ -23,7 +26,7 @@
                 </Link>
             </li>
             <li>
-                <div class="flex items-center">
+                <div class="flex items-center dark:bg-gray-800 dark:text-white">
                     <svg
                         class="w-3 h-3 text-gray-400 mx-1 rtl:rotate-180"
                         aria-hidden="true"
@@ -77,15 +80,14 @@
         Analytics
     </h2>
     <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
-    <DonationsReceived class="m-6"  />
+    <DonationsReceived class="m-6" />
     <div class="grid md:grid-cols-3 gap-6">
         <div class="md:col-span-2">
             <CharityCharts class="my-20 bg-white rounded-xl p-4" />
         </div>
-        <div class="md:col-span-1 mt-20   ">
+        <div class="md:col-span-1 mt-20">
             <ActiveAreas />
         </div>
-
     </div>
 
     <DonationsReceivedTable />
