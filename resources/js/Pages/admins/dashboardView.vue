@@ -73,8 +73,7 @@ import Statistics from "@/Components/Statistics.vue";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 import LastUsers from "@/Components/LastUsers.vue";
 import DonationTable from "@/Components/DonationTable.vue";
-// defineProps({donations:Object})
-
+defineProps({donations:Object})
 
 </script>
 

@@ -59,6 +59,7 @@
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Type User Name"
                                     required=""
+                                    
                                 />
                             </div>
                             <div class="col-span-2">
@@ -146,6 +147,8 @@ import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
 import DisableButton from "@/Components/DisableButton.vue";
 import BanButton from "@/Components/BanButton.vue";
+defineProps({ users: Object })
+
 const form = useForm({
     name: "",
     email: "",
