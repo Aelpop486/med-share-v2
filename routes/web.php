@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth:web'], 'as' => 'admins.'], function () {
     })->name('specialties');
 
     Route::get('/Allusers', function () {
-        $user = User::paginate(20);
+        $user = User::paginate(10);
         return Inertia::render('admins/Users/index', [
             'users' => $user
         ]);
