@@ -22,7 +22,7 @@ class DonationController extends Controller
      */
     public function edit(donation $donation)
     {
-        donation::with(['images','address','city','user'])->get();
+        $donation = donation::where('id', $donation->id)->with(['images','address','city','charity','user'])->first();
         // dd($donation);
         return Inertia::render('charities/DonationManagement/edit',[
             'donation'=>$donation
@@ -41,12 +41,4 @@ class DonationController extends Controller
         return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(donation $donation)
-    {
-        $donation->delete();
-        return back();
-    }
 }
