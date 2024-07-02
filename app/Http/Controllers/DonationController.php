@@ -18,7 +18,8 @@ class DonationController extends Controller
 
     public function edit(donation $donation)
     {
-        donation::with(['images','address','city','charity','user'])->get();
+        $donation = donation::where('id', $donation->id)->with(['images','address','city','charity','user'])->get();
+        // dd($donation);
         return Inertia::render('admins/Donations/edit',[
             'donation'=>$donation
         ]);

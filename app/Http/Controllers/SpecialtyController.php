@@ -51,7 +51,8 @@ class SpecialtyController extends Controller
 
     public function edit(specialty $specialty)
     {
-        specialty::with(['charties','admin'])->get();
+        $specialty = specialty::where('id',$specialty->id)->with(['admin'])->get();
+        // dd($specialty);
         return Inertia::render('admins/specialties/edit', [
             'specialty' => $specialty
         ]);

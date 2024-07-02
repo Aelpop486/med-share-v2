@@ -29,7 +29,8 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        User::with(['addresses','donations'])->get();
+        $user = User::where('id', $user->id)->with(['addresses','donations'])->get();
+        // dd($user);
         return Inertia::render('admins/Users/edit', [
             'user' => $user
         ]);
@@ -37,7 +38,7 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        
+
         $user->delete();
 
         return to_route('admins.users')->with('success', 'User deleted successfully');
