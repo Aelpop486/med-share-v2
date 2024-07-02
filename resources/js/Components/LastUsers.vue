@@ -7,7 +7,7 @@
                         Latest Users
                     </h5>
                     <Link
-                        href="#"
+                    :href="route('admins.users')"
                         class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
                     >
                         View all
@@ -17,6 +17,7 @@
                     <ul
                         role="list"
                         class="divide-y divide-gray-200 dark:divide-gray-700"
+                        v-for="(user,index)  in users.slice(0, 5)" :key="index"
                     >
                         <li class="py-3 sm:py-4">
                             <div class="flex items-center">
@@ -31,12 +32,12 @@
                                     <p
                                         class="text-sm font-medium text-gray-900 truncate dark:text-white"
                                     >
-                                        Neil Sims
+                                        {{user.name}}
                                     </p>
                                     <p
                                         class="text-sm text-gray-500 truncate dark:text-gray-400"
                                     >
-                                        email@windster.com
+                                        {{user.email}}
                                     </p>
                                 </div>
                                 <div
@@ -46,7 +47,7 @@
                                 </div>
                             </div>
                         </li>
-                 
+
                     </ul>
                 </div>
             </div>
@@ -54,6 +55,7 @@
 
 <script setup>
 import { Link } from '@inertiajs/vue3';
+defineProps ({users:Object});
 
 </script>
 

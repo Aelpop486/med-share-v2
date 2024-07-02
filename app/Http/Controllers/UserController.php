@@ -29,7 +29,7 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        $user = User::where('id', $user->id)->with(['addresses','donations'])->get();
+        $user = User::where('id', $user->id)->with(['addresses','donations'])->first();
         // dd($user);
         return Inertia::render('admins/Users/edit', [
             'user' => $user

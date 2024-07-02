@@ -126,8 +126,46 @@
                     />
                     <!-- image upload End -->
                 </div>
+
                 <div class="grid grid-cols-2 gap-6">
+
                     <div class="  ">
+                        <div class="mt-4">
+                            <!-- <label
+                                for="password"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Password</label
+                            >
+                            <input
+                                v-model="form.password"
+                                type="password"
+                                name="password"
+                                id="password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Password"
+                                required
+                            />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.password"
+                            /> -->
+                            <label
+                                    for="id"
+                                    class=" mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    >Charity Id</label
+                                >
+                                <input
+                                    type="number"
+                                    name="id"
+                                    id="id"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Type User ID"
+                                    required=""
+                                    disabled
+                                    readonly
+                                    v-model="form.id"
+                                />
+                        </div>
                         <div class="mt-4">
                             <label
                                 for="name"
@@ -161,7 +199,7 @@
                                 id="phone"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Phone"
-                                required=""
+
                             />
                             <InputError
                                 class="mt-2"
@@ -188,26 +226,7 @@
                                 :message="form.errors.email"
                             />
                         </div>
-                        <div class="mt-4">
-                            <label
-                                for="email"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                >Password</label
-                            >
-                            <input
-                                v-model="form.password"
-                                type="password"
-                                name="password"
-                                id="password"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Password"
-                                required
-                            />
-                            <InputError
-                                class="mt-2"
-                                :message="form.errors.password"
-                            />
-                        </div>
+
                     </div>
                     <div class="">
                         <div class="mt-4">
@@ -222,7 +241,7 @@
                                 id="website"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Website.com"
-                                required
+
                             />
                         </div>
 
@@ -230,12 +249,13 @@
                             <label
                                 for="category"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                >Major</label
+                                >Speciality</label
                             >
                             <select
-                                v-model="form.major"
+                                v-model="form.specialty_id"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                disabled
                             >
                                 <option selected="">-</option>
                                 <option value="">Major 1</option>
@@ -281,6 +301,7 @@
                 <button
                     type="submit"
                     class="text-white inline-flex w-full mt-12 items-center bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+
                 >
                     <svg
                         class="me-1 -ms-1 w-5 h-5"
@@ -373,29 +394,28 @@ import { initFlowbite } from "flowbite";
 import { Head, Link, useForm } from "@inertiajs/vue3";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
-// defineProps({charity:Object})
+const props = defineProps({ charity: Object })
 onMounted(() => {
     initFlowbite();
 });
 
 const form = useForm({
-    name: "",
-    email: "",
-    phone: "",
-    website_link: "",
-    password: "",
-    major: "",
-    isAtive: "",
-    description: "",
-    image: "",
+    id: props.charity.id,
+    name: props.charity.name,
+    email: props.charity.email,
+    phone: props.charity.phone,
+    website_link: props.charity.website_link,
+    // password: "",
+    specialty_id: props.charity.specialty_id,
+    isAtive: props.charity.isActive,
+    description: props.charity.description,
+    image: props.charity.image,
 });
 const submit = () => {
     form.put(
         route("admins.charities.update"),
-        // {
-        //     charity: charity.id,
-        // },
         {
+            charity: charity.id,
             onFinish: () => Swal.fire("Created successfully", "", "success"),
         }
     );

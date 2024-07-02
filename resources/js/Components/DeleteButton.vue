@@ -1,8 +1,13 @@
 <template>
 
     <!-- Modal toggle -->
-<div class="flex justify-center">
+<!-- <div class="flex justify-center">
     <button id="deleteButton" data-modal-target="deleteModal" data-modal-toggle="deleteModal" class=" px-6 py-2 rounded-md font-semibold tracking-wide cursor-pointer  text-white bg-red-700 rounded-e-lg border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 " type="button">
+    Delete
+    </button>
+</div> -->
+<div class="flex justify-center">
+    <button id="deleteButton"class=" px-6 py-2 rounded-md font-semibold tracking-wide cursor-pointer  text-white bg-red-700 rounded-e-lg border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 " type="button">
     Delete
     </button>
 </div>

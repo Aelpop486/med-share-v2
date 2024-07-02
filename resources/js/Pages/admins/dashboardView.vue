@@ -51,11 +51,11 @@
 
             </div>
             <div class="xl:col-span-1 lg:mx-auto ">
-                        <LastUsers />
+                        <LastUsers :users="users" />
 
             </div>
             <div class="xl:col-span-1 lg:mx-auto">
-                        <LastDonetion />
+                        <LastDonetion :donations="donations"/>
 
             </div>
         </div>
@@ -73,7 +73,7 @@ import Statistics from "@/Components/Statistics.vue";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 import LastUsers from "@/Components/LastUsers.vue";
 import DonationTable from "@/Components/DonationTable.vue";
-defineProps({donations:Object})
+defineProps({donations:Object , users:Object})
 
 </script>
 

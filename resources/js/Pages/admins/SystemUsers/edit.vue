@@ -32,6 +32,10 @@
                 <div class="grid gap-4 mb-4 grid-cols-2">
 
                     <div class="col-span-2">
+                        <label for="id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID</label>
+                        <input v-model="form.id" type="text" name="id" id="id" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" disabled >
+                    </div>
+                    <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                         <input v-model="form.name" type="text" name="name" id="name" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type SystemUser Name" required="">
                     </div>
@@ -40,7 +44,7 @@
                         <input v-model="form.email" type="text" name="email" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type SystemUser Email" required="">
                     </div>
 
-                     <div class="col-span-2">
+                     <!-- <div class="col-span-2">
                                     <label
                                         for="email"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -57,7 +61,7 @@
                                     />
                                                         <InputError class="mt-2" :message="form.errors.password" />
 
-                                </div>
+                                </div> -->
                     <!-- <div class="col-span-2 ">
                         <label for="role" class="block mb-2 text-sm text-center font-medium text-gray-900 dark:text-white">Role</label>
                         <select v-model="form.role" id="role" class="bg-gray-50 border border-gray-300  text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
@@ -91,13 +95,15 @@ import DisableButton from "@/Components/DisableButton.vue";
 import BanButton from "@/Components/BanButton.vue";
 import AdminsLayout from '@/Layouts/AdminsLayout.vue';
 defineOptions({ layout: AdminsLayout })
+const props = defineProps({ admin: Object })
 const form = useForm({
-    name: '',
-    email: '',
-    password: '',
+    id: props.admin.id,
+    name: props.admin.name,
+    email: props.admin.email,
+    // password: '',
     // role: '',
-    description: '',
-    image: '',
+    description: props.admin.description,
+    image: props.admin.image,
 
 });
 const submit = () => {

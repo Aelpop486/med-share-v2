@@ -18,7 +18,7 @@ class DonationController extends Controller
 
     public function edit(donation $donation)
     {
-        $donation = donation::where('id', $donation->id)->with(['images','address','city','charity','user'])->get();
+        $donation = donation::where('id', $donation->id)->with(['images','address','city','charity','user'])->first();
         // dd($donation);
         return Inertia::render('admins/Donations/edit',[
             'donation'=>$donation
@@ -27,9 +27,9 @@ class DonationController extends Controller
 
     public function destroy(donation $donation)
     {
-        dd($donation);
+        // dd($donation);
         $donation->delete();
-        return to_route('admins.donations.index')->with('success', 'Donation deleted successfully');
+        return back()->with('success', 'Donation deleted successfully');
     }
 
 }
