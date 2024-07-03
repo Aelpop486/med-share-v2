@@ -208,6 +208,7 @@
 </template>
 
 <script setup>
+import Swal from "sweetalert2";
 import { Head, Link, useForm } from "@inertiajs/vue3";
 import DeleteButton from "@/Components/DeleteButton.vue";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
@@ -220,9 +221,8 @@ const form = useForm({
     image: props.specialty.image,
 });
 const submit = () => {
-    form.put(route("admins.specialties.update"), {
-        charity: charity.id,
-        onFinish: () => Swal.fire("Updated successfully", "", "success"),
+    form.put(route("admins.specialties.update", { speciality: props.speciality.id }), {
+        onSuccess: () => Swal.fire("Updated successfully", "", "success"),
     });
 };
 </script>

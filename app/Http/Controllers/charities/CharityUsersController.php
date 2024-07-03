@@ -25,6 +25,7 @@ class CharityUsersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(CharityUsersStoreRequset $request)
     {
         $validatedData = $request->validated();
@@ -37,7 +38,6 @@ class CharityUsersController extends Controller
         $user = Charity_users::create($validatedData);
         return back()->with('success', 'User created successfully');
     }
-
     public function edit(Charity_users $charity_users)
     {
         return Inertia::render('charities/CharityUsers/edit', [
@@ -48,7 +48,7 @@ class CharityUsersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CharityUsersStoreRequset $request,Charity_users $charity_users)
+    public function update(CharityUsersStoreRequset $request, Charity_users $charity_users)
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {

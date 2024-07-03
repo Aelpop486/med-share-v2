@@ -1,1 +1,0 @@
-import{_ as t}from"./charitesLayout-CnQJfE9R.js";import{o,c as e}from"./app-Cte6n6nR.js";import"./IMG_1525-93Jb5LtC.js";import"./index-BIUDqRGO.js";import"./DarkMode-s1XbGzlA.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";const l=Object.assign({layout:t},{__name:"index",setup(r){return(s,a)=>(o(),e("div",null,"HEllo settings"))}});export{l as default};

@@ -42,7 +42,7 @@ class CharitController extends Controller
      */
     public function edit(charit $charity)
     {
-        $charity = charit::where('id', $charity->id)->with(['specialty','users','admin'])->first();
+        $charity->load(['specialty','users','admin']);
         // dd($charity);
         $specialty = specialty::all();
         return Inertia::render('admins/Charity/edit',[
@@ -57,6 +57,7 @@ class CharitController extends Controller
     public function update(CharityStoreRequest $request,charit $charity)
     {
         $validatedData = $request->validated();
+        dd($validatedData);
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
             ImageService::deleteImage($charity->image);

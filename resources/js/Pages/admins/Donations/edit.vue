@@ -382,24 +382,25 @@
 </template>
 
 <script setup>
+import Swal from "sweetalert2";
 import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 import { Head, Link, useForm } from "@inertiajs/vue3";
 // import DeleteButton from "@/Components/DeleteButton.vue";
-const props = defineProps({ donation: Object });
+const props = defineProps({ donation: Object ,user: Object,address: Object });
 
 const form = useForm({
     id: props.donation.id,
-    name: props.donation.title,
-    email: props.donation.email,
+    name: props.donation.user.name,
+    email: props.donation.user.email,
     address: props.donation.address,
     description: props.donation.description,
     image: props.donation.image,
 });
 const submit = () => {
-    form.delete(route("admins.donations.destroy"), {
-        onFinish: () => Swal.fire("Deleted successfully", "", "success"),
+    form.delete(route("admins.donations.destroy" ,{ donation: props.donation.id }), {
+        onSuccess: () => Swal.fire("Deleted successfully", "", "success"),
     });
 };
 

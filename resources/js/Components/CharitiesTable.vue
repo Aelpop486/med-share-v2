@@ -180,6 +180,7 @@
                                 <th scope="col" class="px-4 py-3">Id</th>
                                 <th scope="col" class="px-4 py-3">Logo</th>
                                 <th scope="col" class="px-4 py-3">Name</th>
+                                <th scope="col" class="px-4 py-3">Email</th>
                                 <th scope="col" class="px-4 py-3">Major</th>
 
                                 <th scope="col" class="px-4 py-3">
@@ -196,7 +197,7 @@
                                 <td class="px-4 py-3">{{ charity.id }}</td>
                                 <td class="px-4 py-3">{{}}</td>
                                 <td class="px-4 py-3">{{ charity.name }}</td>
-                                <td class="px-4 py-3">{{}}</td>
+                                <td class="px-4 py-3">{{charity.email}}</td>
 
                                 <td
                                     class="px-4 py-3 flex items-center justify-end"
