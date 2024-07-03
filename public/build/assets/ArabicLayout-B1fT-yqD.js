@@ -1,1 +1,0 @@
-import o from"./ArabicFooter-DFvn0hlD.js";import a from"./ArabicNavbar-Cg5fYBjt.js";import{o as t,c as s,f as r,r as c,F as m}from"./app-Do2_cE_O.js";const i={__name:"ArabicLayout",setup(n){return(e,_)=>(t(),s(m,null,[r(a),c(e.$slots,"default"),r(o)],64))}};export{i as _};
