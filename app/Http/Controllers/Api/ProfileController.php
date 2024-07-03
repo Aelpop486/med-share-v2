@@ -38,7 +38,6 @@ class ProfileController extends Controller
             'gender' => 'nullable|in:male,female',
             'date_of_birth' => 'date',
         ]);
-
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "images");
         }
@@ -46,8 +45,6 @@ class ProfileController extends Controller
             $validatedData["national_id"] = ImageService::uploadImage($request->file("national_id"), "national_ids");
         }
         
-        // dd($validatedData);
-
         $user->update($validatedData);
         
         return response()->json(['message' => 'Profile updated successfully']);
