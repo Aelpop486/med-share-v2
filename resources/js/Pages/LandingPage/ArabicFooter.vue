@@ -57,7 +57,6 @@
                     </li>
                     <li>
                         <a
-                            :href="route('Arabic')"
                             class="text-white hover:text-gray-900"
                             >الصفحه الريسية</a
                         >
