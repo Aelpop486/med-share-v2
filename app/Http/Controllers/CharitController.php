@@ -57,6 +57,7 @@ class CharitController extends Controller
     public function update(CharityStoreRequest $request,charit $charity)
     {
         $validatedData = $request->validated();
+        dd($validatedData);
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
             ImageService::deleteImage($charity->image);

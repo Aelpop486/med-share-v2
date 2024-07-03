@@ -135,7 +135,7 @@
                         <div class="flex justify-center">
                             <DisableButton />
                             <BanButton />
-                            <button
+                            <!-- <button
                             type="submit"
                             class="text-white inline-flex mt-6 w-full items-center bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                         >
@@ -152,7 +152,7 @@
                                 ></path>
                             </svg>
                             save
-                        </button>
+                        </button> -->
                         </div>
                     </form>
                 </div>
@@ -180,12 +180,12 @@ const form = useForm({
     image: "",
     language: props.user.language,
 });
-const submit = () => {
-    form.put(route("admins.users.update"), {
-        
-        onFinish: () => Swal.fire("Updated successfully", "", "success"),
-    });
-};
+// const submit = () => {
+//     form.put(route("admins.users.update"), {
+
+//         onSuccess: () => Swal.fire("Updated successfully", "", "success"),
+//     });
+// };
 
 </script>
 
