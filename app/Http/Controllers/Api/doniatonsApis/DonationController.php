@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Api\doniatonsApis;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DeleteImageRequest;
 use App\Http\Requests\DonationApiStoreRequest;
 use App\Http\Requests\DonationApiUpdateRequest;
 use App\Http\Requests\UpdateDonationRequest;
 use App\Http\Resources\DonationCollection;
 use App\Http\Resources\DonationResource;
+use App\Models\donation_image;
 use Illuminate\Http\Request;
 use App\Models\donation;
 use App\Services\ImageService;
 use Illuminate\Support\Facades\Validator;
-
 use function Pest\Laravel\json;
 
 class DonationController extends Controller
@@ -23,7 +24,9 @@ class DonationController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
-        $donations = $user->donations()->with('images')->paginate(10);
+        $donations = $user->donations()->with(['images','user', 'address'])->paginate(10);
+
+        //$donations->load('user');
         return response()->json([
             'status' => 200,
             'donations' => new DonationCollection($donations)
@@ -52,7 +55,6 @@ class DonationController extends Controller
                 'path' => $imageName
             ]);
         }
-    
         return response()->json(['message' => 'Donation Created successfully', 'donation' => new DonationResource($donation)]);
     }
     
@@ -65,6 +67,16 @@ class DonationController extends Controller
         return new DonationResource($donation);
     }
 
+    public function addNewImage(Request $request, donation $donation)
+    {
+        return new DonationResource($donation);
+    }
+
+    public function deleteImage(DeleteImageRequest $request)
+    {  
+       $deletedImages = donation_image::whereIn('id', $request->ids)->delete();
+        return response()->json(['message' => 'Donation Updated successfully']);
+    }
     // /**
     //  * Update the specified resource in storage.
     //  */
@@ -87,9 +99,7 @@ class DonationController extends Controller
                 ]);
             }
         }
-
-        return response()->json(['message' => 'Donation updated successfully', 'donation' => new DonationResource($donation)]);
-    
+        return response()->json(['message' => 'Donation updated successfully', 'donation' => new DonationResource($donation)]);    
     }
     
 

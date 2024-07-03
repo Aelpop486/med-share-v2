@@ -25,10 +25,9 @@ class CharityUsersStoreRequset extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:charity_users,email',
             'password' => 'required|string|min:8|confirmed',
-            'phone' => 'required|numeric',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+            'phone' => 'nullable|numeric',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
             'role' => 'required',
-            'charity_id' => 'required|exists:charits,id',
             'isActive' => 'required',
         ];
     }

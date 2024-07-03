@@ -67,6 +67,7 @@ class AuthController extends Controller
             $data['token'] = $user->createToken('MyAuthApp')->plainTextToken;
             $data['name'] = $user->name;
             $data['email'] = $user->email;
+            $data['image'] = $user->image;
 
             return ApiResponse::sendResponse(200, "Login Succcessfully", $data);
 
@@ -149,8 +150,7 @@ class AuthController extends Controller
 
         return ApiResponse::sendResponse(200, 'Password Reset Successfully');
     }
-
-
+}
 
 
 
@@ -227,5 +227,5 @@ class AuthController extends Controller
     //     return ApiResponse::sendResponse(200, 'Password reset successfully');
     // }
 
-}
+
 

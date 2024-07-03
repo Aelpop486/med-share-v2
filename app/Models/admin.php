@@ -53,4 +53,9 @@ class admin extends Authenticatable #implements MustVerifyEmail
     {
         return $this->hasMany(charit::class);
     }
+
+    public function specialties() : HasMany
+    {
+        return $this->hasMany(specialty::class);
+    }
 }

@@ -33,6 +33,7 @@ class LoginController extends Controller
             $data['token'] = $token;
             $data['name'] = $user->name;
             $data['email'] = $user->email;
+            $data['image']= $user->image;
 
             return ApiResponse::sendResponse(200, "Login Successfully", $data);
         } else {

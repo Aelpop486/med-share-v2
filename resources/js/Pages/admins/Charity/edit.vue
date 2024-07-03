@@ -101,45 +101,78 @@
     </h2>
     <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
     <section class="text-gray-200 body-font">
-        <div class="container px-5 py-24 mx-auto  ">
+        <div class="container px-5 py-24 mx-auto">
             <!-- Edit Section-->
-            <div class=" mx-auto bg-white p-8 rounded-lg" >
-                <!-- image upload -->
-                <div class="shrink-0 mb-6 justify-center flex">
-                    <img
-                        class="h-20 w-20 bg-slate-300 object-cover rounded-full"
-                        src=""
-                        alt=""
+            <form class="w-full p-4 md:p-5" @submit.prevent="submit">
+                <div class="">
+                    <!-- image upload -->
+                    <div class="shrink-0 mb-6 justify-center flex">
+                        <img
+                            class="h-20 w-20 bg-slate-300 object-cover rounded-full"
+                            src=""
+                            alt=""
+                        />
+                    </div>
+                    <label
+                        class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        for="file_input"
+                        >Upload Photo</label
+                    >
+                    <input
+                        class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        id="file_input"
+                        type="file"
+                        @input="form.image = $event.target.files[0]"
                     />
+                    <!-- image upload End -->
                 </div>
-                <label
-                    class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    for="file_input"
-                    >Upload Photo</label
-                >
-                <input
-                    class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                    id="file_input"
-                    type="file"
-                    @input="form.image = $event.target.files[0]"
 
-                />
-               <!-- image upload End -->
-                <!-- Form -->
-                <form class="grid grid-cols-4 gap-6 w-full p-4 md:p-5">
-                    <div class="col-span-2 justify-center mb-4">
-                         <div class="col-span-2">
-                      <label for="id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Admin Id</label>
-                      <input type="number" name="id" id="id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full mb-2 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Admin ID" required="">
-                  </div>
-                        <div class="col-span-2">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="  ">
+                        <div class="mt-4">
+                            <!-- <label
+                                for="password"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Password</label
+                            >
+                            <input
+                                v-model="form.password"
+                                type="password"
+                                name="password"
+                                id="password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Password"
+                                required
+                            />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.password"
+                            /> -->
+                            <label
+                                for="id"
+                                class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Charity Id</label
+                            >
+                            <input
+                                type="number"
+                                name="id"
+                                id="id"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Type User ID"
+                                required=""
+                                disabled
+                                readonly
+                                v-model="form.id"
+                            />
+                        </div>
+                        <div class="mt-4">
                             <label
                                 for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Name</label
                             >
                             <input
-                            v-model="form.name"
+                                v-model="form.name"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -147,31 +180,38 @@
                                 placeholder="Charity Name"
                                 required=""
                             />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.name"
+                            />
                         </div>
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
                                 for="phone"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Phone</label
                             >
                             <input
-                            v-model="form.phone"
+                                v-model="form.phone"
                                 type="text"
                                 name="phone"
                                 id="phone"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Phone"
-                                required=""
+                            />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.phone"
                             />
                         </div>
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
                                 for="email"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Email</label
                             >
                             <input
-                            v-model="form.email"
+                                v-model="form.email"
                                 type="email"
                                 name="email"
                                 id="email"
@@ -179,10 +219,15 @@
                                 placeholder="Email"
                                 required=""
                             />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.email"
+                            />
                         </div>
-                        <div class="col-span-2">
+                    </div>
+                    <div class="">
+                        <div class="mt-4">
                             <label
-
                                 for="website"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Website URL</label
@@ -193,40 +238,38 @@
                                 id="website"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Website.com"
-                                required
                             />
-
                         </div>
-                    </div>
-                    <div class="mb-4 col-span-2">
 
-                        <div class="col-span-2">
-
+                        <div class="mt-4">
                             <label
                                 for="category"
-                                class="block mb-2 text-sm  font-medium text-gray-900 dark:text-white"
-                                >Major</label
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Speciality</label
                             >
                             <select
-                            v-model="form.major"
+                                v-model="form.specialty_id"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                disabled
                             >
-                                <option selected="">-</option>
-                                <option value="">Major 1</option>
-                                <option value="">Major 2</option>
-                                <option value="">Major 3</option>
-                                <option value="">Major 4</option>
+                                <option
+                                    v-for="(s, index) in specialty"
+                                    :key="index"
+                                    :value="s.id"
+                                >
+                                    {{ s.title }}
+                                </option>
                             </select>
                         </div>
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
                                 for="category"
-                                class="block mb-2 text-sm  font-medium text-gray-900 dark:text-white"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >Status</label
                             >
                             <select
-                            v-model="form.isAtive"
+                                v-model="form.isAtive"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             >
@@ -236,7 +279,7 @@
                             </select>
                         </div>
 
-                        <div class="col-span-2">
+                        <div class="mt-4">
                             <label
                                 for="description"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -244,7 +287,7 @@
                                 Description</label
                             >
                             <textarea
-                            v-model="form.description"
+                                v-model="form.description"
                                 id="description"
                                 rows="4"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -252,10 +295,10 @@
                             ></textarea>
                         </div>
                     </div>
-                </form>
+                </div>
                 <button
                     type="submit"
-                    class="text-white inline-flex w-full items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    class="text-white inline-flex w-full mt-12 items-center bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                 >
                     <svg
                         class="me-1 -ms-1 w-5 h-5"
@@ -271,10 +314,9 @@
                     </svg>
                     Create
                 </button>
-                <!-- Form End -->
-            </div>
+            </form>
             <!-- Edit Section End-->
-                <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700 " />
+            <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
 
             <div class="lg:w-4/6 mx-auto bg-white rounded-3xl">
                 <div class="py-20">
@@ -336,7 +378,7 @@
                     </div>
                 </div>
             </div>
-                            <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700 " />
+            <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
 
             <charities-users-table />
         </div>
@@ -344,33 +386,35 @@
 </template>
 
 <script setup>
+import Swal from "sweetalert2";
 import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
+import { Head, Link, useForm } from "@inertiajs/vue3";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
+import InputError from "@/Components/InputError.vue";
 defineOptions({ layout: AdminsLayout });
-import CharitiesUsersTable from "@/Components/CharitiesUsersTable.vue";
-import { Head, Link, useForm } from '@inertiajs/vue3';
-import SaveButton from "@/Components/SaveButton.vue";
-defineProps({donation:Object})
-// initialize components based on data attribute selectors
+
+const props = defineProps({ charity: Object, specialty: Object });
+
 onMounted(() => {
     initFlowbite();
 });
 
 const form = useForm({
-    name: '',
-    email: '',
-    phone: '',
-    website_link:'',
-    major: '',
-    isAtive:'',
-    description: '',
-    image: '',
-
+    id: props.charity.id,
+    name: props.charity.name,
+    email: props.charity.email,
+    phone: props.charity.phone,
+    website_link: props.charity.website_link,
+    // password: "",
+    specialty_id: props.charity.specialty_id,
+    isAtive: props.charity.isActive,
+    description: props.charity.description,
+    image: props.charity.image,
 });
 const submit = () => {
-    form.post(route("charities.update"), {
-        onFinish: () => Swal.fire("Created successfully", "", "success"),
+    form.put(route("admins.charities.update", { charity: props.charity.id }), {
+        onSuccess: () => Swal.fire("Created successfully", "", "success"),
     });
 };
 </script>

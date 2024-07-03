@@ -11,6 +11,8 @@ class Charity_Contact extends Model
 {
     use HasFactory;
 
+    protected $table = "charity_contacts";
+
     protected $fillable = [
         'charity_id',
         'subject',

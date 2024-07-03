@@ -171,10 +171,12 @@
                         </span>
                     </button>
                 </div>
+
                 <div
                     class=" justify-center mt-10 rounded-2xl bg-white  "
                 >
                     <div class="text-center sm:pr-8 sm:py-8">
+                         <form class="p-4 md:p-5" @submit.prevent="submit">
                         <div
                             class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-800 text-gray-600"
                         >
@@ -196,12 +198,8 @@
                            </a>
 
 
-                <form class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
-                    <div class="col-span-2">
-                        <label for="id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Donate Id</label>
-                        <input type="number" name="id" id="id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Donate ID" required="">
-                    </div>
+
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                         <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Donator Name" required="">
@@ -213,6 +211,14 @@
                     <div class="col-span-2 ">
                         <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
                         <input type="text" name="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="area" required="">
+                    </div>
+                    <div class="col-span-2">
+                        <label for="role" class="block mb-2 text-sm text-center font-medium text-gray-900 dark:text-white">Status</label>
+                        <select  id="role" v-model="form.state" class="bg-gray-50 border border-gray-300  text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+
+                            <option value=""></option>
+
+                        </select>
                     </div>
 
                     <div class="col-span-2">
@@ -237,12 +243,20 @@
 import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
 import charitesLayout from "@/Layouts/charitesLayout.vue";
-
+import { Head, Link, useForm } from '@inertiajs/vue3';
 
 // initialize components based on data attribute selectors
 onMounted(() => {
     initFlowbite();
 });
+const form = useForm({
+    state:'',
+});
+const submit = () => {
+    form.put(route("admins.admins.update"), {
+        onFinish: () => Swal.fire("Updated successfully", "", "success"),
+    });
+};
 </script>
 
 <style lang="scss" scoped></style>

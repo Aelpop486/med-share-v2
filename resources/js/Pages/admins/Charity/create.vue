@@ -104,170 +104,228 @@
 
         <!-- Main modal -->
         <div class="container px-5 py-6">
-            <div class="lg:w-3/6 mx-auto bg-white rounded-2xl">
-                <div class="rounded-xl">
-                    <div class="text-center sm:pr-8 sm:py-8">
-                        <form
-                            class="p-4 md:p-5"
-                            @submit.prevent="submit"
-                            method="POST"
-                        >
-                            <div class="justify-center mb-10">
-                                <div class="shrink-0 mb-6 justify-center flex">
-                                    <img
-                                        class="h-20 w-20 bg-slate-300 object-cover rounded-full"
-                                        src=""
-                                        alt
-                                    />
-                                </div>
-
-                                <label
-                                    class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                    for="file_input"
-                                    >Upload Photo</label
-                                >
-                                <input
-                                    class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    id="file_input"
-                                    type="file"
-                                    @input="form.image = $event.target.files[0]"
-                                />
-                            </div>
-                            <div class="grid gap-4 mb-4 grid-cols-2">
-                                <div class="col-span-2">
-                                    <label
-                                        for="name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Name</label
-                                    >
-                                    <input
-                                        v-model="form.name"
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Charity Name"
-                                        required
-                                    />
-                                </div>
-                                <div class="col-span-2">
-                                    <label
-                                        for="phone"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Phone</label
-                                    >
-                                    <input
-                                        v-model="form.phone"
-                                        type="text"
-                                        name="phone"
-                                        id="phone"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Phone"
-                                        required
-                                    />
-                                </div>
-                                <div class="col-span-2">
-                                    <label
-                                        for="email"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Email</label
-                                    >
-                                    <input
-                                        v-model="form.email"
-                                        type="email"
-                                        name="email"
-                                        id="email"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Email"
-                                        required
-                                    />
-                                </div>
-                                <div class="col-span-2">
-                                    <label
-                                        for="website"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Website URL</label
-                                    >
-                                    <input
-                                        v-model="form.website_link"
-                                        type="url"
-                                        id="website"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="Website.com"
-                                        required
-                                    />
-                                </div>
-                                <div class="col-span-2">
-                                    <label
-                                        for="category"
-                                        class="block mb-2 text-sm text-center font-medium text-gray-900 dark:text-white"
-                                        >Major</label
-                                    >
-                                    <select
-                                        v-model="form.major"
-                                        id="category"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    >
-                                        <option selected>-</option>
-                                        <option value>Major 1</option>
-                                        <option value>Major 2</option>
-                                        <option value>Major 3</option>
-                                        <option value>Major 4</option>
-                                    </select>
-                                </div>
-                                <div class="col-span-2">
-                                    <label
-                                        for="category"
-                                        class="block mb-2 text-sm text-center font-medium text-gray-900 dark:text-white"
-                                        >Status</label
-                                    >
-                                    <select
-                                        id="category"
-                                        v-model="form.isAtive"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    >
-                                        <option selected>-</option>
-                                        <option value>Active</option>
-                                        <option value>Not Active</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-span-2">
-                                    <label
-                                        for="description"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Description</label
-                                    >
-                                    <textarea
-                                        v-model="form.description"
-                                        id="description"
-                                        rows="4"
-                                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="Write description here"
-                                    ></textarea>
-                                </div>
-                            </div>
-                            <button
-                                type="submit"
-                                class="text-white inline-flex w-full items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                            >
-                                <svg
-                                    class="me-1 -ms-1 w-5 h-5"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                                        clip-rule="evenodd"
-                                    />
-                                </svg>
-                                Create
-                            </button>
-                        </form>
+            <div class="mx-auto bg-white p-8 rounded-2xl">
+                <!-- Form -->
+                <form
+                    class="  w-full p-4 md:p-5"
+                    @submit.prevent="submit"
+                >
+                <div class="">
+                    <!-- image upload -->
+                    <div class="shrink-0 mb-6 justify-center flex">
+                        <img
+                            class="h-20 w-20 bg-slate-300 object-cover rounded-full"
+                            src=""
+                            alt=""
+                        />
                     </div>
+                    <label
+                        class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        for="file_input"
+                        >Upload Photo</label
+                    >
+                    <input
+                        class="mb-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        id="file_input"
+                        type="file"
+                        @input="form.image = $event.target.files[0]"
+                    />
+                    <!-- image upload End -->
                 </div>
+                  <div class="grid grid-cols-2 gap-6 ">
+                      <div class="  ">
+                        <div class="mt-4">
+                            <label
+                                for="name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Name</label
+                            >
+                            <input
+                                v-model="form.name"
+                                type="text"
+                                name="name"
+                                id="name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Charity Name"
+                                required=""
+                            />
+                             <InputError
+                                class="mt-2"
+                                :message="form.errors.name"
+                            />
+                        </div>
+                        <div class="mt-4">
+                            <label
+                                for="phone"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Phone</label
+                            >
+                            <input
+                                v-model="form.phone"
+                                type="text"
+                                name="phone"
+                                id="phone"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Phone"
+                                required=""
+                            />
+                             <InputError
+                                class="mt-2"
+                                :message="form.errors.phone"
+                            />
+                        </div>
+                        <div class="mt-4">
+                            <label
+                                for="email"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Email</label
+                            >
+                            <input
+                                v-model="form.email"
+                                type="email"
+                                name="email"
+                                id="email"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Email"
+                                required=""
+                            />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.email"
+                            />
+                        </div>
+                        <div class="mt-4">
+                            <label
+                                for="email"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Password</label
+                            >
+                            <input
+                                v-model="form.password"
+                                type="password"
+                                name="password"
+                                id="password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Password"
+                                required
+                            />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.password"
+                            />
+                        </div>
+                        <div class="mt-4">
+                            <label
+                                for="password_confirmation"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Confirm Password</label
+                            >
+                            <input
+                                v-model="form.password_confirmation"
+                                type="password"
+                                name="password_confirmation"
+                                id="password_confirmation"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Confirm Password"
+                                required
+                            />
+                            <InputError
+                                class="mt-2"
+                                :message="form.errors.password_confirmation"
+                            />
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="mt-4">
+                            <label
+                                for="website"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Website URL</label
+                            >
+                            <input
+                                v-model="form.website_link"
+                                type="url"
+                                id="website"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Website.com"
+                                required
+                            />
+                        </div>
+
+                        <div class="mt-4">
+                            <label
+                                for="category"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Major</label
+                            >
+                            <select
+                                v-model="form.major"
+                                id="category"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            >
+                                <option selected="">-</option>
+                                <option value="">Major 1</option>
+                                <option value="">Major 2</option>
+                                <option value="">Major 3</option>
+                                <option value="">Major 4</option>
+                            </select>
+                        </div>
+                        <div class="mt-4">
+                            <label
+                                for="category"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Status</label
+                            >
+                            <select
+                                v-model="form.isAtive"
+                                id="category"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            >
+                                <option selected="">-</option>
+                                <option value="">Active</option>
+                                <option value="">Not Active</option>
+                            </select>
+                        </div>
+
+                        <div class="mt-4">
+                            <label
+                                for="description"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                                Description</label
+                            >
+                            <textarea
+                                v-model="form.description"
+                                id="description"
+                                rows="4"
+                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Write product description here"
+                            ></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+                <button
+                    type="submit"
+                    class="text-white inline-flex w-full mt-12 items-center bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                >
+                    <svg
+                        class="me-1 -ms-1 w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                            clip-rule="evenodd"
+                        ></path>
+                    </svg>
+                    Create
+                </button>
+                </form>
+                <!-- Form End -->
             </div>
         </div>
     </div>
@@ -275,7 +333,7 @@
 
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
-
+import InputError from '@/Components/InputError.vue';
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
 
@@ -283,15 +341,17 @@ const form = useForm({
     name: "",
     email: "",
     phone: "",
+    password: "",
+    password_confirmation: "",
     website_link: "",
     major: "",
-    isAtive: "",
+    isActive: "",
     description: "",
     image: "",
 });
 
 const submit = () => {
-    form.post(route("charities.store"), {
+    form.post(route("admins.charities.store"), {
         onFinish: () => Swal.fire("Created successfully", "", "success"),
     });
 };

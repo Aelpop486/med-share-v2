@@ -13,17 +13,7 @@ use Inertia\Inertia;
 
 class CharitController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $specialty = specialty::all();
@@ -50,9 +40,10 @@ class CharitController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request)
+    public function edit(charit $charity)
     {
-        $charity = charit::find($request->id)->with(['specialty'],['users'],['admin'])->get();
+        $charity->load(['specialty','users','admin']);
+        // dd($charity);
         $specialty = specialty::all();
         return Inertia::render('admins/Charity/edit',[
             'charity'=>$charity,
@@ -66,6 +57,7 @@ class CharitController extends Controller
     public function update(CharityStoreRequest $request,charit $charity)
     {
         $validatedData = $request->validated();
+        dd($validatedData);
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
             ImageService::deleteImage($charity->image);
@@ -81,6 +73,6 @@ class CharitController extends Controller
     public function destroy(charit $charity)
     {
         $charity->delete();
-        return to_route('charities')->with('success', 'Charity deleted successfully');
+        return to_route('admins.charities')->with('success', 'Charity deleted successfully');
     }
 }

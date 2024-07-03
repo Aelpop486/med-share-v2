@@ -11,6 +11,9 @@ class Address extends Model
 {
     use HasFactory;
 
+
+    protected $table = 'addresses';
+
     protected $fillable = [
         'address',
         'longitude',
@@ -18,6 +21,7 @@ class Address extends Model
         'user_id',
         'city_id',
     ];
+
 
     public function user(): BelongsTo
     {

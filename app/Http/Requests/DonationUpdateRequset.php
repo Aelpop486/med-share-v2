@@ -22,7 +22,7 @@ class DonationUpdateRequset extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'state' => 'required|exists:donations,state'
         ];
     }
 }

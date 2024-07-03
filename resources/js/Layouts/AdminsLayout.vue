@@ -1,6 +1,4 @@
 <template>
-
-
    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
       <div class="px-3 py-3 lg:px-5 lg:pl-3">
          <div class="flex items-center justify-between">
@@ -21,6 +19,9 @@
                   <span
                      class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">MedShare</span>
                </a>
+            </div>
+            <div class="">
+                <DarkMode />
             </div>
             <div class="flex items-center">
                <div class="flex items-center ms-3">
@@ -58,9 +59,10 @@
                         </li>
 
                         <li>
-                           <a href="#"
-                              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                              role="menuitem">Sign out</a>
+                           <Link :href="route('logout')" method="post"
+                              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
+                           Sign Out
+                           </Link>
                         </li>
                      </ul>
                   </div>
@@ -76,7 +78,7 @@
       <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
          <ul class="space-y-2 font-medium">
             <li>
-               <Link :href="route('dashboardView')"
+               <Link :href="route('admins.dashboardView')"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -90,7 +92,7 @@
                </Link>
             </li>
             <li>
-               <Link :href="route('govDonations')"
+               <Link :href="route('admins.govDonations')"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -102,7 +104,7 @@
                </Link>
             </li>
             <li>
-               <Link :href="route('charities')"
+               <Link :href="route('admins.charities')"
                   class=" active:text-yellow-400 flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -114,7 +116,7 @@
                </Link>
             </li>
             <li>
-               <Link :href="route('specialties')"
+               <Link :href="route('admins.specialties')"
                   class=" active:text-yellow-400 flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -127,7 +129,7 @@
             </li>
 
             <li>
-               <Link :href="route('users')"
+               <Link :href="route('admins.users')"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -140,7 +142,7 @@
             </li>
 
             <li>
-               <Link :href="route('systemUsers')"
+               <Link :href="route('admins.systemUsers')"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg
                   class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -152,7 +154,7 @@
                </Link>
             </li>
             <li>
-               <Link :href="route('dashboardView')"
+               <Link :href="route('admins.dashboardView')"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
                <svg
@@ -174,7 +176,7 @@
                      d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
                </svg>
                <Link :href="route('logout')" method="post" class="flex-1 ms-3 whitespace-nowrap">
-                  Sign Out
+               Sign Out
                </Link>
                </Link>
             </li>
@@ -183,7 +185,7 @@
       </div>
    </aside>
 
-   <div class="p-4 sm:ml-64 mt-14 bg-gray-100 min-h-screen">
+   <div class="p-4 sm:ml-64 mt-14 bg-gray-100 dark:bg-gray-800 min-h-screen">
       <slot />
    </div>
 
@@ -193,6 +195,7 @@
 import { Head, Link } from '@inertiajs/vue3';
 import { onMounted } from 'vue';
 import { initFlowbite } from 'flowbite';
+import DarkMode from "@/Pages/LandingPage/DarkMode.vue";
 
 
 // initialize components based on data attribute selectors
@@ -200,5 +203,6 @@ onMounted(() => {
    initFlowbite();
 })
 </script>
+
 
 <style lang="scss" scoped></style>

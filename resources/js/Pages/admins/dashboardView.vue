@@ -1,7 +1,7 @@
 <template>
     <!-- slot tmplate link  -->
     <AdminsLayout>
-        <nav class="flex mb-4" aria-label="Breadcrumb">
+        <nav class="flex mb-4 dark:bg-gray-800 dark:text-white" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
                     <Link href="#"
@@ -37,7 +37,7 @@
                 </li>
             </ol>
         </nav>
-        <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
+        <h2 class="mb-4 text-3xl font-extrabold dark:bg-gray-800 leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
             Analytics
         </h2>
         <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
@@ -45,22 +45,23 @@
             <Statistics />
         </div>
 
-        <div class="grid grid-cols-4 ">
-            <div class="col-span-2">
-                        <Charts class="my-20 bg-white rounded-xl p-2" />
+        <div class="grid xl:grid-cols-4 dark:bg-gray-800 dark:text-white md:grid-cols-1 mt-10 ">
+            <div class="xl:col-span-2 ">
+                        <Charts class="my-4 bg-white rounded-xl p-2 "  />
 
             </div>
-            <div class="col-span-1">
-                        <LastUsers />
+            <div class="xl:col-span-1 lg:mx-auto ">
+                        <LastUsers :users="users" />
 
             </div>
-            <div class="col-span-1">
-                        <LastDonetion />
+            <div class="xl:col-span-1 lg:mx-auto">
+                        <LastDonetion :donations="donations"/>
 
             </div>
         </div>
 
-        <DonationTable />
+
+        <DonationTable :donations="donations" />
     </AdminsLayout>
 </template>
 
@@ -72,6 +73,7 @@ import Statistics from "@/Components/Statistics.vue";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 import LastUsers from "@/Components/LastUsers.vue";
 import DonationTable from "@/Components/DonationTable.vue";
+defineProps({donations:Object , users:Object})
 
 </script>
 

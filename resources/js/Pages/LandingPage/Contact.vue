@@ -1,6 +1,6 @@
 <template>
     <section
-        class="w-full xl:py-24 lg:py-20 py-12 bg-slate-50 border-b border-gray-300"
+        class="w-full xl:py-24 lg:py-20 py-12 bg-slate-50 border-b border-gray-300 dark:bg-gray-900 dark:text-white"
     >
         <div class="w-full max-w-7xl px-6 lg:px-8 mx-auto">
             <div
@@ -8,12 +8,12 @@
             >
                 <div>
                     <h1
-                        class="font-manrope text-gray-900 md:text-5xl text-4xl font-bold leading-tight mb-8 lg:text-left text-center"
+                        class="font-manrope text-gray-900 md:text-5xl dark:text-white text-4xl font-bold leading-tight mb-8 lg:text-left text-center"
                     >
                         Contact Us
                     </h1>
                     <p
-                        class="text-gray-900 text-lg font-normal leading-7 lg:text-left text-center"
+                        class="text-gray-900 text-lg font-normal leading-7 dark:text-white lg:text-left text-center"
                     >
                         We're here to assist you! Whether you have questions,
                         feedback, or inquiries, our team is ready to help.
@@ -22,7 +22,7 @@
                         class="my-12 grid md:grid-cols-2 grid-cols-1 md:gap-x-8 gap-y-8"
                     >
                         <div
-                            class="rounded-2xl border border-gray-200 bg-white p-7 group transition-all duration-500 hover:bg-blue-700"
+                            class="rounded-2xl border border-gray-200 bg-white dark:bg-gray-900 dark:text-white p-7 group transition-all duration-500 hover:bg-blue-700 dark:hover:bg-white"
                         >
                             <a
                                 href="javascript:;"
@@ -51,19 +51,19 @@
                                 </svg>
                             </a>
                             <h5
-                                class="text-gray-900 text-xl font-semibold leading-8 mb-3 transition-all duration-500 group-hover:text-white"
+                                class="text-gray-900 text-xl dark:hover:text-black dark:text-white font-semibold leading-8 mb-3 transition-all duration-500 group-hover:text-white"
                             >
                                 Support
                             </h5>
                             <p
-                                class="text-gray-500 text-sm font-normal leading-5 transition-all duration-500 group-hover:text-white"
+                                class="text-gray-500 text-sm dark:hover:text-black dark:text-white font-normal leading-5 transition-all duration-500 group-hover:text-white"
                             >
-                                We Provide Various Methods For You To Carry Out
-                                All Transactions Related To Your Finances
+                                +20 155-4322-389 <br>
+                                +20 122-7405-709
                             </p>
                         </div>
                         <div
-                            class="rounded-2xl border border-gray-200 bg-white p-7 group transition-all duration-500 hover:bg-blue-700"
+                            class="rounded-2xl border dark:bg-gray-900 dark:text-white border-gray-200 bg-white p-7 group transition-all duration-500 hover:bg-blue-700 dark:hover:bg-white"
                         >
                             <a
                                 href="javascript:;"
@@ -92,34 +92,32 @@
                                 </svg>
                             </a>
                             <h5
-                                class="text-gray-900 text-xl font-semibold leading-8 mb-3 transition-all duration-500 group-hover:text-white"
+                                class="text-gray-900 text-xl dark:hover:text-black dark:text-white font-semibold leading-8 mb-3 transition-all duration-500 group-hover:text-white"
                             >
-                                Pagedone Blog
+                                Email
                             </h5>
                             <p
-                                class="text-gray-500 text-sm font-normal leading-5 transition-all duration-500 group-hover:text-white"
+                                class="text-gray-500 text-sm dark:hover:text-black dark:text-white font-normal leading-5 transition-all duration-500 group-hover:text-white"
                             >
-                                We have the most up-to-date security to support
-                                the security of all our customers in carrying
-                                out all transactions.
+                              sharemed915@gmail.com
                             </p>
                         </div>
                     </div>
                 </div>
                 <form
                     @submit.prevent="submit"
-                    class="h-fit bg-white border border-slate-200 rounded-2xl lg:p-12 p-8 w-full max-w-lg md:max-w-3xl lg:max-w-full mx-auto"
+                    class="h-fit bg-white border dark:bg-gray-900 dark:text-white border-slate-200 rounded-2xl lg:p-12 p-8 w-full max-w-lg md:max-w-3xl lg:max-w-full mx-auto"
                 >
                     <div class="relative mb-8">
                         <label
-                            class="flex items-center mb-2 text-gray-600 text-base leading-6 font-medium"
+                            class="flex items-center dark:text-white mb-2 text-gray-600 text-base leading-6 font-medium"
                             >Name
                         </label>
                         <div
-                            class="relative text-gray-500 focus-within:text-gray-900"
+                            class="relative dark:text-white text-gray-500 focus-within:text-gray-900"
                         >
                             <div
-                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                                class="absolute inset-y-0 dark:text-white left-0 flex items-center pl-3 pointer-events-none"
                             >
                                 <svg
                                     width="24"
@@ -144,7 +142,7 @@
                                 autocomplete="name"
                                 type="text"
                                 id="default-search"
-                                class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
+                                class="w-full block h-12 dark:text-white pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                                 placeholder="Full Name"
                             />
                             <InputError
@@ -155,14 +153,14 @@
                     </div>
                     <div class="relative mb-8">
                         <label
-                            class="flex items-center mb-2 text-gray-600 text-base leading-6 font-medium"
+                            class="flex items-center mb-2 dark:text-white text-gray-600 text-base leading-6 font-medium"
                             >Email
                         </label>
                         <div
                             class="relative text-gray-500 focus-within:text-gray-900"
                         >
                             <div
-                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                                class="absolute inset-y-0 left-0  dark:text-white flex items-center pl-3 pointer-events-none"
                             >
                                 <svg
                                     width="24"
@@ -183,9 +181,9 @@
                                 v-model="form.email"
                                 required
                                 autocomplete="username"
-                                type="text"
+                                type="email"
                                 id="default-search"
-                                class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
+                                class="w-full block h-12 v pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                                 placeholder="Enter Your Email"
                             />
                             <InputError
@@ -197,14 +195,14 @@
 
                     <div class="relative mb-8">
                         <label
-                            class="flex items-center mb-2 text-gray-600 text-base leading-6 font-medium"
+                            class="flex dark:text-white items-center mb-2 text-gray-600 text-base leading-6 font-medium"
                             >Phone
                         </label>
                         <div
-                            class="relative text-gray-500 focus-within:text-gray-900"
+                            class="relative dark:text-white text-gray-500 focus-within:text-gray-900"
                         >
                             <div
-                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                                class="absolute dark:text-white inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +225,7 @@
                                 autocomplete="phone"
                                 type="text"
                                 id="default-search"
-                                class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
+                                class="w-full block dark:text-white h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
                                 placeholder="Enter Your Phone"
                             />
                             <InputError
@@ -239,7 +237,7 @@
 
                     <div class="relative mb-8">
                         <label
-                            class="flex items-center mb-2 text-gray-600 text-base leading-6 font-medium"
+                            class="flex dark:text-white items-center mb-2 text-gray-600 text-base leading-6 font-medium"
                             >Subject
                         </label>
                         <div
@@ -270,8 +268,8 @@
                                 autocomplete="name"
                                 type="text"
                                 id="default-search"
-                                class="w-full block h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
-                                placeholder="Enter Your Phone"
+                                class="w-full block dark:text-white h-12 pr-5 pl-12 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
+                                placeholder="Enter Your Subject"
                             />
                             <InputError
                                 class="mt-2"
@@ -282,20 +280,22 @@
 
                     <div class="relative mb-8">
                         <label
-                            class="flex items-center mb-2 text-gray-600 text-base leading-6 font-medium"
+                            class="flex dark:text-white items-center mb-2 text-gray-600 text-base leading-6 font-medium"
                             >How can we help you
                         </label>
                         <div class="relative">
                             <textarea
-                                v-model="form.description"
+                                v-model="form.message"
+                                required
+                                type="text"
                                 id="description"
-                                class="block w-full h-40 px-4 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-2xl placeholder-gray-400 focus:outline-none resize-none"
+                                class="block w-full dark:text-white h-40 px-4 py-2.5 text-lg leading-7 font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-2xl placeholder-gray-400 focus:outline-none resize-none"
                                 placeholder="Write your message"
                             ></textarea>
                         </div>
                     </div>
                     <button
-                        class="w-full h-12 rounded-full bg-blue-700 hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center"
+                        class="w-full h-12 dark:text-white rounded-full bg-[#0155A5] hover:bg-indigo-900 transition-all duration-700 shadow-sm text-white text-base font-semibold leading-6 flex items-center justify-center"
                     >
                         Send message
                         <svg
@@ -329,11 +329,12 @@ const form = useForm({
     name: "",
     email: "",
     phone: "",
-    description: "",
+    subject: "",
+    message: "",
 });
 
 const submit = () => {
-    form.post(route("contact.store"), {
+    form.post(route('admins.contact.store'), {
         onFinish: () => Swal.fire("Contacted successfully", "", "success"),
     });
 };

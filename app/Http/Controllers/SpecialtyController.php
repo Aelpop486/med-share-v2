@@ -51,6 +51,8 @@ class SpecialtyController extends Controller
 
     public function edit(specialty $specialty)
     {
+        $specialty->Load('admin');
+        // dd($specialty);
         return Inertia::render('admins/specialties/edit', [
             'specialty' => $specialty
         ]);
@@ -76,6 +78,6 @@ class SpecialtyController extends Controller
     public function destroy(specialty $specialty)
     {
         $specialty->delete();
-        return to_route('specialties')->with('success', 'Specialty deleted successfully');
+        return to_route('admins.specialties')->with('success', 'Specialty deleted successfully');
     }
 }

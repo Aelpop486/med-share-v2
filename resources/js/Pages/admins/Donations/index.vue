@@ -64,7 +64,6 @@
 <script setup>
 import AdminsLayout from '@/Layouts/AdminsLayout.vue';
 import GovDonationsTable from '@/Components/GovDonationsTable.vue';
-
 import { Link } from "@inertiajs/vue3";
 defineProps({donations: Object});
 

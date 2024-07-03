@@ -26,6 +26,6 @@ class Charity_users extends Model
 
     public function charity() : BelongsTo
     {
-        return $this->belongsTo(charit::class);
+        return $this->belongsTo(charit::class,'charity_id');
     }
 }

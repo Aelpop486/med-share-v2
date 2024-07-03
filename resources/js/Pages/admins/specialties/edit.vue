@@ -98,7 +98,7 @@
     <h2
         class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white"
     >
-        Create Speciality
+        Edit Speciality
     </h2>
     <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
     <!-- Main modal -->
@@ -136,12 +136,13 @@
                                 >Admin Id</label
                             >
                             <input
+                                v-model="form.admin_id"
                                 type="number"
                                 name="id"
                                 id="id"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full mb-2 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Type Admin ID"
-                                required=""
+                                disabled
                             />
                         </div>
                         <div class="grid gap-4 mb-4 grid-cols-2">
@@ -178,12 +179,13 @@
                                 ></textarea>
                             </div>
                         </div>
+                       <div class="flex justify-around ">
                         <button
                             type="submit"
-                            class="text-white inline-flex w-full items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                            class="text-white inline-flex  items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                         >
                             <svg
-                                class="me-1 -ms-1 w-5 h-5"
+                                class="me-1 -ms-1 w-5 h-5 "
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -194,8 +196,10 @@
                                     clip-rule="evenodd"
                                 ></path>
                             </svg>
-                            Create
+                            Update
                         </button>
+                        <DeleteButton/>
+                       </div>
                     </form>
                 </div>
             </div>
@@ -204,18 +208,21 @@
 </template>
 
 <script setup>
+import Swal from "sweetalert2";
 import { Head, Link, useForm } from "@inertiajs/vue3";
-
+import DeleteButton from "@/Components/DeleteButton.vue";
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
+const props = defineProps({ specialty: Object })
 defineOptions({ layout: AdminsLayout });
 const form = useForm({
-    title: "",
-    description: "",
-    image: "",
+    title: props.specialty.title,
+    admin_id: props.specialty.admin_id,
+    description: props.specialty.description,
+    image: props.specialty.image,
 });
 const submit = () => {
-    form.post(route("specialties.update"), {
-        onFinish: () => Swal.fire("Updated successfully", "", "success"),
+    form.put(route("admins.specialties.update", { speciality: props.speciality.id }), {
+        onSuccess: () => Swal.fire("Updated successfully", "", "success"),
     });
 };
 </script>

@@ -15,14 +15,6 @@ use App\Http\Requests\CharityUsersStoreRequset;
 class CharityUsersController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -33,6 +25,7 @@ class CharityUsersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(CharityUsersStoreRequset $request)
     {
         $validatedData = $request->validated();
@@ -45,18 +38,6 @@ class CharityUsersController extends Controller
         $user = Charity_users::create($validatedData);
         return back()->with('success', 'User created successfully');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Charity_users $charity_users)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Charity_users $charity_users)
     {
         return Inertia::render('charities/CharityUsers/edit', [
@@ -67,7 +48,7 @@ class CharityUsersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CharityUsersStoreRequset $request,Charity_users $charity_users)
+    public function update(CharityUsersStoreRequset $request, Charity_users $charity_users)
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
@@ -85,6 +66,6 @@ class CharityUsersController extends Controller
     public function destroy(Charity_users $charity_users)
     {
         $charity_users->delete();
-        return to_route('charityUsers')->with('success', 'User deleted successfully');
+        return to_route('charits.CharityUsers')->with('success', 'User deleted successfully');
     }
 }

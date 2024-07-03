@@ -1,1 +1,0 @@
-import{_ as t}from"./charitesLayout-C7oy7_c-.js";import{o as e,f as o}from"./app-xfYODjfb.js";import"./IMG_1525-93Jb5LtC.js";import"./index-Bp9WpJq9.js";const m=Object.assign({layout:t},{__name:"index",setup(r){return(s,a)=>(e(),o("div",null,"HEllo settings"))}});export{m as default};
