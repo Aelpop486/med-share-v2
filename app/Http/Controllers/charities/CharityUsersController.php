@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\CharityUsersStoreRequset;
+use App\Http\Requests\CharityUsersUpdateRequset;
 
 class CharityUsersController extends Controller
 {
@@ -29,7 +30,7 @@ class CharityUsersController extends Controller
     public function store(CharityUsersStoreRequset $request)
     {
         $validatedData = $request->validated();
-
+        // dd($validatedData);
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charity_users");
         }
@@ -48,14 +49,13 @@ class CharityUsersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CharityUsersStoreRequset $request, Charity_users $charity_users)
+    public function update(CharityUsersUpdateRequset $request, Charity_users $charity_users)
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charity_users");
-            ImageService::deleteImage($charity_users->image,);
+            ImageService::deleteImage($charity_users->image);
         }
-        $validatedData['password'] = Hash::make($request->password);
         $charity_users->update($validatedData);
         return back()->with('success', 'User updated successfully');
     }
