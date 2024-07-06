@@ -74,6 +74,64 @@
                                     :message="form.errors.email"
                                 />
                             </div>
+                            <div class="mt-4">
+                            <label
+                                for="category"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >isActive</label
+                            >
+                            <select
+                                v-model="form.isActive"
+                                id="category"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                
+                            >
+                                <option
+                                  
+                                >
+                                    active 
+                                </option>
+                                <option
+                                  
+                                >
+                                    not active 
+                                </option>
+                            </select>
+                        </div>
+                        <div class="mt-4">
+                            <label
+                                for="category"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Role</label
+                            >
+                            <select
+                                v-model="form.isActive"
+                                id="category"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                
+                            >
+                                <option
+                                  
+                                >
+                                admin 
+                                </option>
+                                <option
+                                  
+                                >
+                                delvery 
+                                </option>
+                                <option
+                                  
+                                >
+                                reviewer 
+                                </option>
+                                <option
+                                  
+                                >
+                                volunteer 
+                                </option>
+                            </select>
+                        </div>
                                  <div class="col-span-2">
                                     <label
                                         for="email"
@@ -145,9 +203,10 @@ defineOptions({ layout: charitiesLayout });
 const form = useForm({
     name: "",
     email: "",
+    isActive:"",
+    role: "",
     password: "",
     password_confirmation: "",
-    // role: "",
     image: "",
 });
 

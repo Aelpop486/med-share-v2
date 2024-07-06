@@ -198,7 +198,10 @@
                             </svg>
                             Update
                         </button>
-                        <DeleteButton/>
+                             <Link method="delete" :href="route('admins.specialties.destroy', { specialty: specialty.id })"
+                                            class="block px-2 text-sm">
+                                        <DeleteButton/>
+                                        </Link>
                        </div>
                     </form>
                 </div>

@@ -3,11 +3,11 @@
     <div class="container px-5 py-24 mx-auto flex">
         <div class="lg:w-4/6 mx-auto">
             <div
-                class="flex-col justify-center sm:flex-row mt-10 rounded-2xl bg-white"
+                class="flex-col justify-center sm:flex-row mt-10 bg-white rounded-2xl"
             >
                 <div class="text-center sm:pr-8 sm:py-8">
                     <form class="p-4 md:p-5" @submit.prevent="submit">
-                        <div class="flex flex-col justify-center mb-4">
+                         <div class="flex flex-col justify-center mb-4">
                             <div class="shrink-0 mb-6 justify-center flex">
                                 <img
                                     class="h-20 w-20 bg-slate-300 object-cover rounded-full"
@@ -26,14 +26,11 @@
                                 id="file_input"
                                 type="file"
                                 @input="form.image = $event.target.files[0]"
-                            />
-                            <InputError
-                                class="mt-2"
-                                :message="form.errors.image"
+
                             />
                         </div>
-
                         <div class="grid gap-4 mb-4 grid-cols-2">
+                        
                             <div class="col-span-2">
                                 <label
                                     for="name"
@@ -48,10 +45,7 @@
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Type User Name"
                                     required=""
-                                />
-                                <InputError
-                                    class="mt-2"
-                                    :message="form.errors.name"
+
                                 />
                             </div>
                             <div class="col-span-2">
@@ -69,14 +63,60 @@
                                     placeholder="Type Email"
                                     required=""
                                 />
-                                <InputError
-                                    class="mt-2"
-                                    :message="form.errors.email"
-                                />
                             </div>
-                                 <div class="col-span-2">
+                            <div class="mt-4">
+                            <label
+                                for="category"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >isActive</label
+                            >
+                            <select
+                                v-model="form.isActive"
+                                id="category"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                
+                            >
+                                <option
+                                  value="1"
+                                >
+                                    active 
+                                </option>
+                                <option
+                                value="0"
+                                  
+                                >
+                                    not active 
+                                </option>
+                            </select>
+                        </div>
+                        <div class="mt-4">
+                            <label
+                                for="category0"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >Role</label
+                            >
+                            <select
+                                v-model="form.isActive"
+                                id="category"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                
+                            >
+                            <option
+                                    v-for="(option, index) in users.data"
+                                    :key="index"
+                                    :value="option.isActive"
+                                >
+                                    {{ option.isActive }}
+                                </option>
+                            </select>
+                        </div>
+
+
+                    
+                        
+                           <!-- <div class="col-span-2">
                                     <label
-                                        for="email"
+                                        for=""
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                         >Password</label
                                     >
@@ -91,28 +131,14 @@
                                     />
                                                         <InputError class="mt-2" :message="form.errors.password" />
 
-                                </div>
-                                <div class="col-span-2">
-                                    <label
-                                        for="password_confirmation"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Confirm Password</label
-                                    >
-                                    <input
-                                        v-model="form.password_confirmation"
-                                        type="password"
-                                        name="password_confirmation"
-                                        id="password_confirmation"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Confirm Password"
-                                        required
-                                    />
-                                                        <InputError class="mt-2" :message="form.errors.password_confirmation" />
-
-                                </div>
-
+                                </div> -->
+                       
                         </div>
-                        <button
+
+                        <div class="flex justify-center">
+                            <!-- <DisableButton />
+                            <BanButton /> -->
+                            <!-- <button
                             type="submit"
                             class="text-white inline-flex mt-6 w-full items-center bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                         >
@@ -128,8 +154,9 @@
                                     clip-rule="evenodd"
                                 ></path>
                             </svg>
-                            Create
-                        </button>
+                            save
+                        </button> -->
+                        </div>
                     </form>
                 </div>
             </div>
@@ -139,25 +166,29 @@
 
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
-import InputError from '@/Components/InputError.vue';
-import AdminsLayout from "@/Layouts/AdminsLayout.vue";
-defineOptions({ layout: AdminsLayout });
+import charitiesLayout from "@/Layouts/charitesLayout.vue";
+defineOptions({ layout: charitiesLayout });
+import DeleteButton from "@/Components/DeleteButton.vue";
+// import DisableButton from "@/Components/DisableButton.vue";
+// import BanButton from "@/Components/BanButton.vue";
+
+const props = defineProps({ charity_users: Object })
+
 const form = useForm({
-    name: "",
-    email: "",
-    password: "",
-    password_confirmation: "",
-    role: "",
-    isActive: "",
+    id: props.charity_users.id,
+    name: props.charity_users.name,
+    email: props.charity_users.email,
+    // password:props.user.password,
+    role: props.charity_users.role,
+    isActive: props.charity_users.isActive,
     image: "",
 });
+// const submit = () => {
+//     form.put(route("admins.charity_users.update"), {
 
-const submit = () => {
-    form.post(route("admins.users.store"), {
-        onFinish: () => Swal.fire("Created successfully", "", "success"),
-    });
-};
-
+//         onSuccess: () => Swal.fire("Updated successfully", "", "success"),
+//     });
+// };
 
 </script>
 
