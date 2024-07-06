@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminStoreRequest;
+use App\Http\Requests\AdminUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\admin;
@@ -43,7 +44,7 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminStoreRequest $request, admin $admin)
+    public function update(AdminUpdateRequest $request, admin $admin)
     {
         $validatedData = $request->validated();
         $admin->update($validatedData);

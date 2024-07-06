@@ -36,14 +36,15 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth:charits'], 'as' => 'charits.'], function () {
 
     Route::get('/CharityDashboard', function () {
-        $donation = donation::where('state', 'pending')->paginate(20);
+        $donations = donation::where('state', 'pending')->with(['address','user','city'])->paginate(20);
+        // dd($donations);
         return Inertia::render('charities/dashboardView', [
-            'donations' => $donation
+            'donations' => $donations
         ]);
     })->name('CharityDashboard');
 
     Route::get('/DonationManagement', function () {
-        $donations = donation::where('state', '!=', 'pending')->where('charit_id', Auth::user()->id)->with(['user.addresses','city'])->paginate(20);
+        $donations = donation::where('state', '!=', 'pending')->where('charit_id', Auth::user()->id)->with(['address','user','city'])->paginate(20);
         // dd($donations);
         return Inertia::render('charities/DonationManagement/index', [
             'donations' => $donations
@@ -51,7 +52,7 @@ Route::group(['middleware' => ['auth:charits'], 'as' => 'charits.'], function ()
     })->name('DonationManagement');
 
     Route::get('/CharityProfile', function () {
-        $charity = charit::where("id", Auth::user()->id)->get();
+        $charity = charit::find(Auth::user()->id);
         return Inertia::render('charities/CharityProfile/index', [
             'charity' => $charity
         ]);
@@ -68,9 +69,9 @@ Route::group(['middleware' => ['auth:charits'], 'as' => 'charits.'], function ()
         return Inertia::render('charities/Help&Support/index');
     })->name('Help&Support');
 
-    Route::get('/charitySettings', function () {
-        return Inertia::render('charities/Settings/index');
-    })->name('charitySettings');
+    // Route::get('/charitySettings', function () {
+    //     return Inertia::render('charities/Settings/index');
+    // })->name('charitySettings');
 
 
     Route::post('contact', CharityContactController::class)->name('CharityContact.store');
