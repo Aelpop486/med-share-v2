@@ -44,7 +44,7 @@ class CharityUsersController extends Controller
         $validatedData['password'] = Hash::make($request->password);
         $user = Charity_users::create($validatedData);
         return back()->with('success', 'User created successfully');
-        
+
     }
 
     /**
@@ -60,6 +60,7 @@ class CharityUsersController extends Controller
      */
     public function edit(Charity_users $charity_users)
     {
+        dd($charity_users);
         return Inertia::render('charities/CharityUsers/edit', [
             'charity_users' => $charity_users
         ]);
