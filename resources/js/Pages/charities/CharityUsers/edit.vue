@@ -65,28 +65,19 @@
                                 />
                             </div>
                             <div class="mt-4">
-                            <label
+                                <label
                                 for="category"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                >isActive</label
+                                >Status</label
                             >
                             <select
                                 v-model="form.isActive"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                
                             >
-                                <option
-                                  value="1"
-                                >
-                                    active 
-                                </option>
-                                <option
-                                value="0"
-                                  
-                                >
-                                    not active 
-                                </option>
+                                <option selected="">-</option>
+                                <option value=1>Active</option>
+                                <option value=0>Not Active</option>
                             </select>
                         </div>
                         <div class="mt-4">
@@ -96,24 +87,33 @@
                                 >Role</label
                             >
                             <select
-                                v-model="form.isActive"
+                                v-model="form.role"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 
                             >
                             <option
-                                    v-for="(option, index) in users.data"
-                                    :key="index"
-                                    :value="option.isActive"
+                            value="admin"
                                 >
-                                    {{ option.isActive }}
+                                admin
+                                </option>
+                            <option
+                            value="delvery"
+                                >
+                                delvery
+                                </option>
+                            <option
+                            value="reviewer"
+                                >
+                                reviewer
+                                </option>
+                            <option
+                            value="volunteer"
+                                >
+                                volunteer
                                 </option>
                             </select>
                         </div>
-
-
-                    
-                        
                            <!-- <div class="col-span-2">
                                     <label
                                         for=""
@@ -135,15 +135,13 @@
                        
                         </div>
 
-                        <div class="flex justify-center">
-                            <!-- <DisableButton />
-                            <BanButton /> -->
-                            <!-- <button
+                        <div class="flex justify-around ">
+                        <button
                             type="submit"
-                            class="text-white inline-flex mt-6 w-full items-center bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                            class="text-white inline-flex  items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                         >
                             <svg
-                                class="me-1 -ms-1 w-5 h-5"
+                                class="me-1 -ms-1 w-5 h-5 "
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -154,9 +152,10 @@
                                     clip-rule="evenodd"
                                 ></path>
                             </svg>
-                            save
-                        </button> -->
-                        </div>
+                            Update
+                        </button>
+                           
+                       </div>
                     </form>
                 </div>
             </div>
@@ -183,12 +182,12 @@ const form = useForm({
     isActive: props.charity_users.isActive,
     image: "",
 });
-// const submit = () => {
-//     form.put(route("admins.charity_users.update"), {
+const submit = () => {
+    form.put(route("charits.Charityusers.update",{Charityuser:props.charity_users.id}), {
 
-//         onSuccess: () => Swal.fire("Updated successfully", "", "success"),
-//     });
-// };
+        onSuccess: () => Swal.fire("Updated successfully", "", "success"),
+    });
+};
 
 </script>
 

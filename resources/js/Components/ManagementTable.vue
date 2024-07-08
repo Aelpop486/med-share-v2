@@ -195,6 +195,7 @@
                                 <th scope="col" class="px-4 py-3">user</th>
                                 <th scope="col" class="px-4 py-3">city</th>
                                 <th scope="col" class="px-4 py-3">address</th>
+                                <th scope="col" class="px-4 py-3">descreption</th>
                                 <th scope="col" class="px-4 py-3">Status</th>
                                 <th scope="col" class="px-4 py-3">
                                     <span class="sr-only">Actions</span>
@@ -211,7 +212,7 @@
                                     scope="row"
                                     class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                                 >
-                                    {{ donation.id }}
+                                {{ num+1 }}
                                 </th>
                                 <td class="px-4 py-3">
                                     {{ donation.user.name }}
@@ -219,12 +220,15 @@
                                 <td class="px-4 py-3">
                                     {{ donation.city.name }}
                                 </td>
-                                <td class="px-4 py-3">{{}}</td>
+                                <td class="px-4 py-3">
+                                    {{ donation.address.address }}
+                                </td>
+                                <td class="px-4 py-3">{{donation.description}}</td>
                                 <td class="px-4 py-3">{{ donation.state }}</td>
                                 <td
                                     class="px-4 py-3 flex items-center justify-end"
                                 >
-                                    <div class="py-1">
+                                     <div class="py-1">
                                         <Link
                                             :href="
                                                 route(
@@ -237,21 +241,8 @@
                                             class="block px-2 text-sm"
                                             ><EditButton
                                         /></Link>
-                                    </div>
-                                    <div class="py-1">
-                                        <Link
-                                            :href="
-                                                route(
-                                                    'charits.Charitydonations.destroy',
-                                                    {
-                                                        id: donation.id,
-                                                    }
-                                                )
-                                            "
-                                            class="block px-2 text-sm"
-                                            ><DeleteButton
-                                        /></Link>
-                                    </div>
+                                    </div> 
+                             
                                 </td>
                             </tr>
                         </tbody>
@@ -265,9 +256,9 @@
 </template>
 
 <script setup> 
+ var num = 0;
 import { Link } from "@inertiajs/vue3";
 import EditButton from "./EditButton.vue";
-import DeleteButton from "./DeleteButton.vue";
 import Pagination from '@/Components/Pagination.vue';
 defineProps({ donations: Object });
 </script>

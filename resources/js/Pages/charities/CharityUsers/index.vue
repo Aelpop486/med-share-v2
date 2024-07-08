@@ -282,9 +282,9 @@
                         >
                             <tr>
                                 <th scope="col" class="px-4 py-3">Id</th>
-                                <th scope="col" class="px-4 py-3">Logo</th>
+                                <th scope="col" class="px-4 py-3">Pic</th>
                                 <th scope="col" class="px-4 py-3">Name</th>
-                                <th scope="col" class="px-4 py-3">Major</th>
+                                <th scope="col" class="px-4 py-3">Role</th>
 
                                 <th scope="col" class="px-4 py-3">
                                     <span class="sr-only">Actions</span>
@@ -298,9 +298,9 @@
                                 :key="index"
                             >
                                 <td class="px-4 py-3">{{ Charityuser.id }}</td>
-                                <td class="px-4 py-3">{{}}</td>
+                                <td class="px-4 py-3">{{   }}</td>
                                 <td class="px-4 py-3">{{ Charityuser.name }}</td>
-                                <td class="px-4 py-3">{{}}</td>
+                                <td class="px-4 py-3">{{Charityuser.role}}</td>
 
                                 <td
                                     class="px-4 py-3 flex items-center justify-end"

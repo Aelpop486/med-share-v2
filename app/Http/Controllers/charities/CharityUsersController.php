@@ -50,7 +50,7 @@ class CharityUsersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Charity_users $charity_users)
+    public function show(Charity_users $Charityuser)
     {
         //
     }
@@ -58,35 +58,35 @@ class CharityUsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Charity_users $charity_users)
+    public function edit(Charity_users $Charityuser)
     {
-        dd($charity_users);
+        // dd($Charityuser);
         return Inertia::render('charities/CharityUsers/edit', [
-            'charity_users' => $charity_users
+            'charity_users' => $Charityuser
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(CharityUsersStoreRequset $request,Charity_users $charity_users)
+    public function update(CharityUsersStoreRequset $request,Charity_users $Charityuser)
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charity_users");
-            ImageService::deleteImage($charity_users->image,);
+            ImageService::deleteImage($Charityuser->image,);
         }
         $validatedData['password'] = Hash::make($request->password);
-        $charity_users->update($validatedData);
+        $Charityuser->update($validatedData);
         return back()->with('success', 'User updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Charity_users $charity_users)
+    public function destroy(Charity_users $Charityuser)
     {
-        $charity_users->delete();
-        return to_route('charityUsers')->with('success', 'User deleted successfully');
+        $Charityuser->delete();
+        return back()->with('success', 'User deleted successfully');
     }
 }

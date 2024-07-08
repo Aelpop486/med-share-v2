@@ -269,13 +269,13 @@
                                 >Status</label
                             >
                             <select
-                                v-model="form.isAtive"
+                                v-model="form.isActive"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             >
                                 <option selected="">-</option>
-                                <option value="">Active</option>
-                                <option value="">Not Active</option>
+                                <option value=0>Active</option>
+                                <option value=1>Not Active</option>
                             </select>
                         </div>
 
@@ -408,13 +408,13 @@ const form = useForm({
     website_link: props.charity.website_link,
     // password: "",
     specialty_id: props.charity.specialty_id,
-    isAtive: props.charity.isActive,
+    isActive: props.charity.isActive,
     description: props.charity.description,
     image: props.charity.image,
 });
 const submit = () => {
     form.put(route("admins.charities.update", { charity: props.charity.id }), {
-        onSuccess: () => Swal.fire("Created successfully", "", "success"),
+        onSuccess: () => Swal.fire("Updated successfully", "", "success"),
     });
 };
 </script>

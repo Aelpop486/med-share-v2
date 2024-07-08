@@ -138,6 +138,7 @@
 </template>
 
 <script setup>
+import Swal from "sweetalert2";
 import { Head, Link, useForm } from "@inertiajs/vue3";
 import InputError from '@/Components/InputError.vue';
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
@@ -152,7 +153,7 @@ const form = useForm({
 });
 const submit = () => {
     form.post(route("admins.admins.store"), {
-        onFinish: () => Swal.fire("Created successfully", "", "success"),
+        onSuccess: () => Swal.fire("Created successfully", "", "success"),
     });
 };
 </script>

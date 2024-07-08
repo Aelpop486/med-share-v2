@@ -99,8 +99,7 @@
                                 <th scope="col" class="px-4 py-3">icon</th>
                                 <th scope="col" class="px-4 py-3">Name</th>
                                 <th scope="col" class="px-4 py-3">Email</th>
-                                <th scope="col" class="px-4 py-3">Phone</th>
-                                <th scope="col" class="px-4 py-3">Area</th>
+                         
                                 <th scope="col" class="px-4 py-3">
                                     <span class="sr-only">Actions</span>
                                 </th>
@@ -113,9 +112,8 @@
                                     {{ admin.id }}</th>
                                 <td class="px-4 py-3"> </td>
                                 <td class="px-4 py-3">{{ admin.name }}</td>
-                                <td class="px-4 py-3">{{}}</td>
-                                <td class="px-4 py-3">{{}}</td>
-                                <td class="px-4 py-3">{{}}</td>
+                                <td class="px-4 py-3">{{admin.email}}</td>
+                      
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <div class="py-1">
                                         <Link :href="route('admins.admins.edit', { admin: admin.id })"
