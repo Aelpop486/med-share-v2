@@ -28,9 +28,11 @@
                                 @input="form.image = $event.target.files[0]"
 
                             />
+                            <InputError class="mt-2" :message="form.errors.image" />
+                            <InputError class="mt-2" :message="form.errors.phone" />
                         </div>
                         <div class="grid gap-4 mb-4 grid-cols-2">
-                        
+
                             <div class="col-span-2">
                                 <label
                                     for="name"
@@ -47,6 +49,7 @@
                                     required=""
 
                                 />
+                                <InputError class="mt-2" :message="form.errors.name" />
                             </div>
                             <div class="col-span-2">
                                 <label
@@ -63,6 +66,24 @@
                                     placeholder="Type Email"
                                     required=""
                                 />
+                                <InputError class="mt-2" :message="form.errors.email" />
+                            </div>
+                            <div class="col-span-2">
+                                <label
+                                    for="Phone"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                    >Phone</label
+                                >
+                                <input
+                                    v-model="form.phone"
+                                    type="text"
+                                    name="Phone"
+                                    id="Phone"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Type Phone"
+                                    required=""
+                                />
+                                <InputError class="mt-2" :message="form.errors.phone" />
                             </div>
                             <div class="mt-4">
                                 <label
@@ -79,6 +100,7 @@
                                 <option value=1>Active</option>
                                 <option value=0>Not Active</option>
                             </select>
+                            <InputError class="mt-2" :message="form.errors.isActive" />
                         </div>
                         <div class="mt-4">
                             <label
@@ -90,7 +112,7 @@
                                 v-model="form.role"
                                 id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 w-full focus:border-primary-500 block p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                
+
                             >
                             <option
                             value="admin"
@@ -113,6 +135,7 @@
                                 volunteer
                                 </option>
                             </select>
+                            <InputError class="mt-2" :message="form.errors.role" />
                         </div>
                            <!-- <div class="col-span-2">
                                     <label
@@ -132,7 +155,7 @@
                                                         <InputError class="mt-2" :message="form.errors.password" />
 
                                 </div> -->
-                       
+
                         </div>
 
                         <div class="flex justify-around ">
@@ -154,7 +177,7 @@
                             </svg>
                             Update
                         </button>
-                           
+
                        </div>
                     </form>
                 </div>
@@ -167,6 +190,7 @@
 import { Head, Link, useForm } from "@inertiajs/vue3";
 import charitiesLayout from "@/Layouts/charitesLayout.vue";
 defineOptions({ layout: charitiesLayout });
+import InputError from '@/Components/InputError.vue';
 import DeleteButton from "@/Components/DeleteButton.vue";
 // import DisableButton from "@/Components/DisableButton.vue";
 // import BanButton from "@/Components/BanButton.vue";
@@ -177,6 +201,7 @@ const form = useForm({
     id: props.charity_users.id,
     name: props.charity_users.name,
     email: props.charity_users.email,
+    phone: props.charity_users.phone,
     // password:props.user.password,
     role: props.charity_users.role,
     isActive: props.charity_users.isActive,

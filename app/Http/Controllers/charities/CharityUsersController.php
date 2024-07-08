@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\CharityUsersStoreRequset;
+use App\Http\Requests\CharityUsersUpdateRequset;
 
 class CharityUsersController extends Controller
 {
@@ -69,7 +70,7 @@ class CharityUsersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CharityUsersStoreRequset $request,Charity_users $Charityuser)
+    public function update(CharityUsersUpdateRequset $request,Charity_users $Charityuser)
     {
         $validatedData = $request->validated();
         if ($request->hasFile("image")) {
