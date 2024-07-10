@@ -92,11 +92,11 @@
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-4 py-3">Id</th>
-                                <th scope="col" class="px-4 py-3">icon</th>
+                                <!-- <th scope="col" class="px-4 py-3">icon</th> -->
                                 <th scope="col" class="px-4 py-3">Name</th>
                                 <th scope="col" class="px-4 py-3">Email</th>
                                 <th scope="col" class="px-4 py-3">Area</th>
-                                <th scope="col" class="px-4 py-3">---</th>
+                                <!-- <th scope="col" class="px-4 py-3">---</th> -->
                                 <th scope="col" class="px-4 py-3">
                                     <span class="sr-only">Actions</span>
                                 </th>
@@ -106,13 +106,14 @@
                             <tr class="border-b dark:border-gray-700" v-for="(donation, index) in donations.data"
                                 :key="index">
                                 <th scope="row"
-                                    class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">-----
+                                    class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ donation.id }}
                                 </th>
-                                <td class="px-4 py-3"> </td>
+                                <!-- <td class="px-4 py-3">-----</td> -->
                                 <td class="px-4 py-3">{{ donation.user.name }}</td>
                                 <td class="px-4 py-3">{{ donation.user.email }}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3">-----</td>
+                                <td class="px-4 py-3">{{ donation.address.address }}</td>
+                                <!-- <td class="px-4 py-3">-----</td> -->
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <div class="py-1">
                                         <Link :href="route('admins.donations.edit', { donation: donation.id })"

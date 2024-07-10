@@ -26,7 +26,7 @@ class CharityUsersUpdateRequset extends FormRequest
             'email' => 'nullable|string|email|max:255',
             'phone' => 'nullable|numeric',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
-            'role' => 'nullable|exists:charity_users,role',
+            'role' => 'nullable',
             'isActive' => 'nullable',
         ];
     }

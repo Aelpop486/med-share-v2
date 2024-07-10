@@ -394,7 +394,7 @@ const form = useForm({
     id: props.donation.id,
     name: props.donation.user.name,
     email: props.donation.user.email,
-    address: props.donation.address,
+    address: props.donation.address.address,
     description: props.donation.description,
     image: props.donation.image,
 });

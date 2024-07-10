@@ -18,6 +18,7 @@ class DonationSeeder extends Seeder
             'user_id' => '1',
             'city_id' => '2',
             'charit_id' => '1',
+            'address_id' => '1',
         ]);
     }
 }

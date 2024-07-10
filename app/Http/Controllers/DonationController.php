@@ -10,7 +10,7 @@ class DonationController extends Controller
 {
     public function index(Request $request)
     {
-        $donations = donation::where('city_id', $request->city_id)->with(['user','city'])->paginate(20);
+        $donations = donation::where('city_id', $request->city_id)->with(['user','city','address'])->paginate(20);
         return Inertia::render('admins/Donations/index',[
             'donations'=>$donations
         ]);
@@ -29,7 +29,7 @@ class DonationController extends Controller
     {
         // dd($donation);
         $donation->delete();
-        return back()->with('success', 'Donation deleted successfully');
+        return to_route('admins.donations.index')->with('success', 'Donation deleted successfully');
     }
 
 }
