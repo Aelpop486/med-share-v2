@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\charit;
 use App\Models\specialty;
 use Illuminate\Http\Request;
@@ -9,21 +10,11 @@ use App\Services\ImageService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\CharityStoreRequest;
-use Inertia\Inertia;
+use App\Http\Requests\CharityUpdateRequest;
 
 class CharitController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $specialty = specialty::all();
@@ -52,7 +43,7 @@ class CharitController extends Controller
      */
     public function edit(charit $charity)
     {
-        charit::with(['specialty','users','admin'])->get();
+        $charity->load(['specialty','users','admin']);
         // dd($charity);
         $specialty = specialty::all();
         return Inertia::render('admins/Charity/edit',[
@@ -64,14 +55,14 @@ class CharitController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CharityStoreRequest $request,charit $charity)
+    public function update(CharityUpdateRequest $request,charit $charity)
     {
         $validatedData = $request->validated();
+        // dd($validatedData);
         if ($request->hasFile("image")) {
             $validatedData["image"] = ImageService::uploadImage($request->file("image"), "charities");
             ImageService::deleteImage($charity->image);
         }
-        $validatedData['password'] = Hash::make($request->password);
         $charity->update($validatedData);
         return back()->with('success', 'Charity updated successfully');
     }
@@ -82,6 +73,6 @@ class CharitController extends Controller
     public function destroy(charit $charity)
     {
         $charity->delete();
-        return to_route('admins.charities.index')->with('success', 'Charity deleted successfully');
+        return to_route('admins.charities')->with('success', 'Charity deleted successfully');
     }
 }

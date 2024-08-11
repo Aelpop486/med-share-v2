@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth:web'], 'as' => 'admins.'], function () {
     })->name('specialties');
 
     Route::get('/Allusers', function () {
-        $user = User::paginate(20);
+        $user = User::paginate(10);
         return Inertia::render('admins/Users/index', [
             'users' => $user
         ]);
@@ -71,7 +71,7 @@ Route::group(['middleware' => ['auth:web'], 'as' => 'admins.'], function () {
     })->name('systemUsers');
 
     Route::get('/Allcharities', function () {
-        $charities = charit::paginate(20);
+        $charities = charit::with(['specialty'])->paginate(20);
         return Inertia::render('admins/Charity/index', [
             'charities' => $charities
         ]);
@@ -79,10 +79,10 @@ Route::group(['middleware' => ['auth:web'], 'as' => 'admins.'], function () {
 
     Route::post('contact', ContactController::class)->name('contact.store');
 
-    Route::resource('charities', CharitController::class)->except('show');
+    Route::resource('charities', CharitController::class)->except('show','index');
     Route::resource('donations', DonationController::class)->only('index','edit','destroy');
     Route::resource('specialties', SpecialtyController::class)->except('show');
-    Route::resource('users', UserController::class)->except('show');
+    Route::resource('users', UserController::class)->except('show','index','update');
     Route::resource('admins', AdminController::class)->except('show');
 });
 
@@ -147,5 +147,8 @@ Route::get('/ArabicFaqs', function () {
     return Inertia::render('LandingPage/ArabicFaqs');
 })->name('ArabicFaqs');
 
+Route::get('/ContactAarbic', function () {
+    return Inertia::render('LandingPage/ContactAarbic');
+})->name('ContactAarbic');
 
 require __DIR__ . '/auth.php';

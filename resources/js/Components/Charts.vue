@@ -1,6 +1,6 @@
 <template>
-    <div class="h-96 w-full">
-      <div id="chart" class="h-full w-full"></div>
+    <div class="h-96 w-full dark:bg-gray-800 dark:text-white">
+      <div id="chart" class="h-full w-full dark:bg-gray-800 dark:text-white"></div>
     </div>
   </template>
 

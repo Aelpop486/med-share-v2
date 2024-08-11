@@ -1,39 +1,37 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import GuestLayout from "@/Layouts/GuestLayout.vue";
+import InputError from "@/Components/InputError.vue";
+import InputLabel from "@/Components/InputLabel.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import TextInput from "@/Components/TextInput.vue";
+import { Head, Link, useForm } from "@inertiajs/vue3";
 // import Swal from 'sweetalert2'
 
-defineOptions({ layout: GuestLayout })
+defineOptions({ layout: GuestLayout });
 
 const form = useForm({
-    name: '',
-    email: '',
-    password: '',
-    password_confirmation: '',
-    phone: '',
-    website_link: '',
-    specialty_id: '',
-    description: '',
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
+    phone: "",
+    website_link: "",
+    specialty_id: "",
+    description: "",
     image: "",
 });
 
 const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => Swal.fire('Registered successfully', '', 'success')
+    form.post(route("register"), {
+        onFinish: () => Swal.fire("Registered successfully", "", "success"),
     });
 };
-
 </script>
 
 <template>
+    <!-- <div class="mx-auto dark:bg-gray-900 dark:text-white">
 
-    <div class="container mx-auto">
-
-        <div class="flex justify-center items-center mt-5 font-bold text-2xl  text-center">
+        <div class="flex justify-center items-center font-bold text-2xl  text-center">
             <h1>
                 👋<br>
                 Register with us now as a charitable organization <br>
@@ -42,9 +40,9 @@ const submit = () => {
         </div>
 
         <form @submit.prevent="submit"
-            class="h-fit bg-white border border-slate-200 shadow-xl rounded-2xl lg:p-12 p-8 w-[75%] mb-10 mt-10  max-w-lg md:max-w-3xl lg:max-w-full mx-auto">
+            class="h-fit bg-white border dark:bg-gray-900 dark:text-white border-slate-200 shadow-xl rounded-2xl lg:p-12 p-8 w-[75%] mt-10  max-w-lg md:max-w-3xl lg:max-w-full mx-auto">
 
-            <div class="relative mb-8">
+            <div class="relative mb-8 dark:bg-gray-900 dark:text-white">
                 <label class="flex  items-center mb-2 text-gray-600 text-base leading-6 font-medium">Name
                 </label>
                 <div class="relative text-gray-500 focus-within:text-gray-900">
@@ -235,5 +233,145 @@ const submit = () => {
                 </svg>
             </button>
         </form>
+    </div> -->
+
+    <div class="bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto p-4 w-[90%]">
+            <div class="bg-white dark:bg-gray-700 shadow rounded-lg p-6">
+                <h1
+                    class="text-xl text-center font-semibold mb-4 text-gray-900 dark:text-gray-100"
+                >
+                    Register with us now as a charitable organization
+                </h1>
+                <p class="text-gray-600 text-center dark:text-gray-300 mb-6">
+                    To become our partner in spreading health awareness
+                </p>
+                <form @submit.prevent="submit">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <input
+                            id="name"
+                            type="text"
+                            v-model="form.name"
+                            required
+                            autofocus
+                            autocomplete="name"
+                            placeholder="Full Name"
+                            class="border p-2 rounded w-full"
+                        />
+                        <InputError class="mt-2" :message="form.errors.name" />
+
+                        <input
+                            id="email"
+                            type="email"
+                            v-model="form.email"
+                            required
+                            autocomplete="username"
+                            placeholder="Enter Your Email"
+                            class="border p-2 rounded w-full"
+                        />
+                        <InputError class="mt-2" :message="form.errors.email" />
+                    </div>
+                    <div class="mb-4">
+                        <input
+                            id="phone"
+                            type="tel"
+                            v-model="form.phone"
+                            required
+                            autocomplete="phone"
+                            placeholder="Enter Your Phone"
+                            class="border p-2 rounded w-full"
+                        />
+                        <InputError class="mt-2" :message="form.errors.phone" />
+                    </div>
+                    <div class="mb-4">
+                        <select
+                            class="border p-2 rounded w-full"
+                            v-model="form.specialty_id"
+                            id="category"
+                        >
+                            <option selected="">-</option>
+                            <option value="">Major 1</option>
+                            <option value="">Major 2</option>
+                            <option value="">Major 3</option>
+                            <option value="">Major 4</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <input
+                            id="website"
+                            type="url"
+                            v-model="form.website_link"
+                            autocomplete="website"
+                            placeholder="Enter Your Website"
+                            class="border p-2 rounded w-full"
+                        />
+                        <InputError
+                            class="mt-2"
+                            :message="form.errors.website"
+                        />
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+
+                        <input
+                            type="password"
+                            id="password"
+                            v-model="form.password"
+                            required
+                            autocomplete="new-password"
+                            placeholder="Enter Your Password"
+                            class="border p-2 rounded w-full"
+                        />
+                        <InputError
+                            class="mt-2"
+                            :message="form.errors.password"
+                        />
+
+                        <input
+                            type="password"
+                            id="password_confirmation"
+                            v-model="form.password_confirmation"
+                            placeholder="Enter Your Confirm Password"
+                            required
+                            class="border p-2 rounded w-full"
+                        />
+                        <InputError
+                            class="mt-2"
+                            :message="form.errors.password_confirmation"
+                        />
+
+                        <input
+                            class="border p-2 rounded w-full "
+                            id="file_input"
+                            type="file"
+                            @input="form.image = $event.target.files[0]"
+                        />
+                    </div>
+
+                    <div class="relative mb-8">
+                        <label
+                            class="flex items-center mb-2 text-gray-600 text-base leading-6 font-medium"
+                        >
+                            Description
+                        </label>
+                        <div class="mb-4">
+                            <textarea
+                                v-model="form.description"
+                                id="description"
+                                rows="4"
+                                class="border p-2 rounded w-full"
+                                placeholder="Write your message"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <PrimaryButton
+                    :class="{ 'opacity-25': form.processing }" :disabled="form.processing"
+                        class="px-4 py-2 rounded bg-[#1e429f] text-white hover:bg-blue-600 focus:outline-none transition-colors"
+                    >
+                    Register
+                    </PrimaryButton>
+                </form>
+            </div>
+        </div>
     </div>
 </template>

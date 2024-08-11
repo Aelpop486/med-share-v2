@@ -27,6 +27,7 @@ class User extends Authenticatable #implements MustVerifyEmail
         'national_id',
         'gender',
         'date_of_birth',
+        'user_aggrement'
     ];
 
     /**

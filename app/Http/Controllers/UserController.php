@@ -11,10 +11,6 @@ use App\Http\Requests\UserStoreRequest;
 class UserController extends Controller
 {
 
-    public function index()
-    {
-        //
-    }
 
     public function create()
     {
@@ -33,26 +29,18 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        User::with(['addresses','donations'])->get();
+        $user->load(['addresses', 'donations']);
+        // dd($user);
         return Inertia::render('admins/Users/edit', [
             'user' => $user
         ]);
     }
 
-    public function update(UserStoreRequest $request, User $user)
-    {
-        $validatedData = $request->validated();
-        if ($request->hasFile("image")) {
-            $validatedData["image"] = ImageService::uploadImage($request->file("image"), "users");
-        }
-        $user->update($validatedData);
-        return back()->with('success', 'User updated successfully');
-    }
-
-
     public function destroy(User $user)
     {
+
         $user->delete();
-        return to_route('admins.users.index')->with('success', 'User deleted successfully');
+
+        return to_route('admins.users')->with('success', 'User deleted successfully');
     }
 }

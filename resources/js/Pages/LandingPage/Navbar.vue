@@ -14,7 +14,7 @@
                         alt="MedShare"
                     />
                     <span
-                        class="roo self-center text-[#1e429f] font-bold text-2xl whitespace-nowrap dark:text-white"
+                        class="self-center text-[#1e429f] font-bold text-2xl whitespace-nowrap dark:text-white"
                         >MedShare</span
                     >
                 </a>
@@ -126,7 +126,6 @@
                         <li>
                             <Link
 
-                            :href="route('Arabic')"
                                 class="block py-2 px-3 md:p-0 text-gray-900 rounded font-bold hover:bg-[#1e429f] hover:text-white md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                             >
                                 <svg

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class charit extends Authenticatable implements MustVerifyEmail
+class charit extends Authenticatable #implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 

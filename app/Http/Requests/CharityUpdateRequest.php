@@ -23,12 +23,12 @@ class CharityUpdateRequest extends FormRequest
     {
         return [
             'name' => 'nullable|string|max:255',
-            'email' => 'nullable|string|email|max:255|unique:charits,email',
-            'password' => 'nullable|string|min:8|confirmed',
-            'phone' => 'nullable|numeric|unique:charits,phone',
+            'email' => 'nullable|string|email|max:255',
+            'phone' => 'nullable|numeric',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
             'description' => 'nullable|string',
             'specialty_id' => 'nullable|exists:specialties,id',
+            'isActive' => 'nullable|exists:charits,isActive',
             'website_link'=>'nullable|url',
         ];
     }

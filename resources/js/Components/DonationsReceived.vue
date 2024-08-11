@@ -1,8 +1,8 @@
 <template>
-    <ol class="items-center sm:flex">
-        <li class="relative mb-6 sm:mb-0">
-            
-            <div class="flex items-center">
+    <ol class="items-center sm:flex dark:bg-gray-800 dark:text-white">
+        <li class="relative mb-6 sm:mb-0 dark:bg-gray-800 dark:text-white">
+
+            <div class="flex items-center dark:bg-gray-800 dark:text-white">
 
                 <div
                     class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
@@ -33,7 +33,7 @@
                 >
             </div>
         </li>
-   
+
     </ol>
 </template>
 

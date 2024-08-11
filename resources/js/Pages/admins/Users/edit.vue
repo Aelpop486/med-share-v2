@@ -7,7 +7,7 @@
             >
                 <div class="text-center sm:pr-8 sm:py-8">
                     <form class="p-4 md:p-5" @submit.prevent="submit">
-                         <div class="flex flex-col justify-center mb-4">
+                        <div class="flex flex-col justify-center mb-4">
                             <div class="shrink-0 mb-6 justify-center flex">
                                 <img
                                     class="h-20 w-20 bg-slate-300 object-cover rounded-full"
@@ -26,7 +26,6 @@
                                 id="file_input"
                                 type="file"
                                 @input="form.image = $event.target.files[0]"
-
                             />
                         </div>
                         <div class="grid gap-4 mb-4 grid-cols-2">
@@ -43,6 +42,9 @@
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Type User ID"
                                     required=""
+                                    disabled
+                                    readonly
+                                    v-model="form.id"
                                 />
                             </div>
                             <div class="col-span-2">
@@ -77,24 +79,7 @@
                                     required=""
                                 />
                             </div>
-                           <div class="col-span-2">
-                                    <label
-                                        for="email"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                        >Password</label
-                                    >
-                                    <input
-                                        v-model="form.password"
-                                        type="password"
-                                        name="password"
-                                        id="password"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                        placeholder="Password"
-                                        required
-                                    />
-                                                        <InputError class="mt-2" :message="form.errors.password" />
 
-                                </div>
                             <div class="col-span-2">
                                 <label
                                     for="language"
@@ -108,7 +93,6 @@
                                     id="language"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Language"
-                                    required=""
                                 />
                             </div>
                             <div class="col-span-2">
@@ -129,8 +113,26 @@
                         </div>
 
                         <div class="flex justify-center">
-                            <DisableButton />
-                            <BanButton />
+                            <!-- <DisableButton />
+                            <BanButton /> -->
+                            <!-- <button
+                            type="submit"
+                            class="text-white inline-flex mt-6 w-full items-center bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                        >
+                            <svg
+                                class="me-1 -ms-1 w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                            save
+                        </button> -->
                         </div>
                     </form>
                 </div>
@@ -141,25 +143,26 @@
 
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
-
 import AdminsLayout from "@/Layouts/AdminsLayout.vue";
 defineOptions({ layout: AdminsLayout });
-import DisableButton from "@/Components/DisableButton.vue";
-import BanButton from "@/Components/BanButton.vue";
+const props = defineProps({ user: Object });
+
 const form = useForm({
-    name: "",
-    email: "",
-    password:"",
+    id: props.user.id,
+    name: props.user.name,
+    email: props.user.email,
+    // password:props.user.password,
     // role: "",
-    description: "",
+    description: props.user.description,
     image: "",
-    language: "",
+    language: props.user.language,
 });
-const submit = () => {
-    form.post(route("admins.users.update"), {
-        onFinish: () => Swal.fire("Updated successfully", "", "success"),
-    });
-};
+// const submit = () => {
+//     form.put(route("admins.users.update"), {
+
+//         onSuccess: () => Swal.fire("Updated successfully", "", "success"),
+//     });
+// };
 </script>
 
 <style lang="scss" scoped></style>

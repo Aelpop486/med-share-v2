@@ -10,7 +10,7 @@ class DonationController extends Controller
 {
     public function index(Request $request)
     {
-        $donations = donation::where('city_id', $request->city_id)->with(['user','city'])->paginate(20);
+        $donations = donation::where('city_id', $request->city_id)->with(['user','city','address'])->paginate(20);
         return Inertia::render('admins/Donations/index',[
             'donations'=>$donations
         ]);
@@ -18,7 +18,8 @@ class DonationController extends Controller
 
     public function edit(donation $donation)
     {
-        donation::with(['images','address','city','charity','user'])->get();
+        $donation->load(['images','address','city','charity','user']);
+        // dd($donation);
         return Inertia::render('admins/Donations/edit',[
             'donation'=>$donation
         ]);
@@ -26,6 +27,7 @@ class DonationController extends Controller
 
     public function destroy(donation $donation)
     {
+        // dd($donation);
         $donation->delete();
         return to_route('admins.donations.index')->with('success', 'Donation deleted successfully');
     }

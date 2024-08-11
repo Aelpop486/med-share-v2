@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminStoreRequest;
+use App\Http\Requests\AdminUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\admin;
@@ -10,13 +11,6 @@ use Inertia\Inertia;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -50,7 +44,7 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminStoreRequest $request, admin $admin)
+    public function update(AdminUpdateRequest $request, admin $admin)
     {
         $validatedData = $request->validated();
         $admin->update($validatedData);
@@ -63,7 +57,7 @@ class AdminController extends Controller
     public function destroy(admin $admin)
     {
         $admin->delete();
-        return to_route('admins.admins.index')->with('success', 'Admin deleted successfully');
+        return to_route('admins.systemUsers')->with('success', 'Admin deleted successfully');
     }
 
 }
